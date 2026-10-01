@@ -8,6 +8,16 @@ export function home(req, res) {
   });
 }
 
+export function estudiantes(req, res) {
+  return res.render('website/estudiantes', {
+    title: 'ReservaUL',
+    Rol: 'Estudiante',
+    currentPage: 'home',
+    description:
+        'Esta es una aplicación de ejemplo creada con Node.js, Express y EJS.'
+  });
+}
+
 export function about(req, res) {
   return res.render('website/about', {
     title: 'Acerca de',
