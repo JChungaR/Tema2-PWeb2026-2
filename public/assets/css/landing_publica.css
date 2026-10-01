@@ -1,19 +1,20 @@
 body {
     margin: 0;
     min-height: 100vh;
-    background-color: rgba(246, 248, 248);
+    background-color: rgba(255, 255, 255);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    padding-top: 20px;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-top: 10px;
+    padding-left: 80px;
+    padding-right:120px;
+    overflow-x: hidden;
 }
 
 .parte-principal{
     width: 1030px; height: 360px;
-    background-color:rgba(246, 248, 248);
+    background-color:rgb(255, 255, 255);
 }
 
 .formulario-busqueda {
@@ -38,6 +39,28 @@ body {
     border-color: rgba(19, 111, 99);
     background: rgba(19, 111, 99);
     padding: 10px;
-    color: rgb(255, 255, 255);
+    color:rgba(246, 248, 248);
     margin-top: 28px;
 }
+
+.foto-sala-estudio{
+    height: 250px;
+    width: 440px;
+    margin-top: 55px;
+    margin-left: -20px;
+    border-radius: 5px;
+    border: 2px solid #dddcdceb;
+}
+
+.parte-abajo{
+    width: 100vw;
+    min-height: calc(100vh - 370px);
+    background-color:rgba(246, 248, 248);
+    border-top: 2px solid #dddcdceb;
+    margin-left: -80px;
+    padding-left: 130px;
+    padding-right:120px;
+    padding-top: 25px;
+}
+
+
