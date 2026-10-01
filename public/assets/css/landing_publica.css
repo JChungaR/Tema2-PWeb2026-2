@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: rgba(246, 248, 248);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding-top: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.parte-principal{
+    width: 1030px; height: 360px;
+    background-color:rgba(246, 248, 248);
+}
+
+.formulario-busqueda {
+    display: flex;
+    padding: 20px;
+
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.agrupar-vertical {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn {
+    width: 110px;
+    border-radius: 5px;
+    border-color: rgba(19, 111, 99);
+    background: rgba(19, 111, 99);
+    padding: 10px;
+    color: rgb(255, 255, 255);
+    margin-top: 28px;
+}
