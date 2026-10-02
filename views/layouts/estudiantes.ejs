@@ -1,64 +1,24 @@
 <!-- views/layouts/estudiantes.ejs -->
 
 <!doctype html>
-
 <html lang="es">
-
 <head>
-
     <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-    >
-
-
-    <!-- CSS propio -->
-    <link
-            rel="stylesheet"
-            href="/dist/css/index.css"
-    >
-    <link
-            rel="stylesheet"
-            href="/dist/css/web.css"
-    >
+    <!-- CSS del Admin o de React -->
+    <link rel="stylesheet" href="/dist/css/index.css">
+    <link rel="stylesheet" href="/dist/css/admin.css">
 
     <title><%= title %></title>
-
 </head>
+<body>
 
+<!-- Renderizado del cuerpo de EJS -->
+<%- body %>
 
-<body class="d-flex flex-column min-vh-100 m-0 p-0">
-
-
-<!-- =====================================================
-     NAVBAR
-====================================================== -->
-
-<%- include("partials/_navbarEstudiante") %>
-
-
-<!-- =====================================================
-     CONTENIDO
-====================================================== -->
-
-<main class="flex-grow-1 w-100 m-0 p-0 " style="background-color: #F6F8F8">
-
-    <%- body %>
-
-</main>
-
-
-<!-- =====================================================
-     FOOTER
-====================================================== -->
-
-<%- include("partials/_footer") %>
-<script
-        type="module"
-        src="/dist/js/web.js">
-</script>
+<!-- JavaScript principal que arranca React -->
+<script type="module" src="/dist/js/testweb.js"></script>
 </body>
-
 </html>
