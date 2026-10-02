@@ -38,6 +38,12 @@ export function players(req, res) {
 
 export function signIn(req, res) {
   return res.render('website/sign-in', {
+    title: 'Reservas Ulima',
+  });
+}
+
+export function landing(req, res) {
+  return res.render('website/landing', {
     title: 'Bienvenido',
   });
 }
