@@ -36,15 +36,30 @@ export function players(req, res) {
   });
 }
 
-export function signIn(req, res) {
-  return res.render('website/sign-in', {
-    title: 'Reservas Ulima',
-  });
-}
+export function signIn(req, res) { 
+  return res.render('visit/sign-in', { 
+    title: 'Iniciar Sesión', 
+    currentPage: 'sign-in',
+    css: '/assets/css/sign_in.css',
+    description:
+      'Esta es una aplicación de ejemplo creada con Node.js, Express y EJS.'
+  }); }
+
+export function signUp(req, res) { 
+  return res.render('visit/sign-up', { 
+    title: 'Crear cuenta',
+    currentPage: 'sign-up',
+    description:
+      'Esta es una aplicación de ejemplo creada con Node.js, Express y EJS.'
+  }); }
 
 export function landing(req, res) {
-  return res.render('website/landing', {
+  return res.render('visit/landing', {
     title: 'Bienvenido',
+    currentPage: 'landing',
+    css: '/assets/css/landing_publica.css',
+    description:
+      'Esta es una aplicación de ejemplo creada con Node.js, Express y EJS.'
   });
 }
 

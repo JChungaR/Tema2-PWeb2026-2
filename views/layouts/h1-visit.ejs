@@ -19,14 +19,31 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/assets/css/landing_publica.css">
+  <link rel="stylesheet" href= <%= css %> >
 </head>
 <body>
 
+  <!-- =====================================================
+       NAVBAR
+  ====================================================== -->
+
+  <%- include("partials/_navbar-visit") %>
+
+
+  <!-- =====================================================
+       CONTENIDO
+  ====================================================== -->
+
+
   <!-- Renderizado del cuerpo de EJS -->
-  <%- body %>
 
+    <%- body %>
 
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <%- include("partials/_footer-visit") %>
 
   <!-- JavaScript principal que arranca React -->
   <script type="module" src="/dist/js/admin.js"></script>

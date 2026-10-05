@@ -1,0 +1,210 @@
+<% layout("layouts/h1-visit") %>
+
+<main class="login-main">
+
+    <!-- Imagen -->
+    <div class="login-imagen">
+        <img
+            src="https://scontent.flim16-1.fna.fbcdn.net/v/t39.30808-6/622265665_1336444315193780_8762287330396599955_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s1080x1350&_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=KNJqQ4-z59gQ7kNvwGdylr_&_nc_oc=AdqjMvvDenI_eYlzQSd6lgE29DkLBYcnN-bmDKn6LUNOb1jSLlz9xgmzAP-sQDwlh78S6tuI_TbaKh1RCH_xqHGI&_nc_zt=23&_nc_ht=scontent.flim16-1.fna&_nc_gid=wP5axtj-8ckqZx5w3Te6rA&_nc_ss=7b289&oh=00_AQMqtvN1QRC-_CWxji8U6atmWUkA9DH-5z-WLDdfOOskfg&oe=6AC8DC39"
+            alt="Universidad de Lima">
+    </div>
+
+
+    <!-- Formulario -->
+    <div class="login-formulario">
+
+        <div
+            class="card border-0"
+            style="
+                width: 100%;
+                max-width: 500px;
+                border-radius: 10px;
+                background-color: rgba(246, 248, 248);
+                padding: 20px;
+            "
+        >
+
+            <div class="card-body p-5">
+
+                <!-- Título -->
+                <div class="mb-2">
+
+                    <h2
+                        style="
+                            font-family: Manrope;
+                            color: rgba(21, 35, 34);
+                            font-weight: bolder;
+                        "
+                    >
+                        Iniciar sesión
+                    </h2>
+
+                    <p
+                        style="
+                            font-family: Inter;
+                            color: rgba(106, 122, 120);
+                            font-size: 15px;
+                        "
+                    >
+                        Usa tu correo institucional @ulima.edu.pe
+                    </p>
+
+                </div>
+
+
+                <!-- Formulario -->
+                <form>
+
+                    <!-- Email -->
+                    <div class="mb-3">
+
+                        <label
+                            for="email"
+                            class="form-label"
+                            style="
+                                font-family: Inter;
+                                font-size: 14px;
+                                font-weight: bolder;
+                                color: rgba(106, 122, 120);
+                            "
+                        >
+                            CORREO INSTITUCIONAL
+                        </label>
+
+                        <input
+                            type="email"
+                            class="form-control input-signIn"
+                            id="email"
+                            name="email"
+                            placeholder="ejemplo@ulima.edu.pe"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Contraseña -->
+                    <div class="mb-2">
+
+                        <label
+                            for="password"
+                            class="form-label"
+                            style="
+                                font-family: Inter;
+                                font-size: 14px;
+                                font-weight: bolder;
+                                color: rgba(106, 122, 120);
+                            "
+                        >
+                            CONTRASEÑA
+                        </label>
+
+                        <input
+                            type="password"
+                            class="form-control input-signIn"
+                            id="password"
+                            name="password"
+                            placeholder="Ingresa tu contraseña"
+                            autocomplete="current-password"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Recordarme / Olvidé mi contraseña -->
+                    <div class="login-opciones">
+
+                        <!-- Recordarme -->
+                        <div class="form-check mb-4">
+
+                            <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="remember"
+                                name="remember"
+                            >
+
+                            <label
+                                class="form-check-label"
+                                for="remember"
+                                style="
+                                    font-family: Inter;
+                                    font-size: 14px;
+                                    color: rgba(106, 122, 120);
+                                "
+                            >
+                                Recordarme
+                            </label>
+
+                        </div>
+
+
+                        <!-- Olvidé mi contraseña -->
+                        <a
+                            href="/forgot-password"
+                            style="
+                                font-family: Inter;
+                                font-size: 14px;
+                                color: rgba(19, 111, 99);
+                                text-decoration: none;
+                                font-weight: bolder;
+                            "
+                        >
+                            ¿Olvidaste tu contraseña?
+                        </a>
+
+                    </div>
+
+
+                    <!-- Botón -->
+                    <div class="d-grid">
+
+                        <button
+                            type="submit"
+                            class="btn btn-dark"
+                        >
+                            Ingresar
+                        </button>
+
+                    </div>
+
+                </form>
+
+
+                <!-- Crear cuenta -->
+                <div class="text-center mt-3">
+
+                    <span
+                        style="
+                            font-family: Inter;
+                            font-size: 14px;
+                            color: rgba(106, 122, 120);
+                        "
+                    >
+                        ¿No tienes una cuenta?
+                    </span>
+
+                    <a
+                        href="/sign-up"
+                        style="
+                            font-family: Inter;
+                            font-size: 14px;
+                            font-weight: bolder;
+                            color: rgba(19, 111, 99);
+                            text-decoration: none;
+                        "
+                    >
+                        Regístrate
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>

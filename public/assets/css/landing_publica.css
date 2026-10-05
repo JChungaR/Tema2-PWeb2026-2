@@ -6,14 +6,20 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    padding-top: 10px;
-    padding-left: 80px;
-    padding-right:120px;
+    padding: 0;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.contenido-landing {
+    padding-left: 80px;
+    padding-right: 120px;
+    padding-top: 6px;
 }
 
 .parte-principal{
-    width: 1030px; height: 360px;
+    width: 1030px; min-height: 360px;
     background-color:rgb(255, 255, 255);
 }
 
@@ -41,11 +47,31 @@ body {
 .btn {
     width: 110px;
     border-radius: 5px;
-    border-color: rgba(19, 111, 99);
+    border: 1px solid rgba(19, 111, 99);
     background: rgba(19, 111, 99);
     padding: 10px;
-    color:rgba(246, 248, 248);
+    color:rgb(255, 255, 255);
     margin-top: 28px;
+}
+
+.btn-signIn {
+    width: 110px;
+    height: 40px;
+    border-radius: 4px;
+    border: 2px solid rgba(19, 111, 99);
+    background: rgb(255, 255, 255);
+    padding: 5px;
+    color: rgba(19, 111, 99);
+}
+
+.btn-signUp {
+    width: 130px;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid rgba(19, 111, 99);
+    background: rgba(19, 111, 99);
+    padding: 5px;
+    color:rgb(255, 255, 255);
 }
 
 .foto-sala-estudio{
@@ -71,12 +97,12 @@ body {
     padding-left: 130px;
     padding-right:120px;
     padding-top: 25px;
-    padding-bottom: 90px;
+    padding-bottom: 6%;
 }
 
 .cuadro-verde{
     width: 100%;
-    height: 100px;
+    min-height: 100px;
     background-color:rgba(226, 241, 238);
     padding: 20px;
     border-radius: 5px;
@@ -99,7 +125,7 @@ body {
 }
 
 .card-body {
-    min-height: 200px;
+    height: 200px;
     padding: 20px;
 }
 

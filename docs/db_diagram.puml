@@ -1,0 +1,523 @@
+@startuml
+
+!define table(x) entity x << (T,#FFAAAA) >>
+!define primary_key(x) <b><color:red>x</color></b>
+!define foreign_key(x) <color:blue>x</color>
+
+skinparam linetype ortho
+skinparam packageStyle rectangle
+skinparam shadowing false
+skinparam ranksep 80
+skinparam nodesep 60
+skinparam entityFontSize 10
+skinparam entityFontStyle bold
+skinparam entityBackgroundColor #FEFECE
+skinparam entityBorderColor #A80036
+
+
+' =========================================================
+' ROLES Y AUTENTICACIÓN
+' =========================================================
+
+entity "users" as users {
+  * id : INT
+  --
+  email : VARCHAR(100)
+  password : VARCHAR(255)
+  status : VARCHAR(20)
+  email_verified : BOOLEAN
+  reset_token : VARCHAR(255)
+  reset_token_expires : DATETIME
+  created_at : DATETIME
+  updated_at : DATETIME
+  role_id : INT
+}
+
+entity "roles" as roles {
+  * id : INT
+  --
+  name : VARCHAR(30)
+  description : VARCHAR(100)
+}
+
+entity "permissions" as permissions {
+  * id : INT
+  --
+  name : VARCHAR(50)
+  description : VARCHAR(150)
+}
+
+entity "role_permissions" as role_permissions {
+  * id : INT
+  --
+  role_id : INT
+  permission_id : INT
+}
+
+
+' =========================================================
+' INFORMACIÓN ACADÉMICA
+' =========================================================
+
+entity "students" as students {
+  * id : INT
+  --
+  user_id : INT
+  student_code : VARCHAR(20)
+  names : VARCHAR(60)
+  last_names : VARCHAR(100)
+  phone : VARCHAR(20)
+  career_id : INT
+  semester_id : INT
+  accumulated_absences : INT
+  blocked_until : DATE
+  created_at : DATETIME
+  updated_at : DATETIME
+}
+
+entity "careers" as careers {
+  * id : INT
+  --
+  name : VARCHAR(80)
+}
+
+entity "semesters" as semesters {
+  * id : INT
+  --
+  name : VARCHAR(30)
+}
+
+
+' =========================================================
+' ENCARGADOS
+' =========================================================
+
+entity "staff_members" as staff_members {
+  * id : INT
+  --
+  user_id : INT
+  names : VARCHAR(60)
+  last_names : VARCHAR(100)
+  assigned_campus_id : INT
+  approval_status : VARCHAR(20)
+  created_at : DATETIME
+  approved_at : DATETIME
+}
+
+
+' =========================================================
+' UBICACIONES
+' =========================================================
+
+entity "campuses" as campuses {
+  * id : INT
+  --
+  name : VARCHAR(60)
+  address : VARCHAR(150)
+  status : VARCHAR(20)
+}
+
+entity "buildings" as buildings {
+  * id : INT
+  --
+  name : VARCHAR(60)
+  campus_id : INT
+}
+
+
+' =========================================================
+' ESPACIOS
+' =========================================================
+
+entity "space_types" as space_types {
+  * id : INT
+  --
+  name : VARCHAR(50)
+  description : VARCHAR(150)
+}
+
+entity "spaces" as spaces {
+  * id : INT
+  --
+  code : VARCHAR(20)
+  name : VARCHAR(100)
+  description : TEXT
+  capacity : INT
+  floor : INT
+  status : VARCHAR(30)
+  campus_id : INT
+  building_id : INT
+  space_type_id : INT
+  created_by : INT
+  created_at : DATETIME
+  updated_at : DATETIME
+}
+
+entity "space_staff" as space_staff {
+  * id : INT
+  --
+  space_id : INT
+  staff_id : INT
+}
+
+
+' =========================================================
+' FOTOGRAFÍAS
+' =========================================================
+
+entity "space_photos" as space_photos {
+  * id : INT
+  --
+  space_id : INT
+  url : VARCHAR(255)
+  is_main : BOOLEAN
+  created_at : DATETIME
+}
+
+
+' =========================================================
+' EQUIPAMIENTO
+' =========================================================
+
+entity "equipment" as equipment {
+  * id : INT
+  --
+  name : VARCHAR(60)
+  description : VARCHAR(150)
+}
+
+entity "space_equipment" as space_equipment {
+  * id : INT
+  --
+  space_id : INT
+  equipment_id : INT
+  quantity : INT
+}
+
+
+' =========================================================
+' HORARIOS Y BLOQUES
+' =========================================================
+
+entity "space_schedules" as space_schedules {
+  * id : INT
+  --
+  space_id : INT
+  day_of_week : INT
+  opening_time : TIME
+  closing_time : TIME
+  block_duration : INT
+  active : BOOLEAN
+}
+
+entity "availability_blocks" as availability_blocks {
+  * id : INT
+  --
+  space_id : INT
+  date : DATE
+  start_time : TIME
+  end_time : TIME
+  status : VARCHAR(30)
+}
+
+
+' =========================================================
+' RESERVAS
+' =========================================================
+
+entity "reservations" as reservations {
+  * id : INT
+  --
+  code : VARCHAR(30)
+  student_id : INT
+  space_id : INT
+  availability_block_id : INT
+  status : VARCHAR(30)
+  purpose : VARCHAR(255)
+  created_at : DATETIME
+  cancelled_at : DATETIME
+  cancelled_by : INT
+  cancellation_reason : TEXT
+}
+
+entity "reservation_guests" as reservation_guests {
+  * id : INT
+  --
+  reservation_id : INT
+  names : VARCHAR(100)
+  email : VARCHAR(100)
+}
+
+entity "reservation_events" as reservation_events {
+  * id : INT
+  --
+  reservation_id : INT
+  user_id : INT
+  event_type : VARCHAR(40)
+  description : VARCHAR(255)
+  created_at : DATETIME
+}
+
+
+' =========================================================
+' ASISTENCIA
+' =========================================================
+
+entity "attendances" as attendances {
+  * id : INT
+  --
+  reservation_id : INT
+  registered_by : INT
+  status : VARCHAR(30)
+  arrival_time : DATETIME
+  tolerance_until : DATETIME
+  registered_at : DATETIME
+}
+
+
+' =========================================================
+' BLOQUEOS POR MANTENIMIENTO
+' =========================================================
+
+entity "maintenance_blocks" as maintenance_blocks {
+  * id : INT
+  --
+  space_id : INT
+  created_by : INT
+  start_date : DATE
+  end_date : DATE
+  start_time : TIME
+  end_time : TIME
+  all_day : BOOLEAN
+  reason : TEXT
+  created_at : DATETIME
+}
+
+entity "maintenance_block_reservations" as maintenance_block_reservations {
+  * id : INT
+  --
+  maintenance_block_id : INT
+  reservation_id : INT
+  action : VARCHAR(30)
+}
+
+
+' =========================================================
+' INCIDENCIAS
+' =========================================================
+
+entity "incident_types" as incident_types {
+  * id : INT
+  --
+  name : VARCHAR(50)
+  description : VARCHAR(150)
+}
+
+entity "incidents" as incidents {
+  * id : INT
+  --
+  code : VARCHAR(30)
+  space_id : INT
+  reported_by : INT
+  reservation_id : INT
+  incident_type_id : INT
+  description : TEXT
+  detected_date : DATE
+  detected_block : VARCHAR(30)
+  status : VARCHAR(30)
+  solution : TEXT
+  resolved_at : DATETIME
+  resolved_by : INT
+  created_at : DATETIME
+  updated_at : DATETIME
+}
+
+entity "incident_equipment" as incident_equipment {
+  * id : INT
+  --
+  incident_id : INT
+  space_equipment_id : INT
+  quantity_affected : INT
+}
+
+entity "incident_comments" as incident_comments {
+  * id : INT
+  --
+  incident_id : INT
+  user_id : INT
+  comment : TEXT
+  created_at : DATETIME
+}
+
+
+' =========================================================
+' NOTIFICACIONES
+' =========================================================
+
+entity "notifications" as notifications {
+  * id : INT
+  --
+  user_id : INT
+  title : VARCHAR(100)
+  message : TEXT
+  type : VARCHAR(30)
+  read_at : DATETIME
+  created_at : DATETIME
+}
+
+
+' =========================================================
+' RELACIONES
+' =========================================================
+
+
+' -------------------------
+' Usuarios y roles
+' -------------------------
+
+roles ||--o{ users : "has"
+
+roles ||--o{ role_permissions : "has"
+permissions ||--o{ role_permissions : "assigned to"
+
+
+' -------------------------
+' Estudiantes
+' -------------------------
+
+users ||--o| students : "has"
+
+careers ||--o{ students : "belongs to"
+semesters ||--o{ students : "has"
+
+
+' -------------------------
+' Encargados
+' -------------------------
+
+users ||--o| staff_members : "has"
+
+campuses ||--o{ staff_members : "assigned to"
+
+
+' -------------------------
+' Campus / edificios
+' -------------------------
+
+campuses ||--o{ buildings : "contains"
+
+campuses ||--o{ spaces : "contains"
+
+buildings ||--o{ spaces : "contains"
+
+
+' -------------------------
+' Espacios
+' -------------------------
+
+space_types ||--o{ spaces : "classifies"
+
+users ||--o{ spaces : "creates"
+
+spaces ||--o{ space_staff : "assigned staff"
+
+staff_members ||--o{ space_staff : "manages"
+
+
+' -------------------------
+' Fotografías
+' -------------------------
+
+spaces ||--o{ space_photos : "has"
+
+
+' -------------------------
+' Equipamiento
+' -------------------------
+
+spaces ||--o{ space_equipment : "has"
+
+equipment ||--o{ space_equipment : "included in"
+
+
+' -------------------------
+' Horarios
+' -------------------------
+
+spaces ||--o{ space_schedules : "has"
+
+spaces ||--o{ availability_blocks : "generates"
+
+
+' -------------------------
+' Reservas
+' -------------------------
+
+students ||--o{ reservations : "makes"
+
+spaces ||--o{ reservations : "receives"
+
+availability_blocks ||--o| reservations : "reserved by"
+
+reservations ||--o{ reservation_guests : "has guests"
+
+reservations ||--o{ reservation_events : "has history"
+
+users ||--o{ reservation_events : "performs"
+
+users ||--o{ reservations : "cancels"
+
+
+' -------------------------
+' Asistencia
+' -------------------------
+
+reservations ||--o| attendances : "has"
+
+staff_members ||--o{ attendances : "registers"
+
+
+' -------------------------
+' Mantenimiento
+' -------------------------
+
+spaces ||--o{ maintenance_blocks : "blocked"
+
+staff_members ||--o{ maintenance_blocks : "creates"
+
+maintenance_blocks ||--o{ maintenance_block_reservations : "affects"
+
+reservations ||--o{ maintenance_block_reservations : "affected by"
+
+
+' -------------------------
+' Incidencias
+' -------------------------
+
+incident_types ||--o{ incidents : "classifies"
+
+spaces ||--o{ incidents : "has"
+
+students ||--o{ incidents : "reports"
+
+reservations ||--o{ incidents : "related to"
+
+users ||--o{ incidents : "resolves"
+
+incidents ||--o{ incident_equipment : "affects"
+
+space_equipment ||--o{ incident_equipment : "reported"
+
+incidents ||--o{ incident_comments : "has comments"
+
+users ||--o{ incident_comments : "writes"
+
+
+' -------------------------
+' Notificaciones
+' -------------------------
+
+users ||--o{ notifications : "receives"
+
+
+@enduml
