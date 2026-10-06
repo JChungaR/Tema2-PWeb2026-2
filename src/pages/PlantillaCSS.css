@@ -1,23 +1,21 @@
 :root {
 
     /*Paleta de colores*/
-    --verde_institucional: #136f63;
-    --verde_oscuro: #0d5249;
-    --verde_claro: #e2f1ee;
-    --tinta: #152322;
-    --texto_secundario: #6a7a78;
-    --fondo_pagina: #f6f8f8;
-    --superficie: #ffffff;
-    --borde: #dee5e4;
+    --c_verde_institucional: #136f63;
+    --c_verde_oscuro: #0d5249;
+    --c_verde_claro: #e2f1ee;
+    --c_tinta: #152322;
+    --c_texto_secundario: #6a7a78;
+    --c_fondo_pagina: #f6f8f8;
+    --c_superficie: #ffffff;
+    --c_borde: #dee5e4;
 
     /*Colores de estado*/
-    --exito: #1e7f4d;
-    --advertencia: #b7791f;
-    --error: #b4322b;
-    --informativo: #3b6fa8;
+    --c_exito: #1e7f4d;
+    --c_advertencia: #b7791f;
+    --c_error: #b4322b;
+    --c_informativo: #3b6fa8;
 
     --fuente_titulos: Manrope, serif;
     --fuente_cuerpo: Inter, serif;
-
-
 }
