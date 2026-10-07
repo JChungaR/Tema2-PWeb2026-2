@@ -22,6 +22,7 @@ export default defineConfig(({ mode }) => {
         input: {
           'web': resolve(__dirname, 'src/entries/web.jsx'),
           'admin': resolve(__dirname, 'src/entries/admin.jsx'),
+          'enterpriseEsp': resolve(__dirname, 'src/entries/enterpriseEsp.jsx'),
           testweb: resolve(__dirname, 'src/entries/testweb.jsx'), // Added entry
         },
         output: {
