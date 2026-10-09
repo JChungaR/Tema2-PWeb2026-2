@@ -3,9 +3,10 @@
 <main class="login-main">
 
     <!-- Imagen -->
-    <div class="login-imagen">
-        <img
-            src="https://scontent.flim16-1.fna.fbcdn.net/v/t39.30808-6/622265665_1336444315193780_8762287330396599955_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s1080x1350&_nc_cat=106&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=KNJqQ4-z59gQ7kNvwGdylr_&_nc_oc=AdqjMvvDenI_eYlzQSd6lgE29DkLBYcnN-bmDKn6LUNOb1jSLlz9xgmzAP-sQDwlh78S6tuI_TbaKh1RCH_xqHGI&_nc_zt=23&_nc_ht=scontent.flim16-1.fna&_nc_gid=wP5axtj-8ckqZx5w3Te6rA&_nc_ss=7b289&oh=00_AQMqtvN1QRC-_CWxji8U6atmWUkA9DH-5z-WLDdfOOskfg&oe=6AC8DC39"
+    <div>
+        <img  
+            class="login-imagen"
+            src="https://scontent-lim1-1.xx.fbcdn.net/v/t39.30808-6/622265665_1336444315193780_8762287330396599955_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s1080x1350&_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=KNJqQ4-z59gQ7kNvwHbvF3N&_nc_oc=Adqhp4zwrehXWHpqmqtUKwGeSnzhSlyLa2F2dv6LLtjBxwmdqphN1zkn16msEdn80ak&_nc_zt=23&_nc_ht=scontent-lim1-1.xx&_nc_gid=QwD2jxk8GscN5orxZY_HjA&_nc_ss=7b289&oh=00_AQOxwkgjnuh8PCJcaFmUTRLlzIM2QuvcG_rBiEu7liU0rQ&oe=6ACAD679"
             alt="Universidad de Lima">
     </div>
 
@@ -86,6 +87,8 @@
 
                     <!-- Contraseña -->
                     <div class="mb-2">
+                     
+                     <div class="d-flex justify-content-between">
 
                         <label
                             for="password"
@@ -100,6 +103,12 @@
                             CONTRASEÑA
                         </label>
 
+                        <button onclick="mostrar(event)" type="button" id="togglePassword" class="btn-mostrar">
+                            Mostrar
+                        </button>
+
+                     </div>
+
                         <input
                             type="password"
                             class="form-control input-signIn"
@@ -108,6 +117,7 @@
                             placeholder="Ingresa tu contraseña"
                             autocomplete="current-password"
                             required
+                            
                         >
 
                     </div>
@@ -208,3 +218,21 @@
     </div>
 
 </main>
+
+<script>
+
+    function mostrar(event){
+        event.preventDefault()
+
+        let password = document.getElementById('password');
+        let togglePassword = document.getElementById('togglePassword');
+
+        if (password.type === 'password') {
+            password.type = 'text';
+            togglePassword.textContent = 'Ocultar';
+        } else {
+            password.type = 'password';
+            togglePassword.textContent = 'Mostrar';
+        }
+    }
+</script>

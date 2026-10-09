@@ -1,0 +1,275 @@
+<% layout("layouts/h1-visit") %>
+
+<main class="signup-main">
+
+    <!-- Formulario -->
+    <div class="signup-formulario">
+
+        <div class="card signup-card border-0">
+
+            <div class="card-body">
+
+                <!-- Título -->
+                <div class="signup-encabezado">
+                    <h2>Crear cuenta de estudiante</h2>
+
+                    <p>
+                        Solo correos @ulima.edu.pe. La cuenta se activa al confirmar el correo.
+                    </p>
+                </div>
+
+                <form id="formSignUp">
+
+                    <!-- Nombres y apellidos -->
+                    <div class="signup-campos-dobles">
+
+                        <div class="signup-campo">
+                            <label for="names">NOMBRES</label>
+
+                            <input
+                                type="text"
+                                class="form-control input-signUp"
+                                id="names"
+                                name="names"
+                                placeholder="Ingresa tus nombres"
+                                autocomplete="given-name"
+                                >
+                        </div>
+
+                        <div class="signup-campo">
+                            <label for="last_names">APELLIDOS</label>
+
+                            <input
+                                type="text"
+                                class="form-control input-signUp"
+                                id="last_names"
+                                name="last_names"
+                                placeholder="Ingresa tus apellidos"
+                                autocomplete="family-name"
+                                >
+                        </div>
+
+                    </div>
+
+                    <!-- Correo -->
+                    <div class="signup-campo signup-campo-ancho">
+                        <label for="email">CORREO INSTITUCIONAL</label>
+
+                        <input
+                            type="email"
+                            class="form-control input-signUp"
+                            id="email"
+                            name="email"
+                            placeholder="ejemplo@ulima.edu.pe"
+                            autocomplete="email"
+                            >
+
+                        <small id="emailError" class="signup-error"></small>
+                    </div>
+
+                    <!-- Contraseñas -->
+                    <div class="signup-campos-dobles">
+
+                        <div class="signup-campo">
+                            <div class="signup-label-fila">
+                                <label for="password">CONTRASEÑA</label>
+
+                                <button
+                                    type="button"
+                                    class="btn-mostrar"
+                                    onclick="mostrarPassword('password', this)">
+                                    Mostrar
+                                </button>
+                            </div>
+
+                            <input
+                                type="password"
+                                class="form-control input-signUp"
+                                id="password"
+                                name="password"
+                                placeholder="Crea una contraseña"
+                                autocomplete="new-password"
+                                
+                                >
+
+                            <small id="passwordHelp" class="signup-ayuda">
+                                Usa al menos 8 caracteres y una mayúscula.
+                            </small>
+                        </div>
+
+                        <div class="signup-campo">
+                            <div class="signup-label-fila">
+                                <label for="confirmPassword">
+                                    CONFIRMAR CONTRASEÑA
+                                </label>
+
+                                <button
+                                    type="button"
+                                    class="btn-mostrar"
+                                    onclick="mostrarPassword('confirmPassword', this)">
+                                    Mostrar
+                                </button>
+                            </div>
+
+                            <input
+                                type="password"
+                                class="form-control input-signUp"
+                                id="confirmPassword"
+                                name="confirmPassword"
+                                placeholder="Repite tu contraseña"
+                                autocomplete="new-password"
+                                
+                                >
+
+                            <small id="confirmPasswordError" class="signup-error"></small>
+                        </div>
+
+                    </div>
+
+                    <!-- Carrera y ciclo -->
+                    <div class="signup-campos-dobles">
+
+                        <div class="signup-campo">
+                            <label for="career_id">CARRERA</label>
+
+                            <select
+                                class="form-select input-signUp"
+                                id="career_id"
+                                name="career_id"
+                                >
+
+                                <option value="" selected disabled>
+                                    Selecciona tu carrera
+                                </option>
+
+                                <option value="1">Ingeniería de Sistemas</option>
+                            </select>
+                        </div>
+
+                        <div class="signup-campo">
+                            <label for="semester_id">CICLO</label>
+
+                            <select
+                                class="form-select input-signUp"
+                                id="semester_id"
+                                name="semester_id"
+                                >
+
+                                <option value="" selected disabled>
+                                    Selecciona tu ciclo
+                                </option>
+
+                                <option value="1">Primer ciclo</option>
+                                <option value="2">Segundo ciclo</option>
+                                <option value="3">Tercer ciclo</option>
+                                <option value="4">Cuarto ciclo</option>
+                                <option value="5">Quinto ciclo</option>
+                                <option value="6">Sexto ciclo</option>
+                                <option value="7">Séptimo ciclo</option>
+                                <option value="8">Octavo ciclo</option>
+                                <option value="9">Noveno ciclo</option>
+                                <option value="10">Décimo ciclo</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <!-- Aceptación del reglamento -->
+                    <div class="signup-reglamento">
+
+                        <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="acceptRules"
+                            name="acceptRules"
+                            >
+
+                        <label for="acceptRules">
+                            Acepto el
+                            <a href="/about">reglamento de uso de espacios</a>
+                            y el registro de mis inasistencias.
+                        </label>
+
+                    </div>
+
+                    <!-- Acciones -->
+                    <div class="signup-acciones">
+
+                        <a href="/" class="btn-signup-cancelar">
+                            Cancelar
+                        </a>
+
+                        <button type="submit" class="btn-signup-crear">
+                            Crear cuenta
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+<script>
+    function mostrarPassword(id, boton) {
+        const campo = document.getElementById(id);
+
+        if (campo.type === 'password') {
+            campo.type = 'text';
+            boton.textContent = 'Ocultar';
+        } else {
+            campo.type = 'password';
+            boton.textContent = 'Mostrar';
+        }
+    }
+
+    const formSignUp = document.getElementById('formSignUp');
+
+    formSignUp.addEventListener('submit', function (event) {
+        const email = document.getElementById('email');
+        const password = document.getElementById('password');
+        const confirmPassword = document.getElementById('confirmPassword');
+
+        const emailError = document.getElementById('emailError');
+        const confirmPasswordError = document.getElementById('confirmPasswordError');
+
+        emailError.textContent = '';
+        confirmPasswordError.textContent = '';
+
+        let valido = true;
+
+        if (!/^[^\s@]+@ulima\.edu\.pe$/i.test(email.value.trim())) {
+            emailError.textContent = 'El correo debe terminar en @ulima.edu.pe';
+            valido = false;
+        }
+
+        if (!/[A-ZÁÉÍÓÚÑ]/.test(password.value)) {
+            document.getElementById('passwordHelp').textContent =
+                'La contraseña debe incluir al menos una mayúscula.';
+            document.getElementById('passwordHelp').classList.add('signup-error');
+            valido = false;
+        } else {
+            document.getElementById('passwordHelp').textContent =
+                'La contraseña cumple el requisito de mayúscula.';
+            document.getElementById('passwordHelp').classList.remove('signup-error');
+        }
+
+        if (password.value !== confirmPassword.value) {
+            confirmPasswordError.textContent = 'Las contraseñas no coinciden.';
+            valido = false;
+        }
+
+        if (!valido) {
+            event.preventDefault();
+        } else {
+            // Todavía no se envía a un servidor: falta conectar el registro al backend.
+            event.preventDefault();
+            alert('Las validaciones del formulario se completaron correctamente.');
+        }
+    });
+</script>

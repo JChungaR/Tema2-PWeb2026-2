@@ -40,7 +40,7 @@ export function signIn(req, res) {
   return res.render('visit/sign-in', { 
     title: 'Iniciar Sesión', 
     currentPage: 'sign-in',
-    css: '/assets/css/sign_in.css',
+    css: '/assets/css/sign-in.css',
     description:
       'Esta es una aplicación de ejemplo creada con Node.js, Express y EJS.'
   }); }
@@ -49,13 +49,14 @@ export function signUp(req, res) {
   return res.render('visit/sign-up', { 
     title: 'Crear cuenta',
     currentPage: 'sign-up',
+    css: '/assets/css/sign-up.css',
     description:
       'Esta es una aplicación de ejemplo creada con Node.js, Express y EJS.'
   }); }
 
 export function landing(req, res) {
   return res.render('visit/landing', {
-    title: 'Bienvenido',
+    title: 'Reservas ULima',
     currentPage: 'landing',
     css: '/assets/css/landing_publica.css',
     description:

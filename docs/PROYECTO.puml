@@ -1,0 +1,181 @@
+@startuml
+
+hide circle
+skinparam linetype ortho
+
+entity "ROL" as rol {
+* id_rol : INT <<PK>>
+--
+nombre : VARCHAR
+}
+
+entity "USUARIO" as usuario {
+* id_usuario : INT <<PK>>
+--
+id_rol : INT <<FK>>
+nombres : VARCHAR
+apellidos : VARCHAR
+correo : VARCHAR <<UNIQUE>>
+password_hash : VARCHAR
+codigo : VARCHAR
+carrera : VARCHAR
+ciclo : INT
+estado : VARCHAR
+inasistencias : INT
+}
+
+entity "ESPACIO" as espacio {
+* id_espacio : INT <<PK>>
+--
+codigo : VARCHAR <<UNIQUE>>
+nombre : VARCHAR
+tipo : VARCHAR
+sede : VARCHAR
+pabellon : VARCHAR
+piso : INT
+aforo : INT
+descripcion : VARCHAR
+estado : VARCHAR
+}
+
+entity "EQUIPAMIENTO" as equipamiento {
+* id_equipamiento : INT <<PK>>
+--
+nombre : VARCHAR
+}
+
+entity "ESPACIO_EQUIPAMIENTO" as espacio_equipo {
+* id_espacio : INT <<PK, FK>>
+* id_equipamiento : INT <<PK, FK>>
+--
+cantidad : INT
+}
+
+entity "HORARIO_ATENCION" as horario {
+* id_horario : INT <<PK>>
+--
+id_espacio : INT <<FK>>
+dia_semana : VARCHAR
+hora_apertura : TIME
+hora_cierre : TIME
+duracion_bloque : INT
+activo : BOOLEAN
+}
+
+entity "BLOQUE_HORARIO" as bloque {
+* id_bloque : INT <<PK>>
+--
+id_espacio : INT <<FK>>
+fecha : DATE
+hora_inicio : TIME
+hora_fin : TIME
+estado : VARCHAR
+}
+
+entity "RESERVA" as reserva {
+* id_reserva : INT <<PK>>
+--
+id_usuario : INT <<FK>>
+id_bloque : INT <<FK>>
+codigo_reserva : VARCHAR <<UNIQUE>>
+motivo : VARCHAR
+cantidad_asistentes : INT
+estado : VARCHAR
+fecha_creacion : DATETIME
+hora_llegada : DATETIME
+}
+
+entity "INVITADO_RESERVA" as invitado {
+* id_reserva : INT <<PK, FK>>
+* id_usuario : INT <<PK, FK>>
+}
+
+entity "HISTORIAL_RESERVA" as historial {
+* id_historial : INT <<PK>>
+--
+id_reserva : INT <<FK>>
+id_usuario : INT <<FK>>
+accion : VARCHAR
+fecha_hora : DATETIME
+descripcion : VARCHAR
+}
+
+entity "INCIDENCIA" as incidencia {
+* id_incidencia : INT <<PK>>
+--
+id_espacio : INT <<FK>>
+id_usuario_reporta : INT <<FK>>
+codigo : VARCHAR <<UNIQUE>>
+tipo : VARCHAR
+descripcion : VARCHAR
+fecha_detectada : DATE
+id_bloque : INT <<FK>>
+estado : VARCHAR
+fecha_solucion : DATE
+descripcion_solucion : VARCHAR
+}
+
+entity "INCIDENCIA_EQUIPAMIENTO" as incidencia_equipo {
+* id_incidencia : INT <<PK, FK>>
+* id_equipamiento : INT <<PK, FK>>
+--
+cantidad_afectada : INT
+detalle : VARCHAR
+}
+
+entity "SEGUIMIENTO_INCIDENCIA" as seguimiento {
+* id_seguimiento : INT <<PK>>
+--
+id_incidencia : INT <<FK>>
+id_usuario : INT <<FK>>
+comentario : VARCHAR
+fecha_hora : DATETIME
+}
+
+entity "BLOQUEO_MANTENIMIENTO" as mantenimiento {
+* id_bloqueo : INT <<PK>>
+--
+id_espacio : INT <<FK>>
+id_encargado : INT <<FK>>
+fecha_inicio : DATE
+fecha_fin : DATE
+motivo : VARCHAR
+}
+
+' ==============================
+' RELACIONES
+' ==============================
+
+rol ||--o{ usuario : posee
+
+usuario ||--o{ reserva : realiza
+
+espacio ||--o{ horario : tiene
+
+espacio ||--o{ bloque : genera
+
+bloque ||--o| reserva : asignado_a
+
+espacio ||--o{ espacio_equipo
+equipamiento ||--o{ espacio_equipo
+
+reserva ||--o{ invitado
+usuario ||--o{ invitado : participa
+
+reserva ||--o{ historial : registra
+usuario ||--o{ historial : ejecuta
+
+usuario ||--o{ incidencia : reporta
+espacio ||--o{ incidencia : presenta
+bloque ||--o{ incidencia : detectada_en
+
+incidencia ||--o{ incidencia_equipo
+equipamiento ||--o{ incidencia_equipo
+
+incidencia ||--o{ seguimiento : posee
+usuario ||--o{ seguimiento : escribe
+
+espacio ||--o{ mantenimiento : recibe
+usuario ||--o{ mantenimiento : registra
+
+@enduml
