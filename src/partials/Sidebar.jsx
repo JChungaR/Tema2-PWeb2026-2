@@ -4,7 +4,10 @@ import './Sidebar.css'
 
 export default function Sidebar() {
   return (
-    <aside className="enterprise-sidebar">
-    </aside>
+      <div>
+        <aside className="enterprise-sidebar">
+          <p>Esto es un sidebar</p>
+        </aside>
+      </div>
   )
 }
