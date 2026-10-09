@@ -2,13 +2,6 @@
 import React from 'react';
 import './ConfirmacionReserva.css';
 
-// Importar fuentes desde Fontsource
-import '@fontsource/inter/400.css';
-import '@fontsource/inter/500.css';
-import '@fontsource/inter/600.css';
-import '@fontsource/manrope/700.css';
-import '@fontsource/manrope/800.css';
-
 export function ConfirmacionReserva({
                                         codigo = "RSV-2026-0473",
                                         espacio = "Laboratorio de Cómputo H-304",
