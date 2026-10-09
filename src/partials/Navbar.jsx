@@ -1,32 +1,32 @@
+// src/partials/Navbar.jsx
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // Activa Dropdown y Collapse de Bootstrap
+import './Navbar.css';
 
-export default function Navbar({ user = { name: "Pepe Valdivia", role: "Estudiante" } }) {
-    let initials = "";
+export default function Navbar({ user = { name: "Pepe Valdivia", role: "Estudiante" }, activeLink = "/estudiantes/reservas" }) {
 
-    initials += user.name.charAt(0);
+  // Función para obtener las iniciales (Ej: "Pepe Valdivia" -> "PV")
+  const getInitials = (name) => {
+    if (!name) return "U";
+    const parts = name.trim().split(" ");
+    if (parts.length === 1) return parts[0].charAt(0).toUpperCase();
+    return (parts[0].charAt(0) + parts[parts.length - 1].charAt(0)).toUpperCase();
+  };
 
-    for(let i=0; i<user.name.length; i++){
-      console.log(user.name[i]);
-      if(user.name[i] === ' ') {
-        initials += user.name[i+1];
-        console.log(user.name[i+1]);
-        break;
-      }
-    }
-
-
+  const initials = getInitials(user.name);
 
   return (
-      <nav className="navbar navbar-expand-lg navbar-light bg-white py-3 border-bottom">
+      <nav className="navbar navbar-expand-lg navbar-custom py-3">
         <div className="container">
-          <a className="navbar-brand fw-bold fs-4 me-4" href="/estudiantes">
-            <span style={{color: '#0f6c5f'}}>Reserva</span><span className="text-dark">UL</span>
+          {/* Logo institucional */}
+          <a className="navbar-brand fw-bold fs-4 me-4 d-flex align-items-center" href="/estudiantes">
+            <span className="brand-verde">Reserva</span>
+            <span className="brand-tinta">UL</span>
           </a>
 
+          {/* Botón responsive menú hamburguesa */}
           <button
-              className="navbar-toggler"
+              className="navbar-toggler border-0"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#navbarContent"
@@ -37,60 +37,84 @@ export default function Navbar({ user = { name: "Pepe Valdivia", role: "Estudian
           </button>
 
           <div className="collapse navbar-collapse" id="navbarContent">
-
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0 gap-2">
+            {/* Enlaces principales */}
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0 gap-1 gap-lg-2">
               <li className="nav-item">
-                <a className="nav-link text-secondary" href="/espacios">
+                <a
+                    className={`nav-link nav-link-custom ${activeLink === '/estudiantes/espacios' ? 'active' : ''}`}
+                    href="/estudiantes/espacios">
                   Buscar espacios
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link fw-bold" style={{color: '#0f6c5f'}} href="/reservas">
+                <a
+                    className={`nav-link nav-link-custom ${activeLink === '/estudiantes/reservas' ? 'active' : ''}`}
+                    href="/estudiantes/reservas">
                   Mis reservas
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-secondary" href="/incidencias">
+                <a
+                    className={`nav-link nav-link-custom ${activeLink === '/estudiantes/incidencias' ? 'active' : ''}`}
+                    href="/estudiantes/incidencias">
                   Mis incidencias
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-secondary" href="/cuenta">
+                <a
+                    className={`nav-link nav-link-custom ${activeLink === '/estudiantes/cuenta' ? 'active' : ''}`}
+                    href="/estudiantes/cuenta">
                   Mi cuenta
                 </a>
               </li>
             </ul>
 
+            {/* Perfil de usuario y Dropdown */}
             <div className="d-flex align-items-center mt-3 mt-lg-0 ms-auto">
-              <span className="badge rounded-2 me-3 px-3 py-2 font-monospace"
-                    style={{backgroundColor: '#d1e7dd', color: '#0f5132', fontWeight: '700', letterSpacing: '0.5px', textTransform: 'uppercase'}}>
-                    {user.role}
-                </span>
+              {/* Rol */}
+              <span className="badge badge-rol rounded-2 me-3 px-3 py-2 font-monospace">
+                            {user.role}
+                        </span>
 
-              <div className="rounded-circle d-flex align-items-center justify-content-center me-2 fw-bold"
-                   style={{width: '36px', height: '36px', backgroundColor: '#d1e7dd', color: '#0f5132', fontSize: '0.85rem'}}>
+              {/* Avatar de iniciales */}
+              <div className="avatar-iniciales rounded-circle d-flex align-items-center justify-content-center me-2">
                 {initials}
               </div>
 
+              {/* Menú Desplegable (Dropdown) */}
               <div className="dropdown">
-                <a className="nav-link dropdown-toggle text-dark fw-medium p-0 d-flex align-items-center"
-                   href="#"
-                   role="button"
-                   data-bs-toggle="dropdown"
-                   aria-expanded="false">
+                <a
+                    className="nav-link dropdown-toggle brand-tinta fw-semibold p-0 d-flex align-items-center cursor-pointer"
+                    href="#"
+                    id="userMenuDropdown"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false">
                   {user.name}
                 </a>
-                <ul className="dropdown-menu dropdown-menu-end shadow-sm">
-                  <li><a className="dropdown-item" href="/perfil">Mi Perfil</a></li>
-                  <li><a className="dropdown-item" href="/configuracion">Configuración</a></li>
+
+                <ul className="dropdown-menu dropdown-menu-end shadow-sm dropdown-menu-custom mt-2" aria-labelledby="userMenuDropdown">
                   <li>
-                    <hr className="dropdown-divider"/>
+                    <a className="dropdown-item dropdown-item-custom" href="/perfil">
+                      Mi Perfil
+                    </a>
                   </li>
-                  <li><a className="dropdown-item text-danger" href="/logout">Cerrar sesión</a></li>
+                  <li>
+                    <a className="dropdown-item dropdown-item-custom" href="/configuracion">
+                      Configuración
+                    </a>
+                  </li>
+                  <li>
+                    <hr className="dropdown-divider my-1" />
+                  </li>
+                  <li>
+                    <a className="dropdown-item dropdown-item-danger" href="/logout">
+                      Cerrar sesión
+                    </a>
+                  </li>
                 </ul>
               </div>
             </div>
-
           </div>
         </div>
       </nav>
