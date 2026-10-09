@@ -1,0 +1,83 @@
+@import "../PlantillaCSS.css";
+
+̣/*src/pages/reservas/ConfirmacionReserva.css*/
+
+/* Envoltorio principal */
+.pagina-confirmacion {
+    background-color: var(--c_fondo_pagina);
+    font-family: var(--fuente_cuerpo), sans-serif;
+}
+
+/* Banner de alerta */
+.alerta-exito {
+    max-width: 520px;
+    background-color: var(--c_verde_claro);
+    border: 1px solid var(--c_verde_institucional);
+    color: var(--c_verde_oscuro);
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+/* Tarjeta principal */
+.confirmacion-bloque {
+    max-width: 520px;
+    background-color: var(--c_superficie);
+    border-color: var(--c_borde) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+/* Check circular */
+.icono-exito {
+    width: 52px;
+    height: 52px;
+    background-color: var(--c_verde_claro);
+    color: var(--c_verde_oscuro);
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+/* Título */
+.confirmacion-msg {
+    font-family: var(--fuente_titulos), sans-serif;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--c_tinta);
+}
+
+/* Caja de Código de Reserva */
+.codigo-bloque {
+    background-color: var(--c_verde_claro);
+    border: 1.5px dashed var(--c_verde_institucional);
+}
+
+.titulo-contenedor {
+    font-size: 0.725rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--c_verde_institucional);
+}
+
+.codigo-contenedor {
+    font-family: var(--fuente_titulos), sans-serif;
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--c_verde_oscuro);
+    letter-spacing: 0.03em;
+}
+
+/* Lista de detalles */
+.detalles_bloque {
+    border-top-color: var(--c_borde) !important;
+}
+
+.detalles-titulo {
+    color: var(--c_texto_secundario);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.detalles-var {
+    color: var(--c_tinta);
+    font-size: 0.9rem;
+    font-weight: 600;
+}

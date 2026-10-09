@@ -1,7 +1,7 @@
 // admin/configs/routes.js
 import { Router } from 'express';
 import * as admins from '../controllers/admin_controllers.js';
-import * as students from '../controllers/student_controllers.js';
+import * as student from '../controllers/student_controllers.js';
 import * as nationApis from '../apis/nations_apis.js';
 import { redirectIfAuthenticated, requireAuth } from '../../configs/middlewares.js'; 
 
@@ -21,6 +21,6 @@ router.post('/api/v1/nations', nationApis.createNation);
 router.put('/api/v1/nations/:id', nationApis.updateNation);
 router.delete('/api/v1/nations/:id', nationApis.deleteNation);
 
-router.get('/estudiantes', students.home);
+router.get('/estudiante', student.home);
 
 export default router;

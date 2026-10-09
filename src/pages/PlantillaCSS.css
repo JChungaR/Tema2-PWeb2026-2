@@ -16,6 +16,11 @@
     --c_error: #b4322b;
     --c_informativo: #3b6fa8;
 
-    --fuente_titulos: Manrope, serif;
-    --fuente_cuerpo: Inter, serif;
+    --fuente_titulos: 'Manrope', sans-serif;
+    --fuente_cuerpo: 'Inter', sans-serif;
+}
+
+body {
+    font-family: var(--fuente_cuerpo), sans-serif !important;
+    background-color: var(--c_fondo_pagina) !important;
 }
