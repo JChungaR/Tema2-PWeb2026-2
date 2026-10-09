@@ -33,7 +33,7 @@
 /* Badge de Rol (Estudiante, Admin, etc.) */
 .badge-rol {
     background-color: var(--c_verde_claro);
-    color: var(--c_verde_oscuro);
+    color: var(--c_verde_oscuro) !important;
     font-weight: 700;
     letter-spacing: 0.5px;
     text-transform: uppercase;
