@@ -22,7 +22,7 @@ export default defineConfig(({ mode }) => {
         input: {
           'web': resolve(__dirname, 'src/entries/web.jsx'),
           'admin': resolve(__dirname, 'src/entries/admin.jsx'),
-          testweb: resolve(__dirname, 'src/entries/testweb.jsx'),
+          'testweb': resolve(__dirname, 'src/entries/testweb.jsx'),
           'estudiante': resolve(__dirname, 'src/entries/estudiante.jsx'),
         },
         output: {
