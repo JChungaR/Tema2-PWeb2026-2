@@ -20,6 +20,8 @@
     "db:dumpdata": "node -e \"const { execSync } = require('child_process'); require('dotenv').config(); execSync('pg_dump --dbname=' + process.env.DB + ' --file=db/dump_complete.sql --clean --if-exists --inserts', { stdio: 'inherit' });\""
   },
   "dependencies": {
+    "@fontsource/inter": "^5.3.0",
+    "@fontsource/manrope": "^5.3.0",
     "@fortawesome/fontawesome-free": "^7.3.1",
     "@fortawesome/fontawesome-svg-core": "^7.3.1",
     "@fortawesome/free-brands-svg-icons": "^7.3.1",

@@ -1,0 +1,25 @@
+<!-- views/layouts/estudiantes.ejs -->
+
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/dist/css/Navbar.css">
+    <link rel="stylesheet" href="/dist/css/estudiante.css">
+    <link rel="stylesheet" href="/dist/css/index.css">
+
+
+    <title><%= title %></title>
+</head>
+<body>
+
+<!-- Renderizado del cuerpo de EJS -->
+<%- body %>
+
+<!-- JavaScript principal que arranca React -->
+<script type="module" src="/dist/js/estudiante.js"></script>
+</body>
+</html>

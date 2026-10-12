@@ -1,0 +1,42 @@
+/* src/pages/PlantillaCSS.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap');
+
+:root {
+    /* Paleta de colores */
+    --c_verde_institucional: #136f63;
+    --c_verde_oscuro: #0d5249;
+    --c_verde_claro: #e2f1ee;
+    --c_tinta: #152322;
+    --c_texto_secundario: #6a7a78;
+    --c_fondo_pagina: #f6f8f8;
+    --c_superficie: #ffffff;
+    --c_borde: #dee5e4;
+
+    /* Colores de estado */
+    --c_exito: #1e7f4d;
+    --c_advertencia: #b7791f;
+    --c_error: #b4322b;
+    --c_informativo: #3b6fa8;
+
+    /* Tipografías */
+    --fuente_titulos: 'Manrope', sans-serif;
+    --fuente_cuerpo: 'Inter', sans-serif;
+
+    /* Sobreescribir boostrap */
+    --bs-body-font-family: var(--fuente_cuerpo);
+    --bs-body-bg: var(--c_fondo_pagina);
+    --bs-body-color: var(--c_tinta);
+    --bs-primary: var(--c_verde_institucional);
+    --bs-border-color: var(--c_borde);
+}
+
+body {
+    font-family: var(--fuente_cuerpo) !important;
+    background-color: var(--c_fondo_pagina) !important;
+    color: var(--c_tinta) !important;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: var(--fuente_titulos) !important;
+}
