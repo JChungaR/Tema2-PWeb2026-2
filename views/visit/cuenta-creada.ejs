@@ -1,0 +1,28 @@
+<% layout("layouts/h1-visit") %>
+
+<main class="account-created-main">
+    <div class="account-created-card">
+
+        <div class="account-created-icon">
+            <i class="fa-solid fa-circle-check"></i>
+        </div>
+
+        <h1>Cuenta creada</h1>
+
+        <p>
+            Enviamos un enlace de confirmación a
+            <strong><%= email %></strong>. Tienes 24 horas para
+            activarla.
+
+        </p>
+
+        <a href="/sign-in" class="account-created-button">
+            Ir a iniciar sesión
+        </a>
+
+        <a href="/" class="account-created-link">
+            Volver al inicio
+        </a>
+
+    </div>
+</main>

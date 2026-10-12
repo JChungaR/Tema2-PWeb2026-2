@@ -54,17 +54,74 @@ export function signUp(req, res) {
       'Esta es una aplicación de ejemplo creada con Node.js, Express y EJS.'
   }); }
 
-export function landing(req, res) {
-  return res.render('visit/landing', {
-    title: 'Reservas ULima',
-    currentPage: 'landing',
-    css: '/assets/css/landing_publica.css',
-    description:
-      'Esta es una aplicación de ejemplo creada con Node.js, Express y EJS.'
-  });
+export function cuenta_creada(req, res) {
+    return res.render('visit/cuenta-creada', {
+        title: 'Cuenta creada',
+        currentPage: 'account-created',
+        css: '/assets/css/cuenta-creada.css',
+        description:
+        'Esta es una aplicación de ejemplo creada con Node.js, Express y EJS.'
+    });
 }
 
-export async function login(req, res) {
+export function landing(req, res) {
+    return res.render('visit/landing', {
+      title: 'Reservas ULima',
+      currentPage: 'landing',
+      css: '/assets/css/landing_publica.css',
+      description:
+        'Esta es una aplicación de ejemplo creada con Node.js, Express y EJS.'
+    });
+}
+
+export function recuperar_contraseña(req, res) {
+    return res.render('visit/recuperar-contraseña', {
+        title: 'Recuperar contraseña',
+        currentPage: 'recover-password',
+        css: '/assets/css/recuperar-contraseña.css',
+        description:
+        'Esta es una aplicación de ejemplo creada con Node.js, Express y EJS.'
+    });
+}
+
+
+export async function ingresar(req, res) {
+  
+  return res.send('hola');
+}
+
+export async function signUp_student(req, res) {
+  
+  const { names, last_names, email, password, confirmPassword, career_id, semester_id, acceptRules} = req.body;
+  
+  return res.render('visit/cuenta-creada', {
+        title: 'Cuenta creada',
+        currentPage: 'account-created',
+        css: '/assets/css/cuenta-creada.css',
+        email: email,
+        description:
+          'Esta es una aplicación de ejemplo creada con Node.js, Express y EJS.'
+    });
+  
+}
+
+export async function signUp_staff(req, res) {
+  
+  const { names, last_names, email, password, assigned_campus_id, acceptRules} = req.body;
+  
+  return res.render('visit/solicitud-enviada', {
+        title: 'Solicitud enviada',
+        currentPage: 'request-sent',
+        css: '/assets/css/cuenta-creada.css',
+        email: email,
+        description:
+          'Esta es una aplicación de ejemplo creada con Node.js, Express y EJS.'
+    });
+  
+}
+
+
+export async function login2(req, res) {
   const { user, password } = req.body;
   const validUser = process.env.DEFAULT_USER || 'admin';
   const validPassword = process.env.DEFAULT_PASSWORD || '123';

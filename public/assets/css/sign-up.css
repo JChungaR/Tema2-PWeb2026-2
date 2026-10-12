@@ -1,117 +1,137 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: rgba(255, 255, 255);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 0;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
 
-/* Distribución general */
 .signup-main {
     flex: 1;
-    min-height: 0;
-}
-
-/* Área del formulario */
-.signup-formulario {
     display: flex;
-    align-items: center;
     justify-content: center;
-    padding: 35px;
-    min-width: 0;
+    align-items: center;
+    padding: 36px 20px;
+    background-color: rgb(246, 248, 248);
+    box-sizing: border-box;
 }
 
-/* Tarjeta */
 .signup-card {
     width: 100%;
-    max-width: 900px;
-    border: 1px solid #dce3e2 !important;
+    max-width: 836px;
+    padding: 22px 24px 24px;
+    background-color: #fff;
+    border: 1px solid #dce3e2;
     border-radius: 6px;
-    background-color: #ffffff;
+    box-sizing: border-box;
 }
 
-/* Contenido interno */
-.signup-card .card-body {
-    padding: 24px;
-}
-
-/* Encabezado */
-.signup-encabezado h2 {
+.signup-card h1 {
     margin: 0 0 4px;
-    font-family: Manrope, sans-serif;
     color: rgb(21, 35, 34);
+    font-family: Manrope, sans-serif;
     font-size: 28px;
     font-weight: 800;
 }
 
-.signup-encabezado p {
-    margin: 0 0 14px;
-    font-family: Inter, sans-serif;
+.signup-subtitle {
+    margin: 0 0 16px;
     color: rgb(106, 122, 120);
+    font-family: Inter, sans-serif;
     font-size: 14px;
 }
 
-/* Organización de campos */
-.signup-campos-dobles {
+/* Selector de estudiante y encargado */
+.signup-tabs {
+    display: flex;
+    gap: 22px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #dce3e2;
+}
+
+.signup-tab {
+    position: relative;
+    padding: 10px 2px;
+    border: 0;
+    background: transparent;
+    color: rgb(106, 122, 120);
+    font-family: Inter, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.signup-tab.active {
+    color: rgb(19, 111, 99);
+}
+
+.signup-tab.active::after {
+    position: absolute;
+    right: 0;
+    bottom: -1px;
+    left: 0;
+    height: 2px;
+    background: rgb(19, 111, 99);
+    content: "";
+}
+
+.signup-form[hidden] {
+    display: none !important;
+}
+
+/* Dos columnas, igual que en la captura */
+.signup-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr 1fr;
     gap: 18px;
-    margin-bottom: 16px;
 }
 
-.signup-campo {
+.signup-field {
     min-width: 0;
+    margin-bottom: 17px;
 }
 
-.signup-campo-ancho {
-    margin-bottom: 16px;
-}
-
-/* Etiquetas */
-.signup-campo label {
+.signup-field label {
     display: block;
     margin-bottom: 6px;
-    font-family: Inter, sans-serif;
-    font-size: 11px;
-    font-weight: 800;
-    letter-spacing: 0.3px;
     color: rgb(106, 122, 120);
+    font-family: Inter, sans-serif;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.35px;
 }
 
-/* Inputs y select */
-.input-signUp {
+.signup-field .form-control,
+.signup-field .form-select {
     width: 100%;
     height: 46px;
+    border: 1px solid #dce3e2;
     border-radius: 3px;
-    border-color: #dce3e2;
-    background-color: #ffffff;
+    background-color: #fff;
     color: rgb(21, 35, 34);
     font-family: Inter, sans-serif;
     font-size: 14px;
+    box-sizing: border-box;
 }
 
-.input-signUp:focus {
+.signup-field .error,
+.signup-field .error {
+    border: 1px solid #dc3545;
+}
+
+.signup-field .form-control:focus,
+.signup-field .form-select:focus {
     border-color: rgb(19, 111, 99);
     box-shadow: 0 0 0 0.15rem rgba(19, 111, 99, 0.12);
 }
 
-/* Etiqueta y botón Mostrar/Ocultar */
-.signup-label-fila {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.signup-label-fila label {
-    margin-bottom: 6px;
-}
-
-.btn-mostrar {
-    margin-bottom: 6px;
-    padding: 0;
-    border: 0;
-    background: transparent;
-    color: rgb(19, 111, 99);
-    font-family: Inter, sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-}
-
-/* Mensajes de validación */
-.signup-ayuda,
+.signup-success,
 .signup-error {
     display: block;
     margin-top: 5px;
@@ -119,7 +139,7 @@
     font-size: 12px;
 }
 
-.signup-ayuda {
+.signup-success {
     color: #198754;
 }
 
@@ -127,46 +147,63 @@
     color: #dc3545;
 }
 
-/* Aceptación del reglamento */
-.signup-reglamento {
+.signup-notice {
+    margin-bottom: 18px;
+    padding: 11px;
+    border-radius: 3px;
+    background-color: #e1f1ee;
+    color: #145c53;
+    font-family: Inter, sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* Casilla de aceptación */
+.signup-terms {
     display: flex;
     align-items: flex-start;
     gap: 9px;
-    padding-bottom: 16px;
+    padding: 0 0 16px;
     border-bottom: 1px solid #dce3e2;
+    color: rgb(21, 35, 34);
     font-family: Inter, sans-serif;
     font-size: 12px;
-    color: rgb(21, 35, 34);
+    line-height: 1.6;
 }
 
-.signup-reglamento .form-check-input {
+.signup-terms input {
     flex-shrink: 0;
-    margin: 2px 0 0;
+    margin-top: 3px;
     accent-color: rgb(19, 111, 99);
 }
 
-.signup-reglamento a {
+.signup-terms label {
+    cursor: pointer;
+}
+
+.signup-terms a,
+.signup-login a {
     color: rgb(19, 111, 99);
     font-weight: 700;
     text-decoration: none;
 }
 
-/* Botones inferiores */
-.signup-acciones {
+/* Botones de la tarjeta */
+.signup-actions {
     display: flex;
     justify-content: flex-end;
     gap: 12px;
     margin-top: 18px;
 }
 
-.btn-signup-cancelar,
-.btn-signup-crear {
+.signup-cancel,
+.signup-submit {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 105px;
-    min-height: 42px;
-    padding: 9px 16px;
+    min-height: 43px;
+    padding: 10px 20px;
+    border: 1px solid rgb(19, 111, 99);
     border-radius: 4px;
     font-family: Inter, sans-serif;
     font-size: 13px;
@@ -175,16 +212,31 @@
     cursor: pointer;
 }
 
-.btn-signup-cancelar {
-    border: 1px solid rgb(19, 111, 99);
-    background: #ffffff;
+.signup-cancel {
+    background-color: #fff;
     color: rgb(19, 111, 99);
 }
 
-.btn-signup-crear {
-    border: 1px solid rgb(19, 111, 99);
-    background: rgb(19, 111, 99);
-    color: #ffffff;
+.signup-submit {
+    background-color: rgb(19, 111, 99);
+    color: #fff;
+}
+
+.signup-cancel:hover {
+    background-color: #f2f8f7;
+}
+
+.signup-submit:hover {
+    background-color: rgb(15, 90, 81);
+}
+
+/* Enlace inferior */
+.signup-login {
+    margin-top: 18px;
+    text-align: center;
+    color: rgb(106, 122, 120);
+    font-family: Inter, sans-serif;
+    font-size: 13px;
 }
 
 .btn-signIn {
@@ -196,5 +248,3 @@
     padding: 5px;
     color: rgba(19, 111, 99);
 }
-
-

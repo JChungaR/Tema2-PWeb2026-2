@@ -54,7 +54,7 @@
 
 
                 <!-- Formulario -->
-                <form>
+                <form id="formSignIn" action="/sign-in" method="POST">
 
                     <!-- Email -->
                     <div class="mb-3">
@@ -73,14 +73,17 @@
                         </label>
 
                         <input
-                            type="email"
+                            type="text"
                             class="form-control input-signIn"
                             id="email"
                             name="email"
                             placeholder="ejemplo@ulima.edu.pe"
                             autocomplete="email"
-                            required
+                            
                         >
+                        <small class="signIn-error" id="email_error" hidden>
+                            El correo debe terminar en @ulima.edu.pe.
+                        </small>
 
                     </div>
 
@@ -116,9 +119,12 @@
                             name="password"
                             placeholder="Ingresa tu contraseña"
                             autocomplete="current-password"
-                            required
+                            
                             
                         >
+                        <small class="signIn-error" id="password_error" hidden>
+                            Complete la contraseña.
+                        </small>
 
                     </div>
 
@@ -153,7 +159,7 @@
 
                         <!-- Olvidé mi contraseña -->
                         <a
-                            href="/forgot-password"
+                            href="/recover-password"
                             style="
                                 font-family: Inter;
                                 font-size: 14px;
@@ -170,15 +176,21 @@
 
                     <!-- Botón -->
                     <div class="d-grid">
-
                         <button
                             type="submit"
-                            class="btn btn-dark"
-                        >
-                            Ingresar
-                        </button>
+                            class="btn btn-dark btn-login"
+                            id="btnIngresar">
 
+                            <span class="spinner-login" id="spinnerLogin" hidden></span>
+
+                            <span id="textoLogin">Ingresar</span>
+
+                        </button>
                     </div>
+
+                    <p class="login-mensaje" id="mensajeLogin" hidden>
+                        Verificando tus credenciales. Espera un momento.
+                    </p>
 
                 </form>
 
@@ -235,4 +247,81 @@
             togglePassword.textContent = 'Mostrar';
         }
     }
+
+    const formulario = document.getElementById('formSignIn');
+
+    let boton = document.getElementById('btnIngresar');
+    let spinner = document.getElementById('spinnerLogin');
+    let texto = document.getElementById('textoLogin');
+    let mensaje = document.getElementById('mensajeLogin');
+
+    
+    function mostrarError(id, mostrar) {
+        document.getElementById(id).hidden = !mostrar;
+    }
+
+    let mensajes = [
+        'email_error',
+        'password_error'
+    ]
+
+
+    formulario.addEventListener('submit', function (event) {
+
+        let email = document.getElementById('email');
+        let password = document.getElementById('password');
+
+        let valido = true;
+
+        let ids = [
+            email,
+            password
+        ]
+
+        for (let i = 0; i < mensajes.length; i++){
+        mostrarError(mensajes[i], false);
+        }
+
+        for (let i = 0; i < ids.length; i++){
+            ids[i].classList.remove('error');
+        }
+
+        // Correo institucional.
+        if (!/^[^\s@]+@ulima\.edu\.pe$/i.test(email.value.trim())) {
+            mostrarError('email_error', true);
+            email.classList.add('error');
+            valido = false;
+        }
+
+        // Contraseña.
+        if (password.value.trim() === '') {
+            mostrarError('password_error', true);
+            password.classList.add('error');
+            valido = false; 
+        }
+
+         // Si hay errores, quedarse en esta vista.
+        if (!valido) {
+            event.preventDefault();
+        }
+
+        else{
+
+             // Evitar envíos repetidos
+            boton.disabled = true;
+
+            // Mostrar el spinner
+            spinner.hidden = false;
+
+            // Cambiar el texto
+            texto.textContent = 'Verificando...';
+
+            // Mostrar el mensaje inferior
+            mensaje.hidden = false;
+
+        }
+
+    });
+
+
 </script>
