@@ -6,7 +6,7 @@
     <div>
         <img  
             class="login-imagen"
-            src="https://scontent-lim1-1.xx.fbcdn.net/v/t39.30808-6/622265665_1336444315193780_8762287330396599955_n.jpg?stp=dst-jpg_tt6&cstp=mx1080x1350&ctp=s1080x1350&_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=KNJqQ4-z59gQ7kNvwHbvF3N&_nc_oc=Adqhp4zwrehXWHpqmqtUKwGeSnzhSlyLa2F2dv6LLtjBxwmdqphN1zkn16msEdn80ak&_nc_zt=23&_nc_ht=scontent-lim1-1.xx&_nc_gid=QwD2jxk8GscN5orxZY_HjA&_nc_ss=7b289&oh=00_AQOxwkgjnuh8PCJcaFmUTRLlzIM2QuvcG_rBiEu7liU0rQ&oe=6ACAD679"
+            src="/assets/img/sign-in.jpg"
             alt="Universidad de Lima">
     </div>
 
@@ -54,6 +54,7 @@
 
 
                 <!-- Formulario -->
+                
                 <form id="formSignIn" action="/sign-in" method="POST">
 
                     <!-- Email -->
@@ -76,41 +77,45 @@
                             type="text"
                             class="form-control input-signIn"
                             id="email"
-                            name="email"
+                            name="correo"
                             placeholder="ejemplo@ulima.edu.pe"
                             autocomplete="email"
-                            
                         >
+
                         <small class="signIn-error" id="email_error" hidden>
                             El correo debe terminar en @ulima.edu.pe.
                         </small>
 
                     </div>
 
-
                     <!-- Contraseña -->
                     <div class="mb-2">
-                     
-                     <div class="d-flex justify-content-between">
 
-                        <label
-                            for="password"
-                            class="form-label"
-                            style="
-                                font-family: Inter;
-                                font-size: 14px;
-                                font-weight: bolder;
-                                color: rgba(106, 122, 120);
-                            "
-                        >
-                            CONTRASEÑA
-                        </label>
+                        <div class="d-flex justify-content-between">
 
-                        <button onclick="mostrar(event)" type="button" id="togglePassword" class="btn-mostrar">
-                            Mostrar
-                        </button>
+                            <label
+                                for="password"
+                                class="form-label"
+                                style="
+                                    font-family: Inter;
+                                    font-size: 14px;
+                                    font-weight: bolder;
+                                    color: rgba(106, 122, 120);
+                                "
+                            >
+                                CONTRASEÑA
+                            </label>
 
-                     </div>
+                            <button
+                                onclick="mostrar(event)"
+                                type="button"
+                                id="togglePassword"
+                                class="btn-mostrar"
+                            >
+                                Mostrar
+                            </button>
+
+                        </div>
 
                         <input
                             type="password"
@@ -119,20 +124,17 @@
                             name="password"
                             placeholder="Ingresa tu contraseña"
                             autocomplete="current-password"
-                            
-                            
                         >
+
                         <small class="signIn-error" id="password_error" hidden>
                             Complete la contraseña.
                         </small>
 
                     </div>
 
-
                     <!-- Recordarme / Olvidé mi contraseña -->
                     <div class="login-opciones">
 
-                        <!-- Recordarme -->
                         <div class="form-check mb-4">
 
                             <input
@@ -156,8 +158,6 @@
 
                         </div>
 
-
-                        <!-- Olvidé mi contraseña -->
                         <a
                             href="/recover-password"
                             style="
@@ -173,19 +173,18 @@
 
                     </div>
 
-
                     <!-- Botón -->
                     <div class="d-grid">
+
                         <button
                             type="submit"
                             class="btn btn-dark btn-login"
-                            id="btnIngresar">
-
+                            id="btnIngresar"
+                        >
                             <span class="spinner-login" id="spinnerLogin" hidden></span>
-
                             <span id="textoLogin">Ingresar</span>
-
                         </button>
+
                     </div>
 
                     <p class="login-mensaje" id="mensajeLogin" hidden>
@@ -193,7 +192,6 @@
                     </p>
 
                 </form>
-
 
                 <!-- Crear cuenta -->
                 <div class="text-center mt-3">
@@ -287,6 +285,7 @@
         }
 
         // Correo institucional.
+        
         if (!/^[^\s@]+@ulima\.edu\.pe$/i.test(email.value.trim())) {
             mostrarError('email_error', true);
             email.classList.add('error');
@@ -307,7 +306,10 @@
 
         else{
 
-             // Evitar envíos repetidos
+            // Evitar el envío inmediato del formulario
+            event.preventDefault();
+
+            // Evitar envíos repetidos
             boton.disabled = true;
 
             // Mostrar el spinner
@@ -318,6 +320,11 @@
 
             // Mostrar el mensaje inferior
             mensaje.hidden = false;
+
+            // Esperar 1.5 segundos antes de enviar el formulario
+            setTimeout(function () {
+                formulario.submit();
+            }, 1500);
 
         }
 

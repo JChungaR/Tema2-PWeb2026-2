@@ -45,9 +45,8 @@
         <!-- Espacios -->
         <li class="nav-item">
 
-          <a class="nav-link" href="/players" style="font-family: Manrope; color: rgba(106, 122, 120); font-weight: bolder;">
+          <a class="nav-link" href="/spaces" style="font-family: Manrope; color: rgba(106, 122, 120); font-weight: bolder;">
 
-            <i class="fa-solid fa-door-open me-1"></i>
             Espacios
 
           </a>
@@ -60,7 +59,6 @@
 
           <a class="nav-link" href="/about" style="font-family: Manrope; color: rgba(106, 122, 120); font-weight: bolder;">
 
-            <i class="fa-solid fa-list-check me-1"></i>
             Reglas de uso
 
           </a>
@@ -73,7 +71,6 @@
 
           <a class="nav-link" href="/contact" style="font-family: Manrope; color: rgba(106, 122, 120); font-weight: bolder;">
 
-            <i class="fa-solid fa-circle-question me-1"></i>
             Ayuda
 
           </a>
@@ -97,7 +94,7 @@
         <% } %>
 
 
-        <% if (currentPage !== 'sign-up') { %>
+        <% if (currentPage !== 'sign-up' && currentPage !== '404') { %>
 
           <a href="/sign-up" class="btn-signUp link-underline link-underline-opacity-0" style="text-align: center; font-weight: bold;">
 

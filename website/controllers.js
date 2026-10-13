@@ -27,10 +27,11 @@ export function contact(req, res) {
   });
 }
 
-export function players(req, res) {
-  return res.render('website/players', {
-    title: 'Acerca de',
-    currentPage: 'players',
+export function spaces(req, res) {
+  return res.render('visit/spaces', {
+    title: 'Espacios',
+    currentPage: 'spaces',
+    css: '/assets/css/spaces.css',
     description:
       'Esta es una aplicación de ejemplo creada con Node.js, Express y EJS.'
   });
@@ -87,18 +88,24 @@ export function recuperar_contraseña(req, res) {
 
 export async function ingresar(req, res) {
   
-  return res.send('hola');
+  return res.render('estudiante/home', {
+        title: 'Estudiante',
+        currentPage: 'Estudiante',
+        description:
+          'Esta es una aplicación de ejemplo creada con Node.js, Express y EJS.'
+    });
+  
 }
 
 export async function signUp_student(req, res) {
   
-  const { names, last_names, email, password, confirmPassword, career_id, semester_id, acceptRules} = req.body;
+  const { nombres, apellidos, correo, password, confirmPassword, career_id, semester_id, acceptRules} = req.body;
   
   return res.render('visit/cuenta-creada', {
         title: 'Cuenta creada',
         currentPage: 'account-created',
         css: '/assets/css/cuenta-creada.css',
-        email: email,
+        email: correo,
         description:
           'Esta es una aplicación de ejemplo creada con Node.js, Express y EJS.'
     });
@@ -107,13 +114,13 @@ export async function signUp_student(req, res) {
 
 export async function signUp_staff(req, res) {
   
-  const { names, last_names, email, password, assigned_campus_id, acceptRules} = req.body;
+  const { nombres, apellidos, correo, password, assigned_campus_id, acceptRules} = req.body;
   
   return res.render('visit/solicitud-enviada', {
         title: 'Solicitud enviada',
         currentPage: 'request-sent',
         css: '/assets/css/cuenta-creada.css',
-        email: email,
+        email: correo,
         description:
           'Esta es una aplicación de ejemplo creada con Node.js, Express y EJS.'
     });

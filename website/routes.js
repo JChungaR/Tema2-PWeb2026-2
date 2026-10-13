@@ -9,7 +9,7 @@ const router = Router();
 router.get('/', controller.landing);
 router.get('/about', controller.about);
 router.get('/contact', controller.contact);
-router.get('/players', controller.players);
+router.get('/spaces', controller.spaces);
 router.get('/sign-in', controller.signIn);
 router.post('/sign-in', controller.ingresar);
 router.get('/recover-password', controller.recuperar_contraseña);

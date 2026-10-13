@@ -19,7 +19,7 @@ export default function Navbar({ user = { name: "Pepe Valdivia", role: "Estudian
       <nav className="navbar navbar-expand-lg navbar-custom py-3">
         <div className="container">
           {/* Logo institucional */}
-          <a className="navbar-brand fw-bold fs-4 me-4 d-flex align-items-center" href="/estudiantes">
+          <a className="navbar-brand fw-bold fs-4 me-4 d-flex align-items-center" href="/">
             <span className="brand-verde">Reserva</span>
             <span className="brand-tinta">UL</span>
           </a>

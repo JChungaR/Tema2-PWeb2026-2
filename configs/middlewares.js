@@ -22,7 +22,8 @@ export function notFoundHandler(req, res) {
   if (req.method === 'GET') {
     return res.status(404).render('404', {
       title: 'Página no encontrada',
-      message: 'La página que buscas no existe.'
+      message: 'La página que buscas no existe.',
+      currentPage: '404'
     });
   }
   
