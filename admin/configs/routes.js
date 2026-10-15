@@ -31,10 +31,15 @@ router.get('/estudiantes', students.home);
 
 //
 router.get('/enterprise/espacios', enterpriseEsp.espacios);
+// para recargarrr
 router.get('/enterprise/bandeja', enterpriseEsp.espacios);
 router.get('/enterprise/bloqueos', enterpriseEsp.espacios);
 router.get('/enterprise/incidencias', enterpriseEsp.espacios);
 router.get('/enterprise/', enterpriseEsp.espacios);
+router.get('/enterprise/espacios/nuevo', enterpriseEsp.espacios);
+router.get('/enterprise/espacios/equipamiento/:codigo', enterpriseEsp.espacios);
+router.get('/enterprise/espacios/horario/:codigo', enterpriseEsp.espacios);
+router.get('/enterprise/espacios/estado/:codigo', enterpriseEsp.espacios);
 
 
 export default router;

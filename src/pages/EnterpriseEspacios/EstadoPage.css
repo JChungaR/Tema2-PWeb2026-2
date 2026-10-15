@@ -1,0 +1,286 @@
+
+.estado-fondo {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  padding: 24px;
+  background: #f3f6f5;
+}
+
+.estado-modal {
+  position: relative;
+  width: 100%;
+  max-width: 974px;
+  padding: 34px 33px 32px;
+  border: 1px solid #d5dddb;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 24px 70px rgb(22 40 37 / 10%);
+}
+
+.estado-modal h1 {
+  margin: 0 45px 23px 0;
+  color: #172625;
+  font-size: 32px;
+  font-weight: 750;
+  line-height: 1.25;
+  letter-spacing: -0.7px;
+}
+
+.estado-cerrar {
+  position: absolute;
+  top: 25px;
+  right: 27px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #657875;
+  font-size: 35px;
+  font-weight: 300;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.estado-cerrar:hover {
+  color: #172625;
+}
+
+.estado-label {
+  display: block;
+  margin-bottom: 12px;
+  color: #687a78;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+}
+
+.estado-opciones {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 13px;
+  margin-bottom: 24px;
+}
+
+.estado-opcion {
+  min-height: 67px;
+  padding: 12px;
+  border: 1px solid #dce5e3;
+  border-radius: 6px;
+  background: #fff;
+  color: #687a78;
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 650;
+  cursor: pointer;
+  transition: border-color 0.18s, background 0.18s, color 0.18s;
+}
+
+.estado-opcion:hover {
+  border-color: #6ba99e;
+  color: #086f62;
+}
+
+.estado-opcion.seleccionada {
+  border: 2px solid #087568;
+  background: #e1f1ed;
+  color: #075e53;
+  box-shadow: 0 0 0 1px rgb(8 117 104 / 5%);
+}
+
+.estado-motivo {
+  display: block;
+  width: 100%;
+  min-height: 126px;
+  padding: 17px;
+  border: 1px solid #d9e2e0;
+  border-radius: 6px;
+  background: #fff;
+  color: #172625;
+  font-family: inherit;
+  font-size: 19px;
+  line-height: 1.5;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.estado-motivo::placeholder {
+  color: #99a5a3;
+}
+
+.estado-motivo:focus {
+  border-color: #087568;
+  outline: 3px solid rgb(8 117 104 / 10%);
+}
+
+.estado-ayuda {
+  margin: 11px 0 22px;
+  color: #687a78;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.estado-advertencia {
+  margin-bottom: 22px;
+  padding: 17px;
+  border: 1px solid #d98016;
+  border-radius: 6px;
+  background: #fff4e4;
+  color: #85510a;
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+.estado-advertencia strong {
+  font-weight: 800;
+}
+
+.estado-acciones {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 22px;
+  padding-top: 22px;
+  border-top: 1px solid #dce4e2;
+}
+
+.estado-cancelar,
+.estado-confirmar {
+  min-height: 64px;
+  padding: 14px 27px;
+  border: 0;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 750;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+
+.estado-cancelar {
+  background: transparent;
+  color: #087568;
+}
+
+.estado-cancelar:hover {
+  background: #f0f7f5;
+}
+
+.estado-confirmar {
+  background: #b8322b;
+  color: #fff;
+}
+
+.estado-confirmar:hover {
+  background: #992820;
+}
+
+.estado-confirmar.es-disponible {
+  background: #107568;
+}
+
+.estado-confirmar.es-disponible:hover {
+  background: #0b5d53;
+}
+
+.estado-mensaje {
+  margin: 14px 0;
+  padding: 12px 14px;
+  border: 1px solid;
+  border-radius: 5px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.estado-mensaje.exito {
+  border-color: #b8dfce;
+  background: #eff9f3;
+  color: #17633f;
+}
+
+.estado-mensaje.error {
+  border-color: #efc3c3;
+  background: #fff2f2;
+  color: #a12626;
+}
+
+.estado-no-encontrado h1 {
+  font-size: 24px;
+}
+
+.estado-volver {
+  color: #087568;
+  text-decoration: none;
+}
+
+@media (max-width: 700px) {
+  .estado-fondo {
+    align-items: flex-start;
+    padding: 14px;
+  }
+
+  .estado-modal {
+    margin: auto 0;
+    padding: 26px 18px 20px;
+  }
+
+  .estado-modal h1 {
+    margin-right: 30px;
+    font-size: 24px;
+  }
+
+  .estado-cerrar {
+    top: 18px;
+    right: 15px;
+  }
+
+  .estado-opciones {
+    grid-template-columns: 1fr;
+    gap: 9px;
+  }
+
+  .estado-opcion {
+    min-height: 49px;
+    font-size: 16px;
+  }
+
+  .estado-label {
+    font-size: 13px;
+  }
+
+  .estado-motivo {
+    font-size: 15px;
+  }
+
+  .estado-ayuda {
+    font-size: 13px;
+  }
+
+  .estado-advertencia {
+    font-size: 14px;
+  }
+
+  .estado-acciones {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .estado-cancelar,
+  .estado-confirmar {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px;
+    font-size: 14px;
+  }
+}

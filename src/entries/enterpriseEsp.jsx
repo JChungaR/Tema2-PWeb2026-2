@@ -22,11 +22,11 @@ import EspaciosPage from '../pages/EnterpriseEspacios/EspaciosPage'
 import BandejaDelDiaPage from '../pages/EnterpriseEspacios/BandejaDelDiaPage'
 import BloqueosPage from '../pages/EnterpriseEspacios/BloqueosPage'
 import IncidenciasPage from '../pages/EnterpriseEspacios/IncidenciasPage'
-
-
-
-
-
+import NuevoEspacioPage from '../pages/EnterpriseEspacios/NuevoEspacioPage'
+import DetalleEspacioPage from '../pages/EnterpriseEspacios/DetalleEspacioPage'
+import EquipamientoPage from '../pages/EnterpriseEspacios/EquipamientoPage'
+import HorarioPage from '../pages/EnterpriseEspacios/HorarioPage'
+import EstadoPage from '../pages/EnterpriseEspacios/EstadoPage'
 
 // ========================================
 // LAYOUT DE ENTERPRISE
@@ -50,6 +50,31 @@ function EnterpriseLayout() {
             <Route
               path="/"
               element={<EspaciosPage />}
+            />
+
+            <Route
+              path="/espacios/nuevo"
+              element={<NuevoEspacioPage />}
+            />
+
+            <Route
+              path="espacios/detalle/:codigo"
+              element={<DetalleEspacioPage />}
+            />
+
+            <Route
+              path="espacios/estado/:codigo"
+              element={<EstadoPage />}
+            />
+
+            <Route
+              path="espacios/horario/:codigo"
+              element={<HorarioPage />}
+            />
+
+             <Route
+              path="espacios/equipamiento/:codigo"
+              element={<EquipamientoPage />}
             />
 
             <Route
