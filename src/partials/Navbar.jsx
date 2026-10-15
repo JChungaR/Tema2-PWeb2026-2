@@ -13,9 +13,11 @@ export default function Navbar({ user = { name: "Pepe Valdivia", role: "Estudian
     return (parts[0].charAt(0) + parts[parts.length - 1].charAt(0)).toUpperCase();
   };
 
+
   const initials = getInitials(user.name);
 
   return (
+
       <nav className="navbar navbar-expand-lg navbar-custom py-3">
         <div className="container">
           {/* Logo institucional */}
@@ -114,9 +116,12 @@ export default function Navbar({ user = { name: "Pepe Valdivia", role: "Estudian
                   </li>
                 </ul>
               </div>
+
             </div>
           </div>
+
         </div>
-      </nav>
-  );
+        
+    </nav>
+  )
 }

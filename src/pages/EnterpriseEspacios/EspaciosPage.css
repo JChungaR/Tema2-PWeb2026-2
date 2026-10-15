@@ -1,0 +1,389 @@
+/* =========================================================
+   ESPACIOS PAGE
+   ========================================================= */
+
+
+/* =========================================================
+   CONTENEDOR
+   ========================================================= */
+
+.espacios-page {
+    width: 100%;
+}
+
+
+/* =========================================================
+   CABECERA
+   ========================================================= */
+
+.espacios-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    margin-bottom: 20px;
+}
+
+
+.espacios-header h1 {
+    margin: 0;
+
+    color: var(--enterprise-tinta);
+
+    font-size: 34px;
+
+    font-weight: 700;
+}
+
+
+.espacios-header p {
+    margin: 4px 0 0;
+
+    color: var(--enterprise-texto-secundario);
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   BOTÓN NUEVO ESPACIO
+   ========================================================= */
+
+.espacios-header .btn-enterprise {
+    padding: 12px 24px;
+
+    border-radius: 6px;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   FILTROS
+   ========================================================= */
+
+.espacios-filtros {
+    display: grid;
+
+    grid-template-columns: minmax(250px, 1fr) 265px 150px 165px;
+
+    gap: 12px;
+
+    padding: 16px;
+
+    margin-bottom: 20px;
+
+    background-color: var(--enterprise-superficie);
+
+    border: 1px solid var(--enterprise-borde);
+
+    border-radius: 8px;
+}
+
+
+.espacios-filtros .form-control,
+.espacios-filtros .form-select {
+    height: 46px;
+
+    font-size: 16px;
+}
+
+
+.espacios-filtros .form-control::placeholder {
+    color: var(--enterprise-texto-secundario);
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   FILTROS ACTIVOS
+   ========================================================= */
+
+.filtros-activos {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+
+    color: var(--enterprise-texto-secundario);
+
+    font-size: 15px;
+}
+
+
+.filtros-activos .badge-enterprise {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 7px 10px;
+
+    border-radius: 5px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+.limpiar-filtros {
+    padding: 0;
+
+    background: none;
+
+    border: none;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   TABLA
+   ========================================================= */
+
+.espacios-tabla {
+    width: 100%;
+
+    overflow-x: auto;
+
+    background-color: var(--enterprise-superficie);
+
+    border: 1px solid var(--enterprise-borde);
+
+    border-radius: 8px;
+}
+
+
+.espacios-tabla .enterprise-table {
+    width: 100%;
+
+    margin: 0;
+
+    border-collapse: collapse;
+}
+
+
+/* =========================================================
+   CABECERA DE TABLA
+   ========================================================= */
+
+.espacios-tabla thead th {
+    padding: 14px 22px;
+
+    background-color: var(--enterprise-fondo);
+
+    color: var(--enterprise-texto-secundario);
+
+    border-bottom: 1px solid var(--enterprise-borde);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   CUERPO DE TABLA
+   ========================================================= */
+
+.espacios-tabla tbody td {
+    padding: 14px 22px;
+
+    color: var(--enterprise-tinta);
+
+    border-bottom: 1px solid var(--enterprise-borde);
+
+    font-size: 16px;
+
+    vertical-align: middle;
+}
+
+
+.espacios-tabla tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+.espacios-tabla tbody tr:hover {
+    background-color: var(--enterprise-verde-claro);
+}
+
+
+/* =========================================================
+   CÓDIGO
+   ========================================================= */
+
+.espacios-tabla tbody td:first-child {
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   ESTADOS
+   ========================================================= */
+
+.estado-disponible {
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    background-color: var(--enterprise-verde-claro);
+
+    color: var(--enterprise-exito);
+
+    border-radius: 5px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+
+.estado-mantenimiento {
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    background-color: #FCF4E5;
+
+    color: var(--enterprise-advertencia);
+
+    border-radius: 5px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+
+.estado-de-baja {
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    background-color: #EEF1F1;
+
+    color: var(--enterprise-texto-secundario);
+
+    border-radius: 5px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   BOTÓN EDITAR
+   ========================================================= */
+
+.editar-espacio {
+    padding: 0;
+
+    background: none;
+
+    border: none;
+
+    color: var(--enterprise-verde);
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+
+.editar-espacio:hover {
+    color: var(--enterprise-verde-oscuro);
+
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+    .espacios-filtros {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .espacios-header {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+
+    .espacios-header .btn-enterprise {
+        width: 100%;
+    }
+
+
+    .espacios-filtros {
+        grid-template-columns: 1fr;
+    }
+
+
+    .filtros-activos {
+        flex-wrap: wrap;
+    }
+
+}
+
+
+@media (max-width: 576px) {
+
+    .espacios-header h1 {
+        font-size: 28px;
+    }
+
+
+    .espacios-header p {
+        font-size: 15px;
+    }
+
+
+    .espacios-tabla {
+        border-radius: 6px;
+    }
+
+
+    .espacios-tabla thead th,
+    .espacios-tabla tbody td {
+        padding: 12px 15px;
+    }
+
+}
