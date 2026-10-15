@@ -3,7 +3,7 @@ import React from 'react';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // Activa Dropdown y Collapse de Bootstrap
 import './Navbar.css';
 
-export default function Navbar({ user = { name: "Pepe Valdivia", role: "Estudiante" }, activeLink = "/estudiantes/reservas" }) {
+export default function Navbar({ user = { name: "Pepe Valdivia", role: "Estudiante" }, activeLink = "/estudiantes/espacios" }) {
 
   // Función para obtener las iniciales (Ej: "Pepe Valdivia" -> "PV")
   const getInitials = (name) => {

@@ -88,12 +88,7 @@ export function recuperar_contraseña(req, res) {
 
 export async function ingresar(req, res) {
   
-  return res.render('estudiante/home', {
-        title: 'Estudiante',
-        currentPage: 'Estudiante',
-        description:
-          'Esta es una aplicación de ejemplo creada con Node.js, Express y EJS.'
-    });
+  res.redirect('/estudiante');
   
 }
 

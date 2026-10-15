@@ -1,8 +1,9 @@
 // src/pages/reservas/ConfirmacionReserva.jsx
-import React from 'react';
 import './ConfirmacionReserva.css';
 
-export function ConfirmacionReserva({
+import './ConfirmacionReserva.css'
+
+export default function ConfirmacionReserva({
                                         codigo = "RSV-2026-0473",
                                         espacio = "Laboratorio de Cómputo H-304",
                                         fecha = "14/09/2026",

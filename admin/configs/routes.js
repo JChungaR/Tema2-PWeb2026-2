@@ -22,5 +22,7 @@ router.put('/api/v1/nations/:id', nationApis.updateNation);
 router.delete('/api/v1/nations/:id', nationApis.deleteNation);
 
 router.get('/estudiante', student.home);
+router.get('/estudiante/mi-cuenta', student.home);
+router.get('/estudiante/confirmacion-reserva', student.home)
 
 export default router;
