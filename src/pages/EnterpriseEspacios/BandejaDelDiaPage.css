@@ -1,0 +1,1185 @@
+/* src/pages/EnterpriseEspacios/BandejaDelDiaPage.css */
+
+/* =========================
+   GENERAL
+   ========================= */
+
+.daily-operations {
+  width: 100%;
+
+  color: #152322;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+/* =========================
+   CABECERA
+   ========================= */
+
+.daily-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-end;
+
+  margin-bottom: 12px;
+}
+
+
+.daily-title {
+  margin: 0;
+
+  color: #152322;
+
+  font-size: 28px;
+
+  font-weight: 700;
+
+  line-height: 1.15;
+}
+
+
+.daily-date {
+  margin: 4px 0 0;
+
+  color: #6A7A78;
+
+  font-size: 12px;
+}
+
+
+/* =========================
+   CONTROLES DE FECHA
+   ========================= */
+
+.daily-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+
+.date-navigation {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+}
+
+
+.btn-date-arrow {
+  width: 32px;
+
+  height: 34px;
+
+  padding: 0;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid #DEE5E4;
+
+  border-radius: 4px;
+
+  background: #FFFFFF;
+
+  color: #152322;
+
+  font-size: 15px;
+
+  text-decoration: none;
+}
+
+
+.btn-date-arrow:hover {
+  background: #F6F8F8;
+
+  color: #152322;
+
+  text-decoration: none;
+}
+
+
+.btn-today {
+  height: 34px;
+
+  padding: 0 13px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid #136F63;
+
+  border-radius: 4px;
+
+  background: #FFFFFF;
+
+  color: #136F63;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  text-decoration: none;
+}
+
+
+.btn-today:hover {
+  background: #E2F1EE;
+
+  color: #0D5249;
+
+  text-decoration: none;
+}
+
+
+.btn-search-reservation {
+  height: 34px;
+
+  padding: 0 16px;
+
+  border: 1px solid #DEE5E4;
+
+  border-radius: 4px;
+
+  background: #FFFFFF;
+
+  color: #152322;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  display: inline-flex;
+
+  align-items: center;
+  
+  justify-content: center;
+
+  text-decoration: none;
+
+}
+
+
+.btn-search-reservation:hover {
+  background: #F6F8F8;
+}
+
+
+/* =========================
+   RESUMEN
+   ========================= */
+
+.daily-summary {
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, minmax(0, 1fr));
+
+  gap: 12px;
+
+  margin-bottom: 12px;
+}
+
+
+.summary-card {
+  min-height: 72px;
+
+  padding: 12px 14px;
+
+  background: #FFFFFF;
+
+  border: 1px solid #DEE5E4;
+
+  border-radius: 6px;
+}
+
+
+.summary-label {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #6A7A78;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.2px;
+}
+
+
+.summary-value {
+  display: block;
+
+  color: #152322;
+
+  font-size: 25px;
+
+  font-weight: 700;
+
+  line-height: 1;
+}
+
+
+.summary-confirmed {
+  color: #3B6FA8;
+}
+
+
+.summary-attended {
+  color: #1E7F4D;
+}
+
+
+.summary-no-show {
+  color: #B4322B;
+}
+
+
+.summary-cancelled {
+  color: #B7791F;
+}
+
+
+/* =========================
+   BLOQUES POR ESPACIO
+   ========================= */
+
+.space-card {
+  overflow: hidden;
+
+  margin-bottom: 12px;
+
+  background: #FFFFFF;
+
+  border: 1px solid #DEE5E4;
+
+  border-radius: 6px;
+}
+
+
+.space-header {
+  min-height: 36px;
+
+  padding: 0 14px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  background: #E2F1EE;
+
+  border-bottom: 1px solid #DEE5E4;
+}
+
+
+.space-title {
+  margin: 0;
+
+  color: #0D5249;
+
+  font-size: 14px;
+
+  font-weight: 700;
+}
+
+
+.space-description {
+  color: #0D5249;
+
+  font-size: 11px;
+
+  white-space: nowrap;
+}
+
+
+/* =========================
+   TABLA
+   ========================= */
+
+.operation-table {
+  width: 100%;
+
+  margin: 0;
+
+  border-collapse: collapse;
+
+  table-layout: fixed;
+
+  background: #FFFFFF;
+}
+
+
+.operation-table thead {
+  background: #F6F8F8;
+}
+
+
+.operation-table th {
+  height: 30px;
+
+  padding: 0 14px;
+
+  vertical-align: middle;
+
+  border-bottom: 1px solid #DEE5E4;
+
+  color: #6A7A78;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.25px;
+}
+
+
+.operation-table td {
+  height: 40px;
+
+  padding: 7px 14px;
+
+  vertical-align: middle;
+
+  border-bottom: 1px solid #DEE5E4;
+
+  color: #152322;
+
+  font-size: 12px;
+}
+
+
+.operation-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* COLUMNAS */
+
+.operation-table th:nth-child(1),
+.operation-table td:nth-child(1) {
+  width: 11%;
+}
+
+
+.operation-table th:nth-child(2),
+.operation-table td:nth-child(2) {
+  width: 25%;
+}
+
+
+.operation-table th:nth-child(3),
+.operation-table td:nth-child(3) {
+  width: 28%;
+}
+
+
+.operation-table th:nth-child(4),
+.operation-table td:nth-child(4) {
+  width: 7%;
+}
+
+
+.operation-table th:nth-child(5),
+.operation-table td:nth-child(5) {
+  width: 11%;
+}
+
+
+.operation-table th:nth-child(6),
+.operation-table td:nth-child(6) {
+  width: 18%;
+}
+
+
+.cell-block {
+  font-weight: 650;
+
+  white-space: nowrap;
+}
+
+
+.cell-student,
+.cell-reason {
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+}
+
+
+.cell-attendees,
+.cell-status,
+.cell-actions {
+  white-space: nowrap;
+}
+
+
+/* =========================
+   ESTADOS
+   ========================= */
+
+.status-badge {
+  display: inline-flex;
+
+  align-items: center;
+
+  min-height: 21px;
+
+  padding: 2px 8px;
+
+  border-radius: 3px;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+
+.status-confirmed {
+  background: #E8F0FA;
+
+  color: #3B6FA8;
+}
+
+
+.status-attended {
+  background: #E7F4EC;
+
+  color: #1E7F4D;
+}
+
+
+.status-progress {
+  background: #FFF3E2;
+
+  color: #B7791F;
+}
+
+
+.status-no-show {
+  background: #F8E7E5;
+
+  color: #B4322B;
+}
+
+
+.status-cancelled {
+  background: #FFF3E2;
+
+  color: #B7791F;
+}
+
+
+/* =========================
+   ACCIONES
+   ========================= */
+
+.operation-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  white-space: nowrap;
+}
+
+
+.operation-btn {
+  height: 29px;
+
+  padding: 0 9px;
+
+  border-radius: 3px;
+
+  font-size: 10px;
+
+  font-weight: 650;
+
+  white-space: nowrap;
+}
+
+
+/* Registrar llegada */
+
+.btn-arrival {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+
+  border: 1px solid #136F63;
+  border-radius: 4px;
+
+  background: #FFFFFF;
+  color: #136F63;
+
+  transition: 0.15s ease;
+}
+
+
+.btn-arrival:hover {
+  background: #136F63;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+/* Inasistencia */
+
+.btn-no-show {
+  border: 1px solid #DEE5E4;
+
+  background: #FFFFFF;
+
+  color: #6A7A78;
+}
+
+
+.btn-no-show:hover {
+  border-color: #B4322B;
+
+  color: #B4322B;
+}
+
+
+/* Cancelar */
+
+.btn-cancel-reservation {
+  border: 1px solid #B4322B;
+
+  background: #FFFFFF;
+
+  color: #B4322B;
+}
+
+
+.btn-cancel-reservation:hover {
+  background: #B4322B;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+
+.action-text {
+  color: #6A7A78;
+
+  font-size: 11px;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   5.6 MODAL DE CANCELACIÓN
+   ========================================================= */
+
+.cancel-modal-overlay {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background: rgba(21, 35, 34, 0.18);
+
+  z-index: 9999;
+}
+
+
+.cancel-modal {
+  width: min(570px, 100%);
+
+  padding: 22px 20px 20px;
+
+  border: 1px solid #CCD6D4;
+  border-radius: 6px;
+
+  background: #FFFFFF;
+
+  box-shadow:
+    0 18px 45px rgba(21, 35, 34, 0.16);
+}
+
+
+/* CABECERA */
+
+.cancel-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 14px;
+}
+
+
+.cancel-modal-header h2 {
+  margin: 0;
+
+  color: #152322;
+
+  font-size: 20px;
+  font-weight: 700;
+}
+
+
+.cancel-modal-close {
+  border: none;
+
+  background: transparent;
+
+  color: #6A7A78;
+
+  font-size: 24px;
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+
+.cancel-modal-close:hover {
+  color: #152322;
+}
+
+
+/* RESUMEN */
+
+.cancel-modal-summary {
+  margin-bottom: 16px;
+
+  padding: 11px 12px;
+
+  border-radius: 3px;
+
+  background: #F6F8F8;
+
+  color: #152322;
+
+  font-size: 11px;
+}
+
+
+/* CAMPOS */
+
+.cancel-modal-field {
+  margin-bottom: 14px;
+}
+
+
+.cancel-modal-field label {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #6A7A78;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+}
+
+
+.cancel-modal-field select,
+.cancel-modal-field textarea {
+  width: 100%;
+
+  border: 1px solid #D7DFDE;
+  border-radius: 4px;
+
+  background: #FFFFFF;
+
+  color: #152322;
+
+  font-family: inherit;
+  font-size: 12px;
+
+  outline: none;
+}
+
+
+.cancel-modal-field select {
+  height: 42px;
+
+  padding: 0 10px;
+}
+
+
+.cancel-modal-field textarea {
+  min-height: 78px;
+
+  padding: 11px;
+
+  resize: vertical;
+}
+
+
+.cancel-modal-field select:focus,
+.cancel-modal-field textarea:focus {
+  border-color: #136F63;
+
+  box-shadow:
+    0 0 0 2px rgba(19, 111, 99, 0.08);
+}
+
+
+/* AYUDA */
+
+.cancel-modal-help {
+  margin: 7px 0 0;
+
+  color: #6A7A78;
+
+  font-size: 10px;
+  line-height: 1.4;
+}
+
+
+/* AVISO */
+
+.cancel-modal-warning {
+  margin-top: 4px;
+
+  padding: 10px 11px;
+
+  border: 1px solid #D39232;
+  border-radius: 4px;
+
+  background: #FFF4E4;
+
+  color: #7A5417;
+
+  font-size: 10px;
+  line-height: 1.45;
+}
+
+
+/* PIE */
+
+.cancel-modal-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 18px;
+
+  margin-top: 14px;
+
+  padding-top: 14px;
+
+  border-top: 1px solid #DEE5E4;
+}
+
+
+.cancel-modal-back {
+  border: none;
+
+  background: transparent;
+
+  color: #136F63;
+
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+.cancel-modal-back:hover {
+  color: #0D5249;
+
+  text-decoration: underline;
+}
+
+
+.cancel-modal-confirm {
+  min-height: 40px;
+
+  padding: 0 18px;
+
+  border: 1px solid #B4322B;
+  border-radius: 4px;
+
+  background: #B4322B;
+
+  color: #FFFFFF;
+
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+.cancel-modal-confirm:hover:not(:disabled) {
+  background: #922721;
+
+  border-color: #922721;
+}
+
+
+/* DESHABILITADO */
+
+.cancel-modal-confirm:disabled {
+  border-color: #DEA4A1;
+
+  background: #DEA4A1;
+
+  color: #FFFFFF;
+
+  cursor: not-allowed;
+}
+
+
+/* FORMULARIO */
+
+.cancel-form-group {
+  margin-bottom: 14px;
+}
+
+
+.cancel-form-group label {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #6A7A78;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.4px;
+}
+
+
+.cancel-form-group select,
+.cancel-form-group textarea {
+  width: 100%;
+
+  padding: 10px 11px;
+
+  border: 1px solid #DEE5E4;
+
+  border-radius: 4px;
+
+  background: #FFFFFF;
+
+  color: #152322;
+
+  font-size: 12px;
+
+  outline: none;
+}
+
+
+.cancel-form-group select {
+  height: 42px;
+}
+
+
+.cancel-form-group textarea {
+  min-height: 80px;
+
+  resize: vertical;
+}
+
+
+.cancel-form-group select:focus,
+.cancel-form-group textarea:focus {
+  border-color: #136F63;
+}
+
+
+.cancel-help-text {
+  margin: 6px 0 0;
+
+  color: #6A7A78;
+
+  font-size: 10px;
+
+  line-height: 1.4;
+}
+
+
+/* ADVERTENCIA */
+
+.cancel-warning {
+  margin-bottom: 16px;
+
+  padding: 11px 12px;
+
+  border: 1px solid #B7791F;
+
+  border-radius: 4px;
+
+  background: #FFF7E8;
+
+  color: #8A5D17;
+
+  font-size: 11px;
+
+  line-height: 1.4;
+}
+
+
+/* FOOTER MODAL */
+
+.cancel-modal-footer {
+  display: flex;
+
+  justify-content: flex-end;
+
+  align-items: center;
+
+  gap: 16px;
+
+  padding-top: 14px;
+
+  border-top: 1px solid #DEE5E4;
+}
+
+
+.cancel-back-button {
+  border: none;
+
+  background: transparent;
+
+  color: #136F63;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+
+.cancel-confirm-button {
+  height: 38px;
+
+  padding: 0 17px;
+
+  border: 1px solid #B4322B;
+
+  border-radius: 4px;
+
+  background: #B4322B;
+
+  color: #FFFFFF;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+
+.cancel-confirm-button:hover:not(:disabled) {
+  background: #962822;
+}
+
+
+.cancel-confirm-button:disabled {
+  opacity: 0.45;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 1000px) {
+
+  .daily-summary {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+
+  .daily-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 12px;
+  }
+
+}
+
+/* ========================================
+   5.2 - JORNADA SIN RESERVAS
+   ======================================== */
+
+.empty-day-card {
+  min-height: 490px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+
+  border: 1px solid #DEE5E4;
+  border-radius: 6px;
+
+  text-align: center;
+
+  padding: 40px;
+}
+
+
+/* ICONO */
+
+.empty-day-icon {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 14px;
+
+  background: #E2F1EE;
+
+  border-radius: 6px;
+
+  color: #136F63;
+
+  font-size: 22px;
+}
+
+
+/* TÍTULO */
+
+.empty-day-title {
+  margin: 0 0 10px;
+
+  color: #152322;
+
+  font-size: 20px;
+  font-weight: 700;
+}
+
+
+/* TEXTO */
+
+.empty-day-text {
+  max-width: 430px;
+
+  margin: 0 0 16px;
+
+  color: #6A7A78;
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+
+/* BOTONES */
+
+.empty-day-actions {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+}
+
+
+/* VER EL LUNES */
+
+.empty-day-primary {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 36px;
+
+  padding: 0 16px;
+
+  border: 1px solid #136F63;
+  border-radius: 4px;
+
+  background: #ffffff;
+
+  color: #136F63;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  text-decoration: none;
+}
+
+.empty-day-primary:hover {
+  background: #E2F1EE;
+
+  color: #0D5249;
+}
+
+
+/* NUEVO BLOQUEO */
+
+.empty-day-secondary {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 36px;
+
+  padding: 0 16px;
+
+  border: 1px solid #136F63;
+  border-radius: 4px;
+
+  background: #136F63;
+
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  text-decoration: none;
+}
+
+.empty-day-secondary:hover {
+  background: #0D5249;
+
+  color: #ffffff;
+}
+

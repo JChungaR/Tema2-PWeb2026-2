@@ -2,9 +2,11 @@
 import { Router } from 'express';
 import * as admins from '../controllers/admin_controllers.js';
 
+
 import * as student from '../controllers/student_controllers.js';
 
 import * as enterpriseEsp from '../controllers/enterpriseEsp_controllers.js';
+
 
 import * as nationApis from '../apis/nations_apis.js';
 
@@ -43,5 +45,20 @@ router.get('/enterprise/espacios/equipamiento/:codigo',soloRolEncargado, enterpr
 router.get('/enterprise/espacios/horario/:codigo', soloRolEncargado, enterpriseEsp.espacios);
 router.get('/enterprise/espacios/estado/:codigo', soloRolEncargado, enterpriseEsp.espacios);
 
+
+//
+router.get('/enterprise/espacios', enterpriseEsp.espacios);
+// para recargarrr
+router.get('/enterprise/bandeja', enterpriseEsp.espacios);
+router.get('/enterprise/bandeja/sin-reservas',enterpriseEsp.espacios);
+router.get('/enterprise/bandeja/registro',enterpriseEsp.espacios);
+router.get('/enterprise/bloqueos', enterpriseEsp.espacios);
+router.get('/enterprise/reservas/buscar', enterpriseEsp.espacios)
+router.get('/enterprise/incidencias', enterpriseEsp.espacios);
+router.get('/enterprise/', enterpriseEsp.espacios);
+router.get('/enterprise/espacios/nuevo', enterpriseEsp.espacios);
+router.get('/enterprise/espacios/equipamiento/:codigo', enterpriseEsp.espacios);
+router.get('/enterprise/espacios/horario/:codigo', enterpriseEsp.espacios);
+router.get('/enterprise/espacios/estado/:codigo', enterpriseEsp.espacios);
 
 export default router;

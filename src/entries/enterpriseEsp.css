@@ -27,6 +27,24 @@
 }
 
 
+html,
+body,
+#root {
+    width: 100%;
+    min-height: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    background: var(--enterprise-fondo);
+}
+
+body {
+    min-height: 100vh;
+}
+
+
+
 /* =========================================================
    CONFIGURACIÓN GENERAL
    ========================================================= */
@@ -46,21 +64,15 @@
 .enterprise-layout {
     display: flex;
 
-    width: calc(100% - 48px);
 
-    /*
-     * Separación entre la cabecera
-     * y el área de trabajo
-     */
-    margin: 24px auto;
+    width: 100%;
+    min-height: calc(100vh - 64px);
 
-    /*
-     * Altura mínima para que la página
-     * ocupe prácticamente toda la pantalla
-     */
-    min-height: calc(100vh - 72px - 100px - 48px);
+    margin: 0;
+    padding: 0;
 
-    background-color: var(--enterprise-fondo);
+    background: #F6F8F8;
+
 }
 
 
@@ -89,9 +101,14 @@
 
     min-width: 0;
 
-    padding: 30px 40px;
+    min-height: calc(100vh - 64px);
+
+    padding: 24px 56px;
 
     color: var(--enterprise-tinta);
+
+    background: #F6F8F8;
+
 }
 
 
@@ -339,9 +356,11 @@
 @media (max-width: 991px) {
 
     .enterprise-layout {
-        width: calc(100% - 32px);
 
-        margin: 16px auto;
+        width: 100%;
+
+        margin: 0;
+
 
         flex-direction: column;
     }
@@ -366,9 +385,11 @@
 @media (max-width: 576px) {
 
     .enterprise-layout {
-        width: calc(100% - 20px);
 
-        margin: 10px auto;
+        width: 100%;
+
+        margin: 0;
+
     }
 
 
@@ -376,4 +397,42 @@
         padding: 20px 15px;
     }
 
+
 }
+
+/* ========================================
+   NAVBAR ENCARGADO
+   ======================================== */
+
+.enterprise-navbar {
+  min-height: 64px;
+
+  padding-top: 0;
+  padding-bottom: 0;
+
+  background: #ffffff;
+}
+
+.enterprise-navbar-container {
+  width: 100%;
+
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.enterprise-navbar .navbar-brand {
+  margin-right: 34px !important;
+
+  font-size: 20px !important;
+}
+
+.enterprise-navbar .navbar-nav {
+  gap: 18px !important;
+}
+
+.enterprise-navbar .nav-link {
+  font-size: 13px;
+
+  white-space: nowrap;
+}
+

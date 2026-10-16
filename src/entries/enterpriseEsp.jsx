@@ -1,3 +1,7 @@
+
+// src/entries/enterpriseEsp
+
+
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
@@ -7,7 +11,9 @@ import {
   Route
 } from 'react-router-dom'
 
+
 import Cabecera from '../partials/NavbarEnterprise'
+
 import Sidebar from '../partials/Sidebar'
 import Footer from '../partials/FooterEnterpriseEsp'
 
@@ -15,12 +21,15 @@ import Footer from '../partials/FooterEnterpriseEsp'
 import './enterpriseEsp.css'
 
 
+
 // ========================================
 // PÁGINAS
 // ========================================
 import EspaciosPage from '../pages/EnterpriseEspacios/EspaciosPage'
 import BandejaDelDiaPage from '../pages/EnterpriseEspacios/BandejaDelDiaPage'
+import RegistroLlegadaPage from '../pages/EnterpriseEspacios/RegistroLlegadaPage';
 import BloqueosPage from '../pages/EnterpriseEspacios/BloqueosPage'
+import BusquedaReservasPage from '../pages/EnterpriseEspacios/BusquedaReservasPage';
 import IncidenciasPage from '../pages/EnterpriseEspacios/IncidenciasPage'
 import NuevoEspacioPage from '../pages/EnterpriseEspacios/NuevoEspacioPage'
 import DetalleEspacioPage from '../pages/EnterpriseEspacios/DetalleEspacioPage'
@@ -35,7 +44,7 @@ import EstadoPage from '../pages/EnterpriseEspacios/EstadoPage'
 function EnterpriseLayout() {
   return (
     <>
-      <Cabecera />
+      <Cabecera variant="enterprise" />
 
       <div className="enterprise-layout">
 
@@ -48,12 +57,19 @@ function EnterpriseLayout() {
           <Routes>
 
             <Route
+
               path="/"
+
               element={<EspaciosPage />}
             />
 
             <Route
-              path="/espacios/nuevo"
+              path="reservas/buscar"
+              element={<BusquedaReservasPage />}
+            />
+
+            <Route
+              path="espacios/nuevo"
               element={<NuevoEspacioPage />}
             />
 
@@ -78,17 +94,27 @@ function EnterpriseLayout() {
             />
 
             <Route
-              path="/bandeja"
+              path="bandeja"
               element={<BandejaDelDiaPage />}
             />
 
             <Route
-              path="/bloqueos"
+              path="bandeja/sin-reservas"
+              element={<BandejaDelDiaPage empty={true} />}
+            />
+
+            <Route
+              path="bandeja/registro"
+              element={<RegistroLlegadaPage />}
+            />
+
+            <Route
+              path="bloqueos"
               element={<BloqueosPage />}
             />
 
             <Route
-              path="/incidencias"
+              path="incidencias"
               element={<IncidenciasPage />}
             />
 
