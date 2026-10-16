@@ -21,7 +21,9 @@ import './enterpriseEsp.css'
 // ========================================
 import EspaciosPage from '../pages/EnterpriseEspacios/EspaciosPage'
 import BandejaDelDiaPage from '../pages/EnterpriseEspacios/BandejaDelDiaPage'
+import RegistroLlegadaPage from '../pages/EnterpriseEspacios/RegistroLlegadaPage';
 import BloqueosPage from '../pages/EnterpriseEspacios/BloqueosPage'
+import BusquedaReservasPage from '../pages/EnterpriseEspacios/BusquedaReservasPage';
 import IncidenciasPage from '../pages/EnterpriseEspacios/IncidenciasPage'
 import NuevoEspacioPage from '../pages/EnterpriseEspacios/NuevoEspacioPage'
 import DetalleEspacioPage from '../pages/EnterpriseEspacios/DetalleEspacioPage'
@@ -51,6 +53,11 @@ function EnterpriseLayout() {
             <Route
               path=""
               element={<EspaciosPage />}
+            />
+
+            <Route
+              path="reservas/buscar"
+              element={<BusquedaReservasPage />}
             />
 
             <Route
@@ -86,6 +93,11 @@ function EnterpriseLayout() {
             <Route
               path="bandeja/sin-reservas"
               element={<BandejaDelDiaPage empty={true} />}
+            />
+
+            <Route
+              path="bandeja/registro"
+              element={<RegistroLlegadaPage />}
             />
 
             <Route

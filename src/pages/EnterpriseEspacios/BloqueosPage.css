@@ -1,0 +1,711 @@
+/* =========================================================
+   5.4 BLOQUEO POR MANTENIMIENTO
+   ========================================================= */
+
+.bloqueos-page {
+  width: 100%;
+  padding: 20px 0 32px;
+
+  color: #152322;
+
+  font-family:
+    Inter,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+}
+
+
+/* =========================================================
+   TÍTULO
+   ========================================================= */
+
+.bloqueos-title {
+  margin: 0 0 14px;
+
+  color: #152322;
+
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+
+/* =========================================================
+   LAYOUT GENERAL
+   ========================================================= */
+
+.bloqueos-layout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  gap: 16px;
+
+  align-items: start;
+}
+
+
+/* =========================================================
+   TARJETAS
+   ========================================================= */
+
+.bloqueos-form-card,
+.bloqueos-preview-card,
+.bloqueos-affected-card {
+  background: #FFFFFF;
+
+  border: 1px solid #DEE5E4;
+
+  border-radius: 6px;
+}
+
+
+.bloqueos-form-card {
+  padding: 18px 18px 16px;
+}
+
+
+.bloqueos-preview-card {
+  padding: 16px 16px 14px;
+}
+
+
+.bloqueos-affected-card {
+  padding: 16px;
+}
+
+
+/* =========================================================
+   TÍTULOS DE SECCIÓN
+   ========================================================= */
+
+.bloqueos-section-title {
+  margin: 0 0 16px;
+
+  color: #136F63;
+
+  font-size: 16px;
+
+  font-weight: 700;
+}
+
+
+.bloqueos-affected-title {
+  margin: 0 0 10px;
+
+  color: #152322;
+
+  font-size: 15px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   CAMPOS
+   ========================================================= */
+
+.bloqueos-field {
+  margin-bottom: 16px;
+}
+
+
+.bloqueos-field label {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #6A7A78;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+}
+
+
+.bloqueos-field input,
+.bloqueos-field select,
+.bloqueos-field textarea {
+  width: 100%;
+
+  border: 1px solid #D7DFDE;
+
+  border-radius: 3px;
+
+  background: #FFFFFF;
+
+  color: #152322;
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  outline: none;
+}
+
+
+.bloqueos-field input,
+.bloqueos-field select {
+  height: 42px;
+
+  padding: 0 11px;
+}
+
+
+.bloqueos-field textarea {
+  min-height: 84px;
+
+  padding: 11px;
+
+  resize: vertical;
+
+  line-height: 1.45;
+}
+
+
+.bloqueos-field input:focus,
+.bloqueos-field select:focus,
+.bloqueos-field textarea:focus {
+  border-color: #136F63;
+
+  box-shadow:
+    0 0 0 2px rgba(19, 111, 99, 0.08);
+}
+
+
+/* =========================================================
+   FECHAS
+   ========================================================= */
+
+.bloqueos-date-grid {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap: 10px;
+}
+
+
+/* =========================================================
+   TODO EL DÍA / RANGO HORARIO
+   ========================================================= */
+
+.bloqueos-mode-buttons {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 8px;
+}
+
+
+.bloqueos-mode-btn {
+  min-height: 36px;
+
+  padding: 0 12px;
+
+  border: 1px solid #D7DFDE;
+
+  border-radius: 4px;
+
+  background: #FFFFFF;
+
+  color: #152322;
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+
+.bloqueos-mode-btn:hover {
+  border-color: #136F63;
+
+  color: #136F63;
+}
+
+
+.bloqueos-mode-btn.active {
+  border-color: #136F63;
+
+  background: #136F63;
+
+  color: #FFFFFF;
+}
+
+
+/* =========================================================
+   CHIPS DE HORARIOS
+   ========================================================= */
+
+.bloqueos-time-list {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 5px;
+}
+
+
+.bloqueos-time-chip {
+  min-width: 42px;
+
+  min-height: 27px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 0 7px;
+
+  border-radius: 3px;
+
+  background: #E2F1EE;
+
+  color: #0D5249;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   MOTIVO
+   ========================================================= */
+
+.bloqueos-reason-field {
+  margin-top: 4px;
+
+  margin-bottom: 12px;
+}
+
+
+/* =========================================================
+   ACCIONES DEL FORMULARIO
+   ========================================================= */
+
+.bloqueos-form-actions {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  gap: 18px;
+
+  margin-top: 10px;
+}
+
+
+.bloqueos-btn-cancel,
+.bloqueos-btn-primary {
+  min-height: 42px;
+
+  padding: 0 16px;
+
+  border-radius: 3px;
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+/* CANCELAR */
+
+.bloqueos-btn-cancel {
+  border: none;
+
+  background: transparent;
+
+  color: #136F63;
+}
+
+
+.bloqueos-btn-cancel:hover {
+  color: #0D5249;
+
+  text-decoration: underline;
+}
+
+
+/* BLOQUEAR Y AVISAR */
+
+.bloqueos-btn-primary {
+  border: 1px solid #136F63;
+
+  background: #136F63;
+
+  color: #FFFFFF;
+}
+
+
+.bloqueos-btn-primary:hover {
+  background: #0D5249;
+
+  border-color: #0D5249;
+}
+
+
+/* =========================================================
+   COLUMNA DERECHA
+   ========================================================= */
+
+.bloqueos-side-column {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+
+/* =========================================================
+   CALENDARIO
+   ========================================================= */
+
+.bloqueos-calendar {
+  width: 100%;
+}
+
+
+.calendar-header,
+.calendar-row {
+  display: grid;
+
+  grid-template-columns:
+    48px
+    repeat(3, minmax(0, 1fr));
+
+  gap: 3px;
+}
+
+
+.calendar-header {
+  align-items: center;
+
+  margin-bottom: 3px;
+
+  color: #152322;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  text-align: center;
+}
+
+
+.calendar-empty {
+  min-height: 18px;
+}
+
+
+.calendar-row {
+  margin-bottom: 3px;
+}
+
+
+.calendar-time {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  padding-right: 5px;
+
+  color: #6A7A78;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   CELDAS DEL CALENDARIO
+   ========================================================= */
+
+.calendar-cell {
+  min-height: 38px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 2px;
+
+  font-size: 10px;
+
+  font-weight: 600;
+}
+
+
+/* BLOQUEADO CON TRAMADO */
+
+.calendar-blocked {
+  border: 1px solid #D7DFDE;
+
+  color: #6A7A78;
+
+  background:
+    repeating-linear-gradient(
+      135deg,
+      #EDF1F0,
+      #EDF1F0 4px,
+      #E2E8E7 4px,
+      #E2E8E7 8px
+    );
+}
+
+
+/* SE CANCELA */
+
+.calendar-cancelled {
+  border: 1px solid #D95A53;
+
+  background: #FFF6F5;
+
+  color: #B4322B;
+}
+
+
+/* =========================================================
+   LISTA DE RESERVAS AFECTADAS
+   ========================================================= */
+
+.bloqueos-reservation-list {
+  width: 100%;
+
+  margin-bottom: 10px;
+}
+
+
+.bloqueos-reservation-row {
+  min-height: 34px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 12px;
+
+  border-bottom: 1px solid #DEE5E4;
+
+  font-size: 11px;
+}
+
+
+.bloqueos-reservation-row:last-child {
+  border-bottom: none;
+}
+
+
+.bloqueos-reservation-info {
+  min-width: 0;
+
+  color: #152322;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+
+.bloqueos-reservation-info strong {
+  font-weight: 500;
+}
+
+
+.bloqueos-reservation-info span {
+  font-weight: 500;
+}
+
+
+.bloqueos-reservation-date {
+  flex-shrink: 0;
+
+  color: #6A7A78;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   AVISO INFERIOR
+   ========================================================= */
+
+.bloqueos-warning {
+  padding: 10px 9px;
+
+  border-radius: 3px;
+
+  background: #FFF4E4;
+
+  color: #7A5417;
+
+  font-size: 10px;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+  .bloqueos-layout {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 650px) {
+
+  .bloqueos-date-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .calendar-header,
+  .calendar-row {
+    grid-template-columns:
+      42px
+      repeat(3, minmax(70px, 1fr));
+  }
+
+
+  .bloqueos-preview-card {
+    overflow-x: auto;
+  }
+
+
+  .bloqueos-reservation-row {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 3px;
+
+    padding: 8px 0;
+  }
+
+}
+
+/* =========================================================
+   NIVEL 2 - SELECCIÓN DE HORARIOS
+   ========================================================= */
+
+.bloqueos-time-chip {
+  border: 1px solid transparent;
+
+  font-family: inherit;
+
+  cursor: pointer;
+}
+
+
+.bloqueos-time-chip.selected {
+  background: #E2F1EE;
+
+  color: #0D5249;
+}
+
+
+.bloqueos-time-chip:not(.selected) {
+  border-color: #DEE5E4;
+
+  background: #FFFFFF;
+
+  color: #6A7A78;
+}
+
+
+.bloqueos-time-chip:not(:disabled):hover {
+  border-color: #136F63;
+
+  color: #136F63;
+}
+
+
+.bloqueos-time-chip:disabled {
+  opacity: 1;
+
+  cursor: default;
+}
+
+
+/* =========================================================
+   DISPONIBLE EN VISTA PREVIA
+   ========================================================= */
+
+.calendar-available {
+  border: 1px solid #DEE5E4;
+
+  background: #FFFFFF;
+
+  color: #A0AAA8;
+}
+
+
+/* =========================================================
+   MENSAJES
+   ========================================================= */
+
+.bloqueos-message {
+  margin-bottom: 12px;
+
+  padding: 10px 12px;
+
+  border-radius: 4px;
+
+  font-size: 11px;
+
+  font-weight: 600;
+}
+
+
+.bloqueos-message-success {
+  border: 1px solid #1E7F4D;
+
+  background: #EAF6F0;
+
+  color: #1E7F4D;
+}
+
+
+.bloqueos-message-error {
+  border: 1px solid #B4322B;
+
+  background: #FCEDEC;
+
+  color: #B4322B;
+}

@@ -26,6 +26,22 @@
     --enterprise-info: #3B6FA8;
 }
 
+html,
+body,
+#root {
+    width: 100%;
+    min-height: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    background: var(--enterprise-fondo);
+}
+
+body {
+    min-height: 100vh;
+}
+
 
 /* =========================================================
    CONFIGURACIÓN GENERAL
@@ -46,21 +62,13 @@
 .enterprise-layout {
     display: flex;
 
-    width: calc(100% - 48px);
+    width: 100%;
+    min-height: calc(100vh - 64px);
 
-    /*
-     * Separación entre la cabecera
-     * y el área de trabajo
-     */
-    margin: 24px auto;
+    margin: 0;
+    padding: 0;
 
-    /*
-     * Altura mínima para que la página
-     * ocupe prácticamente toda la pantalla
-     */
-    min-height: calc(100vh - 72px - 100px - 48px);
-
-    background-color: var(--enterprise-fondo);
+    background: #F6F8F8;
 }
 
 
@@ -89,9 +97,13 @@
 
     min-width: 0;
 
-    padding: 30px 40px;
+    min-height: calc(100vh - 64px);
+
+    padding: 24px 56px;
 
     color: var(--enterprise-tinta);
+
+    background: #F6F8F8;
 }
 
 
@@ -339,9 +351,9 @@
 @media (max-width: 991px) {
 
     .enterprise-layout {
-        width: calc(100% - 32px);
+        width: 100%;
 
-        margin: 16px auto;
+        margin: 0;
 
         flex-direction: column;
     }
@@ -366,9 +378,9 @@
 @media (max-width: 576px) {
 
     .enterprise-layout {
-        width: calc(100% - 20px);
+        width: 100%;
 
-        margin: 10px auto;
+        margin: 0;
     }
 
 

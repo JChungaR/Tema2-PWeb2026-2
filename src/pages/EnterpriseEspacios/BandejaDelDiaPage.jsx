@@ -259,12 +259,12 @@ function BandejaDelDiaPage({ empty = false }) {
 
           {!empty && (
 
-            <button
-              type="button"
+            <a
+              href="/enterprise/reservas/buscar"
               className="btn-search-reservation"
             >
               Buscar reserva
-            </button>
+            </a>
 
           )}
 

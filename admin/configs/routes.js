@@ -30,8 +30,10 @@ router.get('/estudiantes', students.home);
 router.get('/enterprise/espacios', enterpriseEsp.espacios);
 // para recargarrr
 router.get('/enterprise/bandeja', enterpriseEsp.espacios);
-router.get(  '/enterprise/bandeja/sin-reservas',enterpriseEsp.espacios);
+router.get('/enterprise/bandeja/sin-reservas',enterpriseEsp.espacios);
+router.get('/enterprise/bandeja/registro',enterpriseEsp.espacios);
 router.get('/enterprise/bloqueos', enterpriseEsp.espacios);
+router.get('/enterprise/reservas/buscar', enterpriseEsp.espacios)
 router.get('/enterprise/incidencias', enterpriseEsp.espacios);
 router.get('/enterprise/', enterpriseEsp.espacios);
 router.get('/enterprise/espacios/nuevo', enterpriseEsp.espacios);

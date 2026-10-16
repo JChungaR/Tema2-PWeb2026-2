@@ -104,15 +104,12 @@ function ReservationRow({
       <div className="operation-actions">
 
 
-        <button
-          type="button"
+        <a
+          href="/enterprise/bandeja/registro"
           className="operation-btn btn-arrival"
-          onClick={() =>
-            onRegisterArrival(reservation.id)
-          }
         >
           Registrar llegada
-        </button>
+        </a>
 
 
         <button

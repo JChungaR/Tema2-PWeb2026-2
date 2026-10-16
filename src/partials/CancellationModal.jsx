@@ -17,23 +17,38 @@ function CancellationModal({
     return null;
   }
 
+  const reservationCode =
+    reservation.reservationCode ||
+    reservation.code ||
+    '';
+
+  const spaceName =
+    reservation.space?.name ||
+    'Espacio reservado';
+
 
   return (
 
     <div className="cancel-modal-overlay">
 
+
       <div className="cancel-modal">
 
 
-        {/* =====================
+        {/* =========================
             CABECERA
-            ===================== */}
+            ========================= */}
 
         <div className="cancel-modal-header">
 
           <h2>
-            Cancelar la reserva {reservation.code}
+            Cancelar la reserva
+            {reservationCode
+              ? ` ${reservationCode}`
+              : ''
+            }
           </h2>
+
 
           <button
             type="button"
@@ -47,11 +62,13 @@ function CancellationModal({
         </div>
 
 
-        {/* Resumen */}
+        {/* =========================
+            RESUMEN
+            ========================= */}
 
-        <div className="cancel-reservation-summary">
+        <div className="cancel-modal-summary">
 
-          {reservation.space.name}
+          {spaceName}
           {' · '}
           {date}
           {' · '}
@@ -64,18 +81,19 @@ function CancellationModal({
         </div>
 
 
-        {/* =====================
+        {/* =========================
             MOTIVO
-            ===================== */}
+            ========================= */}
 
-        <div className="cancel-form-group">
+        <div className="cancel-modal-field">
 
-          <label htmlFor="cancelReason">
+          <label htmlFor="cancel-reason">
             MOTIVO (OBLIGATORIO)
           </label>
 
+
           <select
-            id="cancelReason"
+            id="cancel-reason"
             value={reason}
             onChange={(event) =>
               onReasonChange(event.target.value)
@@ -109,28 +127,27 @@ function CancellationModal({
           </select>
 
 
-          <p className="cancel-help-text">
-            Opciones: mantenimiento correctivo ·
-            corte de energía · uso académico prioritario ·
-            incidencia reportada · otro.
+          <p className="cancel-modal-help">
+            Opciones: mantenimiento correctivo · corte de energía ·
+            uso académico prioritario · incidencia reportada · otro.
           </p>
 
         </div>
 
 
-        {/* =====================
+        {/* =========================
             DETALLE
-            ===================== */}
+            ========================= */}
 
-        <div className="cancel-form-group">
+        <div className="cancel-modal-field">
 
-          <label htmlFor="cancelDetail">
+          <label htmlFor="cancel-detail">
             DETALLE
           </label>
 
+
           <textarea
-            id="cancelDetail"
-            rows="3"
+            id="cancel-detail"
             value={detail}
             onChange={(event) =>
               onDetailChange(event.target.value)
@@ -141,18 +158,19 @@ function CancellationModal({
         </div>
 
 
-        {/* =====================
+        {/* =========================
             AVISO
-            ===================== */}
+            ========================= */}
 
-        <div className="cancel-warning">
+        <div className="cancel-modal-warning">
 
           <strong>
             El motivo será visible para la estudiante
           </strong>
 
-          {' '}en su detalle de reserva y en el correo
-          de aviso.
+          {' '}
+
+          en su detalle de reserva y en el correo de aviso.
 
           <br />
 
@@ -161,15 +179,15 @@ function CancellationModal({
         </div>
 
 
-        {/* =====================
-            FOOTER
-            ===================== */}
+        {/* =========================
+            ACCIONES
+            ========================= */}
 
-        <div className="cancel-modal-footer">
+        <div className="cancel-modal-actions">
 
           <button
             type="button"
-            className="cancel-back-button"
+            className="cancel-modal-back"
             onClick={onClose}
           >
             Volver
@@ -178,9 +196,9 @@ function CancellationModal({
 
           <button
             type="button"
-            className="cancel-confirm-button"
+            className="cancel-modal-confirm"
             onClick={onConfirm}
-            disabled={reason.trim() === ''}
+            disabled={!reason}
           >
             Cancelar la reserva
           </button>
@@ -191,6 +209,7 @@ function CancellationModal({
       </div>
 
     </div>
+
   );
 }
 
