@@ -1,0 +1,269 @@
+/* Estructura general */
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    overflow-x: hidden;
+}
+
+.pagina-ayuda {
+    flex: 1;
+    background-color: #f6f8f8;
+    color: #1b2927;
+    font-family: Inter, sans-serif;
+}
+
+.contenedor-ayuda {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+/* Encabezado */
+.encabezado-ayuda {
+    padding: 55px 0 42px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e1e7e5;
+}
+
+.etiqueta-ayuda {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    color: #136f63;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.encabezado-ayuda h1 {
+    margin: 0 0 14px;
+    color: #1b2927;
+    font-family: Manrope, sans-serif;
+    font-size: clamp(30px, 4vw, 42px);
+    font-weight: 800;
+}
+
+.encabezado-ayuda p {
+    max-width: 650px;
+    margin: 0;
+    color: #6c7a78;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* Contenido */
+.contenido-ayuda {
+    padding: 35px 0 55px;
+}
+
+/* Tarjeta de contacto */
+.tarjeta-contacto {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 25px;
+    border: 1px solid #dce7e4;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+.icono-contacto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    background-color: #e5f2ef;
+    color: #136f63;
+    font-size: 21px;
+}
+
+.texto-contacto h2 {
+    margin: 0 0 9px;
+    font-family: Manrope, sans-serif;
+    font-size: 19px;
+    font-weight: 800;
+}
+
+.texto-contacto p {
+    margin: 0;
+    color: #6c7a78;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.texto-contacto .contacto-pendiente {
+    margin-top: 10px;
+    color: #136f63;
+    font-weight: 600;
+}
+
+/* Encabezado de preguntas */
+.titulo-faq {
+    margin: 38px 0 18px;
+}
+
+.titulo-faq h2 {
+    margin: 0 0 7px;
+    font-family: Manrope, sans-serif;
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.titulo-faq p {
+    margin: 0;
+    color: #6c7a78;
+    font-size: 13px;
+}
+
+/* Lista de preguntas */
+.lista-faq {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.pregunta-faq {
+    overflow: hidden;
+    border: 1px solid #e0e6e4;
+    border-radius: 7px;
+    background-color: #ffffff;
+}
+
+.pregunta-faq summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 19px 22px;
+    color: #263532;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+}
+
+.pregunta-faq summary::-webkit-details-marker {
+    display: none;
+}
+
+.pregunta-faq summary::marker {
+    content: "";
+}
+
+.pregunta-faq summary i {
+    flex-shrink: 0;
+    color: #136f63;
+    font-size: 12px;
+    transition: transform 0.2s ease;
+}
+
+.pregunta-faq[open] summary {
+    color: #136f63;
+    border-bottom: 1px solid #edf0ef;
+}
+
+.pregunta-faq[open] summary i {
+    transform: rotate(180deg);
+}
+
+.respuesta-faq {
+    padding: 17px 22px 20px;
+    color: #6c7a78;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* Tarjeta de reglas */
+.ayuda-reglas {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    margin-top: 30px;
+    padding: 22px;
+    border: 1px solid #dce7e4;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+.ayuda-reglas-icono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+    background-color: #e5f2ef;
+    color: #136f63;
+    font-size: 19px;
+}
+
+.ayuda-reglas-texto {
+    flex: 1;
+}
+
+.ayuda-reglas-texto h3 {
+    margin: 0 0 6px;
+    font-family: Manrope, sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.ayuda-reglas-texto p {
+    margin: 0;
+    color: #6c7a78;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+/* Botón */
+.btn-reglas {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    flex-shrink: 0;
+    padding: 10px 15px;
+    border: 1px solid #136f63;
+    border-radius: 4px;
+    background-color: #136f63;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.btn-reglas:hover {
+    background-color: #0e5b52;
+    border-color: #0e5b52;
+    color: #ffffff;
+}
+
+.btn-signIn {
+    width: 130px;
+    height: 40px;
+    border-radius: 4px;
+    border: 2px solid rgba(19, 111, 99);
+    background: rgb(255, 255, 255);
+    padding: 5px;
+    color: rgba(19, 111, 99);
+}
+
+.btn-signUp {
+    width: 130px;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid rgba(19, 111, 99);
+    background: rgba(19, 111, 99);
+    padding: 5px;
+    color:rgb(255, 255, 255);
+}

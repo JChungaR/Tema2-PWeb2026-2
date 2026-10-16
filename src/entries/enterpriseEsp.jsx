@@ -7,7 +7,7 @@ import {
   Route
 } from 'react-router-dom'
 
-import Cabecera from '../partials/Navbar'
+import Cabecera from '../partials/NavbarEnterprise'
 import Sidebar from '../partials/Sidebar'
 import Footer from '../partials/FooterEnterpriseEsp'
 

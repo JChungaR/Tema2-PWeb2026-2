@@ -11,8 +11,10 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 //Componentes parciales
 import Navbar from '../partials/Navbar.jsx';
 
+
 // Páginas del sistema (CRUDs)
-import ConfirmacionReserva from '../pages/reservas/ConfirmacionReserva.jsx';
+import ConfirmacionReserva from '../pages/Estudiante/ConfirmacionReserva.jsx';
+import MiCuentaPage from '../pages/Estudiante/MiCuentaPage.jsx';
 
 // Layout Principal (Navbar + Footer)
 function EstudianteLayout() {
@@ -32,8 +34,10 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route index element={<MiCuentaPage />} />
         <Route path="/estudiante" element={<EstudianteLayout />}>
         <Route path="confirmacion-reserva" element={<ConfirmacionReserva />} />
+        <Route path="mi-cuenta" element={<MiCuentaPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

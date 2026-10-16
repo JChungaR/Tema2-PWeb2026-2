@@ -9,7 +9,7 @@ export function home(req, res) {
 }
 
 export function about(req, res) {
-  return res.render('website/about', {
+  return res.render('visit/reglamento', {
     title: 'Acerca de',
     currentPage: 'about',
     description:
@@ -19,7 +19,7 @@ export function about(req, res) {
 
 
 export function contact(req, res) {
-  return res.render('website/contact', {
+  return res.render('visit/ayuda', {
     title: 'Acerca de',
     currentPage: 'contact',
     description:
@@ -32,6 +32,26 @@ export function spaces(req, res) {
     title: 'Espacios',
     currentPage: 'spaces',
     css: '/assets/css/spaces.css',
+    description:
+      'Esta es una aplicación de ejemplo creada con Node.js, Express y EJS.'
+  });
+}
+
+export function reglas(req, res) {
+  return res.render('visit/reglas-uso', {
+    title: 'Reglas',
+    currentPage: 'reglas',
+    css: '/assets/css/reglas-uso.css',
+    description:
+      'Esta es una aplicación de ejemplo creada con Node.js, Express y EJS.'
+  });
+}
+
+export function ayuda(req, res) {
+  return res.render('visit/ayuda', {
+    title: 'Ayuda',
+    currentPage: 'ayuda',
+    css: '/assets/css/ayuda.css',
     description:
       'Esta es una aplicación de ejemplo creada con Node.js, Express y EJS.'
   });
@@ -87,8 +107,46 @@ export function recuperar_contraseña(req, res) {
 
 
 export async function ingresar(req, res) {
+  const {correo, password} = req.body;
+  const users = [
+    {correo: 'student@ulima.edu.pe', password: '123', role: 'estudiante'},
+    {correo: 'staff@ulima.edu.pe', password: '123', role: 'encargado'}
+
+  ]
+
+  let usuarioEncontrado = null;
+
+  for(let i = 0; i < users.length; i++){
+    if(users[i].correo == correo && users[i].password == password){
+      usuarioEncontrado = users[i];
+    }
+  }
+
+  if(usuarioEncontrado != null){
+    req.session.correo = usuarioEncontrado.correo;
+    req.session.role = usuarioEncontrado.role;
+    req.session.password = usuarioEncontrado.password;
+
+    return req.session.save(() => {
+      if(req.session.role == 'encargado'){
+        res.redirect('/enterprise/');
+      }
+      else if(req.session.role == 'estudiante'){
+        res.redirect('/estudiante');
+      }
+    });
+
+  }else{
+    return res.render('visit/sign-in',{
+      title: 'Iniciar Sesión', 
+      currentPage: 'sign-in',
+      css: '/assets/css/sign-in.css',
+      description:
+        'Esta es una aplicación de ejemplo creada con Node.js, Express y EJS.'
+    })
+
+  }
   
-  res.redirect('/estudiante');
   
 }
 

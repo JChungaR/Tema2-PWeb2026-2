@@ -70,7 +70,7 @@ export function requireAuth(req, res, next) {
   const isApiRequest = req.path.startsWith('/api/');
   
   // Verificar si el usuario tiene sesión activa
-  const isAuthenticated = req.session && req.session.user && req.session.user.id;
+  const isAuthenticated = req.session && req.session.correo && req.session.role && req.session.password;
   if (isAuthenticated) {
     // Si está autenticado, continuar
     return next();
@@ -97,7 +97,8 @@ export function requireAuth(req, res, next) {
   return res.status(401).render('401', {
     title: 'Acceso no autorizado',
     message: 'Debes iniciar sesión para acceder a esta página.',
-    statusCode: 401
+    statusCode: 401,
+    clase: 'hidden'
   });
 }
 
@@ -122,6 +123,83 @@ export function redirectIfAuthenticated(req, res, next) {
   if (isAuthenticated && isAuthRoute) {
     // Redirigir al home si ya está logueado y quiere acceder a rutas de auth
     return res.redirect('/');
+  }
+  
+  // Si no está autenticado o no es una ruta de auth, continuar
+  next();
+}
+
+export function redirectIfLogin(req, res, next) {
+  // Verificar si el usuario tiene sesión activa
+  const isAuthenticated = req.session && req.session.correo && req.session.role && req.session.password;
+  
+  // Si está autenticado Y está intentando acceder a rutas de autenticación
+  const isAuthRoute = [
+    '/sign-in',
+    '/sign-up',
+    '/',
+    '/reglamento',
+    '/mesa-de-ayuda',
+    '/spaces',
+    '/recover-password',
+    '/sign-up',
+    '/sign-up/student',
+    '/sign-up/staff',
+    '/cuenta-creada',
+  ].some(route => req.path === route);
+  
+  if (isAuthenticated && isAuthRoute) {
+    // Redirigir al home si ya está logueado y quiere acceder a rutas de auth
+    if(req.session.role == 'estudiante'){
+      return res.redirect('/estudiante');
+    }
+    else if(req.session.role == 'encargado'){
+      return res.redirect('/enterprise/');
+    }
+  }
+  
+  // Si no está autenticado o no es una ruta de auth, continuar
+  next();
+}
+
+function rutaInicioPorRol(role) {
+  if (role === 'estudiante') return '/estudiante';
+  if (role === 'encargado') return '/enterprise/';
+  return '/'; // sin sesión
+}
+
+export function soloRolEstudiante(req, res, next) {
+  // Verificar si el usuario tiene sesión activa
+  const role = req.session.role;
+  
+  if (role != 'estudiante') {
+      return res.status(401).render('401', {
+        title: 'Acceso no autorizado',
+        message: 'Debes tener el rol de estudiante',
+        statusCode: 401,
+        rutaInicio: rutaInicioPorRol(role),
+        
+        
+    });
+  }
+  
+  // Si no está autenticado o no es una ruta de auth, continuar
+  next();
+}
+
+export function soloRolEncargado(req, res, next) {
+  // Verificar si el usuario tiene sesión activa
+  const role = req.session.role;
+  
+  if (role != 'encargado') {
+      return res.status(401).render('401', {
+        title: 'Acceso no autorizado',
+        message: 'Debes tener el rol de encargado',
+        statusCode: 401,
+        rutaInicio: rutaInicioPorRol(role),
+        
+        
+    });
   }
   
   // Si no está autenticado o no es una ruta de auth, continuar

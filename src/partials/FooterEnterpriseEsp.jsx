@@ -10,10 +10,14 @@ export default function FooterEnterpriseEsp() {
       </div>
 
       <div className="enterprise-footer-right">
-        <span>Reglamento de uso</span>
-        <span>reservas@ulima.edu.pe</span>
+        
+        <a className='links' href="/manual">Manual de operación</a>
+        <a className='links' href="/soporte">soporte.reservas@ulima.edu.pe</a>
       </div>
 
     </footer>
+
+    
+
   )
 }

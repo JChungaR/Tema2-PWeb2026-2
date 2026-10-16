@@ -1,3 +1,4 @@
+
 // src/partials/Navbar.jsx
 import React from 'react';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // Activa Dropdown y Collapse de Bootstrap
@@ -21,7 +22,7 @@ export default function Navbar({ user = { name: "Pepe Valdivia", role: "Estudian
       <nav className="navbar navbar-expand-lg navbar-custom py-3">
         <div className="container">
           {/* Logo institucional */}
-          <a className="navbar-brand fw-bold fs-4 me-4 d-flex align-items-center" href="/">
+          <a className="navbar-brand fw-bold fs-4 me-4 d-flex align-items-center" href="/estudiantes/espacios">
             <span className="brand-verde">Reserva</span>
             <span className="brand-tinta">UL</span>
           </a>
@@ -43,29 +44,29 @@ export default function Navbar({ user = { name: "Pepe Valdivia", role: "Estudian
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 gap-1 gap-lg-2">
               <li className="nav-item">
                 <a
-                    className={`nav-link nav-link-custom ${activeLink === '/estudiantes/espacios' ? 'active' : ''}`}
-                    href="/estudiantes/espacios">
+                    className={`nav-link nav-link-custom ${activeLink === '/estudiante/espacios' ? 'active' : ''}`}
+                    href="/estudiante/espacios">
                   Buscar espacios
                 </a>
               </li>
               <li className="nav-item">
                 <a
-                    className={`nav-link nav-link-custom ${activeLink === '/estudiantes/reservas' ? 'active' : ''}`}
-                    href="/estudiantes/reservas">
+                    className={`nav-link nav-link-custom ${activeLink === '/estudiante/reservas' ? 'active' : ''}`}
+                    href="/estudiante/reservas">
                   Mis reservas
                 </a>
               </li>
               <li className="nav-item">
                 <a
-                    className={`nav-link nav-link-custom ${activeLink === '/estudiantes/incidencias' ? 'active' : ''}`}
-                    href="/estudiantes/incidencias">
+                    className={`nav-link nav-link-custom ${activeLink === '/estudiante/incidencias' ? 'active' : ''}`}
+                    href="/estudiante/incidencias">
                   Mis incidencias
                 </a>
               </li>
               <li className="nav-item">
                 <a
-                    className={`nav-link nav-link-custom ${activeLink === '/estudiantes/cuenta' ? 'active' : ''}`}
-                    href="/estudiantes/cuenta">
+                    className={`nav-link nav-link-custom ${activeLink === '/estudiante' ? 'active' : ''}`}
+                    href="/estudiante/mi-cuenta">
                   Mi cuenta
                 </a>
               </li>
@@ -121,7 +122,9 @@ export default function Navbar({ user = { name: "Pepe Valdivia", role: "Estudian
           </div>
 
         </div>
-        
+
+      
+
     </nav>
   )
 }

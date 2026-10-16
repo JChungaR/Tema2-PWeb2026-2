@@ -1,0 +1,320 @@
+@import "../PlantillaCSS.css";
+
+/* src/pages/Estudiante/MiCuentaPage.css */
+
+/* =========================================
+   MI CUENTA (ESTUDIANTE)
+========================================= */
+
+.cuenta-page {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 24px 40px;
+  box-sizing: border-box;
+  color: var(--c_tinta, #152322);
+  font-family: var(--fuente_cuerpo, Inter), sans-serif;
+}
+
+.cuenta-page *,
+.cuenta-page *::before,
+.cuenta-page *::after {
+  box-sizing: border-box;
+}
+
+.cuenta-titulo {
+  margin: 0 0 18px;
+  font-family: var(--fuente_titulos, Manrope), sans-serif;
+  font-size: 29px;
+  line-height: 1.25;
+  font-weight: 800;
+  color: var(--c_tinta, #152322);
+}
+
+/* =========================================
+   LAYOUT: DOS COLUMNAS
+========================================= */
+
+.cuenta-contenido {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.cuenta-columna-lateral {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+
+/* =========================================
+   TARJETAS
+========================================= */
+
+.cuenta-card {
+  min-width: 0;
+  padding: 16px 16px 18px;
+  border: 1px solid var(--c_borde, #DEE5E4);
+  border-radius: 7px;
+  background: var(--c_superficie, #FFFFFF);
+}
+
+.cuenta-card h2 {
+  margin: 0 0 14px;
+  font-family: var(--fuente_titulos, Manrope), sans-serif;
+  font-size: 20px;
+  line-height: 1.3;
+  font-weight: 700;
+  color: var(--c_verde_institucional, #136F63);
+}
+
+/* =========================================
+   MENSAJES
+========================================= */
+
+.cuenta-mensaje {
+  margin-bottom: 12px;
+  padding: 9px 12px;
+  border: 1px solid;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.cuenta-mensaje-error {
+  color: #B42318;
+  background: #FDECEC;
+  border-color: #D92D20;
+}
+
+.cuenta-mensaje-exito {
+  color: var(--c_verde_oscuro, #0D5249);
+  background: var(--c_verde_claro, #E2F1EE);
+  border-color: var(--c_verde_institucional, #136F63);
+}
+
+/* =========================================
+   CAMPOS
+========================================= */
+
+.cuenta-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 14px;
+}
+
+.cuenta-campo {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  margin-bottom: 12px;
+}
+
+.cuenta-grid-2 .cuenta-campo {
+  margin-bottom: 0;
+}
+
+.cuenta-campo label {
+  margin-bottom: 5px;
+  color: var(--c_texto_secundario, #6A7A78);
+  font-size: 11px;
+  line-height: 1.4;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.cuenta-campo input,
+.cuenta-campo select {
+  width: 100%;
+  min-width: 0;
+  min-height: 42px;
+  padding: 9px 12px;
+  border: 1px solid var(--c_borde, #DEE5E4);
+  border-radius: 4px;
+  outline: none;
+  background: #FFFFFF;
+  color: var(--c_tinta, #152322);
+  font: inherit;
+  font-size: 14px;
+}
+
+.cuenta-campo input:focus,
+.cuenta-campo select:focus {
+  border-color: var(--c_verde_institucional, #136F63);
+  box-shadow: 0 0 0 3px rgba(19, 111, 99, 0.12);
+}
+
+.cuenta-campo input[readonly] {
+  background: #F1F5F4;
+  color: var(--c_texto_secundario, #6A7A78);
+  cursor: not-allowed;
+}
+
+.cuenta-campo input[readonly]:focus {
+  border-color: var(--c_borde, #DEE5E4);
+  box-shadow: none;
+}
+
+.cuenta-campo .campo-error {
+  border: 2px solid #D92D20;
+}
+
+.cuenta-ayuda {
+  margin-top: 5px;
+  color: var(--c_texto_secundario, #6A7A78);
+  font-size: 11px;
+}
+
+.cuenta-error {
+  margin-top: 5px;
+  color: #D92D20;
+  font-size: 12px;
+}
+
+/* =========================================
+   BOTONES
+========================================= */
+
+.cuenta-acciones {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.cuenta-page button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.cuenta-btn-texto,
+.cuenta-btn-principal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 9px 20px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 700;
+  transition: background-color 0.15s ease;
+}
+
+.cuenta-btn-texto {
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--c_verde_institucional, #136F63);
+}
+
+.cuenta-btn-texto:hover {
+  background: var(--c_verde_claro, #E2F1EE);
+}
+
+.cuenta-btn-principal {
+  border: 1px solid var(--c_verde_institucional, #136F63);
+  background: var(--c_verde_institucional, #136F63);
+  color: #FFFFFF;
+}
+
+.cuenta-btn-principal:hover {
+  border-color: var(--c_verde_oscuro, #0D5249);
+  background: var(--c_verde_oscuro, #0D5249);
+}
+
+.cuenta-btn-ancho {
+  width: 100%;
+  margin-top: 4px;
+}
+
+.cuenta-btn-texto:focus-visible,
+.cuenta-btn-principal:focus-visible {
+  outline: 3px solid rgba(19, 111, 99, 0.35);
+  outline-offset: 2px;
+}
+
+/* =========================================
+   USO DE LA SEMANA
+========================================= */
+
+.cuenta-uso {
+  padding: 14px 16px;
+}
+
+.cuenta-uso p {
+  margin: 0;
+}
+
+.cuenta-uso-etiqueta {
+  margin-bottom: 6px !important;
+  color: var(--c_texto_secundario, #6A7A78);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.cuenta-uso-valor {
+  margin-bottom: 8px !important;
+  font-family: var(--fuente_titulos, Manrope), sans-serif;
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--c_tinta, #152322);
+}
+
+.cuenta-barra {
+  width: 100%;
+  height: 6px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--c_verde_claro, #E2F1EE);
+}
+
+.cuenta-barra-relleno {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--c_verde_institucional, #136F63);
+  transition: width 0.3s ease;
+}
+
+.cuenta-uso-nota {
+  margin-top: 8px !important;
+  color: var(--c_texto_secundario, #6A7A78);
+  font-size: 12px;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+  .cuenta-contenido {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .cuenta-page {
+    padding: 16px 14px 28px;
+  }
+
+  .cuenta-titulo {
+    font-size: 25px;
+  }
+
+  .cuenta-grid-2 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cuenta-grid-2 .cuenta-campo {
+    margin-bottom: 4px;
+  }
+
+  .cuenta-acciones {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+}
