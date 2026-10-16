@@ -44,21 +44,9 @@ router.get('/enterprise/espacios/nuevo', soloRolEncargado, enterpriseEsp.espacio
 router.get('/enterprise/espacios/equipamiento/:codigo',soloRolEncargado, enterpriseEsp.espacios);
 router.get('/enterprise/espacios/horario/:codigo', soloRolEncargado, enterpriseEsp.espacios);
 router.get('/enterprise/espacios/estado/:codigo', soloRolEncargado, enterpriseEsp.espacios);
+router.get('/enterprise/bandeja/sin-reservas', soloRolEncargado, enterpriseEsp.espacios);
+router.get('/enterprise/bandeja/registro', soloRolEncargado, enterpriseEsp.espacios);
+router.get('/enterprise/reservas/buscar',soloRolEncargado, enterpriseEsp.espacios)
 
-
-//
-router.get('/enterprise/espacios', enterpriseEsp.espacios);
-// para recargarrr
-router.get('/enterprise/bandeja', enterpriseEsp.espacios);
-router.get('/enterprise/bandeja/sin-reservas',enterpriseEsp.espacios);
-router.get('/enterprise/bandeja/registro',enterpriseEsp.espacios);
-router.get('/enterprise/bloqueos', enterpriseEsp.espacios);
-router.get('/enterprise/reservas/buscar', enterpriseEsp.espacios)
-router.get('/enterprise/incidencias', enterpriseEsp.espacios);
-router.get('/enterprise/', enterpriseEsp.espacios);
-router.get('/enterprise/espacios/nuevo', enterpriseEsp.espacios);
-router.get('/enterprise/espacios/equipamiento/:codigo', enterpriseEsp.espacios);
-router.get('/enterprise/espacios/horario/:codigo', enterpriseEsp.espacios);
-router.get('/enterprise/espacios/estado/:codigo', enterpriseEsp.espacios);
 
 export default router;
