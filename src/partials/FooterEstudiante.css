@@ -1,0 +1,23 @@
+/* src/partials/FooterEstudiante.css */
+
+.estudiante-footer {
+  background-color: #1a201e;
+  color: #ffffff;
+  padding: 24px 40px;
+  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  width: 100%;
+}
+
+.estudiante-footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  margin-left: 24px;
+}
+
+.estudiante-footer-links a:hover {
+  text-decoration: underline;
+}
