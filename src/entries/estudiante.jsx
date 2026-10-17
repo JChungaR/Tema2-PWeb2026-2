@@ -18,18 +18,21 @@ import ConfirmacionReserva from '../pages/reservas/ConfirmacionReserva.jsx';
 import { MisReservas } from '../pages/reservas/MisReservas.jsx';
 import { DetalleReserva } from '../pages/reservas/DetalleReserva.jsx';
 
-// Layout principal (Navbar + contenido)
-function EstudianteLayout() {
-    return (
-        <div className="flex-grow-1 d-flex flex-column bg-light">
-            <Navbar />
-            <main className="p-4 flex-grow-1">
-                <Outlet />
-            </main>
+import MisIncidenciasPage from '../pages/Estudiante/MisIncidenciasPage.jsx';
+import ReportarIncidenciaPage  from '../pages/Estudiante/ReportarIncidenciaPage.jsx';
 
-            <FooterEstudianteEsp />
-        </div>
-    );
+// Layout Principal (Navbar + Footer)
+function EstudianteLayout() {
+  return (
+      <div className="flex-grow-1 d-flex flex-column bg-light">
+        <Navbar />
+        <main className="p-4 flex-grow-1">
+          {/* El contenido de la ruta activa se renderiza aquí */}
+          <Outlet />
+        </main>
+        <FooterEstudianteEsp/>   
+      </div>
+  );
 }
 
 // Configuración de rutas
@@ -45,6 +48,8 @@ function App() {
                     <Route path="confirmacion" element={<ConfirmacionReserva />} />
                     <Route path="confirmacion-reserva" element={<ConfirmacionReserva />} />
                     <Route path="mi-cuenta" element={<MiCuentaPage />} />
+                    <Route path="mis-incidencias" element={<MisIncidenciasPage />} />
+                    <Route path="reportar-incidencia" element={<ReportarIncidenciaPage />} />   
                 </Route>
 
                 {/* Compatibilidad con la ruta raíz anterior */}

@@ -35,8 +35,9 @@ import NuevoEspacioPage from '../pages/EnterpriseEspacios/NuevoEspacioPage'
 import DetalleEspacioPage from '../pages/EnterpriseEspacios/DetalleEspacioPage'
 import EquipamientoPage from '../pages/EnterpriseEspacios/EquipamientoPage'
 import HorarioPage from '../pages/EnterpriseEspacios/HorarioPage'
-import EstadoPage from '../pages/EnterpriseEspacios/EstadoPage'
+import EstadoPage from '../pages/EnterpriseEspacios/EstadoPage' 
 
+import DetalleIncidenciaPage from '../pages/EnterpriseEspacios/DetalleIncidenciaPage';
 // ========================================
 // LAYOUT DE ENTERPRISE
 // ========================================
@@ -116,6 +117,11 @@ function EnterpriseLayout() {
             <Route
               path="incidencias"
               element={<IncidenciasPage />}
+            />
+
+            <Route
+              path="incidencias/detalle/:codigo"
+              element={<DetalleIncidenciaPage />}
             />
 
           </Routes>
