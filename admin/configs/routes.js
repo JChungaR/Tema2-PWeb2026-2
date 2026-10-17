@@ -32,13 +32,21 @@ router.get('/estudiante', soloRolEstudiante, student.home);
 router.get('/estudiante/mi-cuenta', soloRolEstudiante, student.home);
 router.get('/estudiante/confirmacion-reserva', soloRolEstudiante, student.home)
 
+router.get('/estudiante/mis-incidencias', student.home);
+
+router.get('/estudiante/reportar-incidencia', student.home);
+
 
 //
 router.get('/enterprise/espacios', soloRolEncargado, enterpriseEsp.espacios);
 // para recargarrr
 router.get('/enterprise/bandeja', soloRolEncargado, enterpriseEsp.espacios);
 router.get('/enterprise/bloqueos', soloRolEncargado, enterpriseEsp.espacios);
-router.get('/enterprise/incidencias', soloRolEncargado, enterpriseEsp.espacios);
+
+router.get('/enterprise/incidencias', enterpriseEsp.espacios); 
+
+router.get('/enterprise/incidencias/detalle/:codigo', enterpriseEsp.espacios);
+
 router.get('/enterprise/', soloRolEncargado, enterpriseEsp.espacios);
 router.get('/enterprise/espacios/nuevo', soloRolEncargado, enterpriseEsp.espacios);
 router.get('/enterprise/espacios/equipamiento/:codigo',soloRolEncargado, enterpriseEsp.espacios);

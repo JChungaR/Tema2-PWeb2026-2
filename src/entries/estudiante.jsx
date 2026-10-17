@@ -10,11 +10,14 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 //Componentes parciales
 import Navbar from '../partials/Navbar.jsx';
-
+import FooterEstudiante from '../partials/FooterEstudiante'; 
 
 // Páginas del sistema (CRUDs)
 import ConfirmacionReserva from '../pages/Estudiante/ConfirmacionReserva.jsx';
 import MiCuentaPage from '../pages/Estudiante/MiCuentaPage.jsx';
+
+import MisIncidenciasPage from '../pages/Estudiante/MisIncidenciasPage.jsx';
+import ReportarIncidenciaPage  from '../pages/Estudiante/ReportarIncidenciaPage.jsx';
 
 // Layout Principal (Navbar + Footer)
 function EstudianteLayout() {
@@ -25,6 +28,7 @@ function EstudianteLayout() {
           {/* El contenido de la ruta activa se renderiza aquí */}
           <Outlet />
         </main>
+        <FooterEstudiante />   
       </div>
   );
 }
@@ -36,6 +40,8 @@ function App() {
       <Routes>
         <Route index element={<MiCuentaPage />} />
         <Route path="/estudiante" element={<EstudianteLayout />}>
+        <Route path="mis-incidencias" element={<MisIncidenciasPage />} />
+        <Route path="reportar-incidencia" element={<ReportarIncidenciaPage />} />
         <Route path="confirmacion-reserva" element={<ConfirmacionReserva />} />
         <Route path="mi-cuenta" element={<MiCuentaPage />} />
         </Route>
