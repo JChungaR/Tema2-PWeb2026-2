@@ -21,6 +21,11 @@ router.post('/api/v1/nations', nationApis.createNation);
 router.put('/api/v1/nations/:id', nationApis.updateNation);
 router.delete('/api/v1/nations/:id', nationApis.deleteNation);
 
+//estudiante
 router.get('/estudiante', student.home);
+router.get('/estudiante/misreservas', student.home);
+router.get('/estudiante/confirmacion', student.home);
+router.get('/estudiante/detalle', student.home);
+router.get('/estudiante/detalle/:id', student.home);
 
 export default router;

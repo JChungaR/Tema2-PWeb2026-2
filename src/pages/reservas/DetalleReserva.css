@@ -1,0 +1,127 @@
+/* Tarjetas */
+.detalle-card {
+    background-color: var(--c_superficie);
+    border: 1px solid var(--c_borde) !important;
+    border-radius: 8px;
+}
+
+/* Títulos */
+.section-title {
+    color: var(--c_verde_institucional);
+    font-family: var(--fuente_titulos);
+    font-weight: 700;
+}
+
+/* Botones de acción */
+.btn-outline-verde {
+    background-color: #ffffff;
+    color: var(--c_verde_institucional);
+    border: 1px solid var(--c_verde_institucional);
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.btn-outline-verde:hover {
+    background-color: var(--c_verde_claro);
+    color: var(--c_verde_oscuro);
+}
+
+.btn-outline-cancelar {
+    background-color: #ffffff;
+    color: var(--c_error);
+    border: 1px solid var(--c_error);
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.btn-outline-cancelar:hover {
+    background-color: #fde8e7;
+    color: var(--c_error);
+}
+
+/* Campos de datos */
+.field-label {
+    display: block;
+    font-size: 0.725rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--c_texto_secundario);
+    margin-bottom: 0.25rem;
+}
+
+.field-value {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--c_tinta);
+}
+
+/* Listado de invitados */
+.border-bottom-item {
+    border-bottom: 1px solid var(--c_borde);
+}
+
+.border-bottom-item:last-child {
+    border-bottom: none;
+}
+
+/* Trazabilidad / Timeline */
+.timeline {
+    position: relative;
+    padding-left: 0.5rem;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 1.75rem;
+    padding-bottom: 1.5rem;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0.5rem;
+}
+
+/* Línea vertical del timeline */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 14px;
+    bottom: -4px;
+    width: 2px;
+    background-color: var(--c_borde);
+}
+
+.timeline-item:last-child::before {
+    display: none;
+}
+
+/* Indicadores de estado (Puntos) */
+.timeline-dot {
+    position: absolute;
+    left: 0;
+    top: 3px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-dot.completed {
+    background-color: var(--c_verde_institucional);
+}
+
+.timeline-dot.pending {
+    background-color: #ffffff;
+    border: 2px solid var(--c_borde);
+}
+
+.timeline-subtext {
+    font-size: 0.8rem;
+    margin-top: 0.1rem;
+}
+
+/* Caja de aviso inferior */
+.cancel-notice-box {
+    background-color: #f2f5f5;
+    border-radius: 6px;
+}
