@@ -1,49 +1,34 @@
 // src/pages/reservas/DetalleReserva.jsx
 import React from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import './DetalleReserva.css';
+import { MOCK_DETALLES } from './mockDetalleReservas.js';
 
-export const MOCK_DETALLE_RESERVA = {
-    codigo: 'RSV-2026-0473',
-    estado: 'Confirmada',
-    fechaRegistro: '12/09/2026 a las 20:14',
-    espacio: 'Laboratorio de Cómputo H-304',
-    ubicacion: 'Edificio de Ingeniería, piso 3',
-    fecha: '14/09/2026',
-    bloque: '10:00 – 11:00',
-    motivo: 'Avance del proyecto final de Programación Web',
-    invitadosCount: 3,
-    invitadosCapacidad: 29,
-    invitados: [
-        { nombre: 'Diego Salazar Mendoza', email: 'diego.salazar@ulima.edu.pe' },
-        { nombre: 'Valeria Chávez Ríos', email: 'valeria.chavez@ulima.edu.pe' },
-        { nombre: 'Renzo Paredes Núñez', email: 'renzo.paredes@ulima.edu.pe' }
-    ],
-    trazabilidad: [
-        {
-            titulo: 'Reserva creada',
-            detalle: '12/09/2026 20:14 · Camila Rojas',
-            completado: true
-        },
-        {
-            titulo: 'Invitados notificados',
-            detalle: '12/09/2026 20:15 · Sistema',
-            completado: true
-        },
-        {
-            titulo: 'Estado: confirmada',
-            detalle: '13/09/2026 08:00 · Sistema',
-            completado: true
-        },
-        {
-            titulo: 'Registro de llegada',
-            detalle: 'Pendiente · tolerancia hasta 10:15',
-            completado: false
-        }
-    ],
-    notaCancelacion: 'Puedes cancelar hasta las 08:00 del 14/09/2026 sin acumular inasistencias.'
-};
+export function DetalleReserva() {
+    const { id } = useParams();
+    const navigate = useNavigate();
+    const detalle = MOCK_DETALLES[id];
 
-export function DetalleReserva({ detalle = MOCK_DETALLE_RESERVA, onVolver }) {
+    const handleVolver = () => navigate('/estudiante/mis-reservas');
+
+    if (!detalle) {
+        return (
+            <div className="container py-4">
+                <p className="text-secondary">Reserva no encontrada.</p>
+                <button type="button" className="btn btn-outline-verde" onClick={handleVolver}>
+                    Volver a mis reservas
+                </button>
+            </div>
+        );
+    }
+
+    const getBadgeStyle = (estado) => ({
+        'Confirmada': 'badge-confirmada',
+        'En curso': 'badge-en-curso',
+        'Atendida': 'badge-atendida',
+        'Inasistencia': 'badge-inasistencia',
+    }[estado] || 'bg-secondary text-white');
+
     return (
         <div className="container py-4 detalle-reserva-page">
             {/* Breadcrumb Navigation */}
@@ -53,7 +38,7 @@ export function DetalleReserva({ detalle = MOCK_DETALLE_RESERVA, onVolver }) {
                         <button
                             type="button"
                             className="btn btn-link p-0 text-decoration-none text-secondary"
-                            onClick={onVolver}
+                            onClick={handleVolver}
                         >
                             Mis reservas
                         </button>
@@ -69,7 +54,7 @@ export function DetalleReserva({ detalle = MOCK_DETALLE_RESERVA, onVolver }) {
                 <div>
                     <div className="d-flex align-items-center gap-2 mb-1">
                         <h1 className="h2 fw-bold text-dark mb-0">{detalle.codigo}</h1>
-                        <span className="badge badge-confirmada px-2 py-1 border-0 rounded-1 fw-medium">
+                        <span className={`badge ${getBadgeStyle(detalle.estado)} px-2 py-1 border-0 rounded-1 fw-medium`}>
                             {detalle.estado}
                         </span>
                     </div>
@@ -82,9 +67,11 @@ export function DetalleReserva({ detalle = MOCK_DETALLE_RESERVA, onVolver }) {
                     <button type="button" className="btn btn-outline-verde fw-semibold px-3 py-2">
                         Agregar a mi calendario
                     </button>
-                    <button type="button" className="btn btn-outline-cancelar fw-semibold px-3 py-2">
-                        Cancelar reserva
-                    </button>
+                    {detalle.permitirCancelar && (
+                        <button type="button" className="btn btn-outline-cancelar fw-semibold px-3 py-2">
+                            Cancelar reserva
+                        </button>
+                    )}
                 </div>
             </div>
 

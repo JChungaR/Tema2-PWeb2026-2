@@ -8,7 +8,7 @@
 /* Títulos */
 .section-title {
     color: var(--c_verde_institucional);
-    font-family: var(--fuente_titulos);
+    font-family: var(--fuente_titulos), sans-serif;
     font-weight: 700;
 }
 

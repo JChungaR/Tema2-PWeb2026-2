@@ -1,7 +1,8 @@
 // src/pages/reservas/MisReservas.jsx
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './MisReservas.css';
-import { ModalReservarBloque, ModalCancelarReserva } from './ModalReserva';
+import { ModalReservarBloque, ModalCancelarReserva } from './ModalReserva.jsx';
 
 export const MOCK_RESERVAS = [
     {
@@ -79,6 +80,9 @@ export const MOCK_RESERVAS = [
 ];
 
 export function MisReservas({ reservasLista = MOCK_RESERVAS }) {
+    const navigate = useNavigate();
+    const handleVerDetalle = (id) => navigate(`/estudiante/detalle/${id}`);
+
     const tieneReservas = reservasLista.length > 0;
 
     // Estados de Modales
@@ -109,9 +113,6 @@ export function MisReservas({ reservasLista = MOCK_RESERVAS }) {
             {/* Control para probar los tres estados del Modal de Reservar (Solo para Pruebas/Demo) */}
             <div className="bg-white p-2 mb-3 rounded border d-flex gap-2 align-items-center flex-wrap">
                 <small className="fw-bold text-secondary">Probar Popups:</small>
-                <button type="button" className="btn btn-sm btn-outline-primary" onClick={() => handleAbrirReservaModal('normal')}>
-                    Modal Normal
-                </button>
                 <button type="button" className="btn btn-sm btn-outline-warning" onClick={() => handleAbrirReservaModal('solapamiento')}>
                     Modal Solapamiento
                 </button>
@@ -130,6 +131,7 @@ export function MisReservas({ reservasLista = MOCK_RESERVAS }) {
                 <Reservas
                     reservasLista={reservasLista}
                     onCancelarReserva={handleAbrirCancelarModal}
+                    onVerDetalle={handleVerDetalle}
                 />
             ) : (
                 <ReservasVacio onBuscarEspacio={() => handleAbrirReservaModal('normal')} />
@@ -231,7 +233,7 @@ export function ReservasVacio({ onBuscarEspacio }) {
     );
 }
 
-export function Reservas({ reservasLista = [], onCancelarReserva }) {
+export function Reservas({ reservasLista = [], onCancelarReserva, onVerDetalle }) {
     const proximas = reservasLista.filter(
         (r) => r.estado === 'Confirmada' || r.estado === 'En curso'
     );
@@ -247,7 +249,11 @@ export function Reservas({ reservasLista = [], onCancelarReserva }) {
                     <div className="row g-3">
                         {proximas.map((reserva) => (
                             <div className="col-12 col-md-6" key={reserva.id || reserva.codigo}>
-                                <ReservaCard reserva={reserva} onCancelarReserva={onCancelarReserva} />
+                                <ReservaCard
+                                    reserva={reserva}
+                                    onCancelarReserva={onCancelarReserva}
+                                    onVerDetalle={onVerDetalle}
+                                />
                             </div>
                         ))}
                     </div>
@@ -260,7 +266,11 @@ export function Reservas({ reservasLista = [], onCancelarReserva }) {
                     <div className="row g-3">
                         {historicas.map((reserva) => (
                             <div className="col-12 col-md-6" key={reserva.id || reserva.codigo}>
-                                <ReservaCard reserva={reserva} onCancelarReserva={onCancelarReserva} />
+                                <ReservaCard
+                                    reserva={reserva}
+                                    onCancelarReserva={onCancelarReserva}
+                                    onVerDetalle={onVerDetalle}
+                                />
                             </div>
                         ))}
                     </div>
@@ -270,7 +280,7 @@ export function Reservas({ reservasLista = [], onCancelarReserva }) {
     );
 }
 
-export function ReservaCard({ reserva, onCancelarReserva }) {
+export function ReservaCard({ reserva, onCancelarReserva, onVerDetalle }) {
     const getBadgeStyle = (estado) => {
         switch (estado) {
             case 'Confirmada':
@@ -314,7 +324,7 @@ export function ReservaCard({ reserva, onCancelarReserva }) {
                                 <button
                                     type="button"
                                     className="btn btn-link p-0 text-decoration-none btn-ver-detalle"
-                                    onClick={() => onVerDetalle && onVerDetalle(reserva.codigo)}
+                                    onClick={() => onVerDetalle?.(reserva.id)}
                                 >
                                     Ver detalle
                                 </button>

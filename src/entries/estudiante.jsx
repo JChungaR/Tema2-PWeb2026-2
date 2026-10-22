@@ -36,7 +36,7 @@ function App() {
             <Routes>
                 <Route path="/estudiante" element={<EstudianteLayout />}>
                     <Route index element={<MisReservas />} />
-                    <Route path="misreservas" element={<MisReservas />} />
+                    <Route path="mis-reservas" element={<MisReservas />} />
                     <Route path="detalle" element={<DetalleReserva />} />
                     <Route path="detalle/:id" element={<DetalleReserva />} />
                     <Route path="confirmacion" element={<ConfirmacionReserva />} />
