@@ -130,7 +130,7 @@ function EnterpriseLayout() {
 
       </div>
 
-      <Footer />
+      <Footer/>
     </>
   )
 }

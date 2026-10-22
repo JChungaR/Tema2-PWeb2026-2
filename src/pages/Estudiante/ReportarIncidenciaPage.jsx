@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Incidencias.css'; // Importamos tu CSS único
-import Footer from '../../partials/Footer';
 
 export default function ReportarIncidenciaPage() {
   const navigate = useNavigate();

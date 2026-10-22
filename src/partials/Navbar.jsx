@@ -58,8 +58,8 @@ export default function Navbar({ user = { name: "Pepe Valdivia", role: "Estudian
               </li>
               <li className="nav-item">
                 <a
-                    className={`nav-link nav-link-custom ${activeLink === '/estudiante/incidencias' ? 'active' : ''}`}
-                    href="/estudiante/incidencias">
+                    className={`nav-link nav-link-custom ${activeLink === '/estudiante/mis-incidencias' ? 'active' : ''}`}
+                    href="/estudiante/mis-incidencias">
                   Mis incidencias
                 </a>
               </li>
