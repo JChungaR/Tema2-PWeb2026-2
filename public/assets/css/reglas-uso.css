@@ -1,0 +1,199 @@
+/* Estructura general */
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    overflow-x: hidden;
+}
+
+.pagina-reglas {
+    flex: 1;
+    background-color: #f6f8f8;
+    color: #1b2927;
+    font-family: Inter, sans-serif;
+}
+
+.contenedor-reglas {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+/* Encabezado */
+.encabezado-reglas {
+    padding: 55px 0 42px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e1e7e5;
+}
+
+.etiqueta-seccion {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+    color: #136f63;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.encabezado-reglas h1 {
+    margin: 0 0 14px;
+    color: #1b2927;
+    font-family: Manrope, sans-serif;
+    font-size: clamp(30px, 4vw, 42px);
+    font-weight: 800;
+}
+
+.encabezado-reglas p {
+    max-width: 650px;
+    margin: 0;
+    color: #6c7a78;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* Contenido */
+.contenido-reglas {
+    padding: 35px 0 55px;
+}
+
+/* Aviso */
+.aviso-reglas {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    padding: 17px 20px;
+    margin-bottom: 28px;
+    border: 1px solid #cfe4df;
+    border-radius: 7px;
+    background-color: #edf6f4;
+    color: #136f63;
+}
+
+.aviso-reglas > i {
+    margin-top: 3px;
+    font-size: 18px;
+}
+
+.aviso-reglas p {
+    margin: 0;
+    color: #405e58;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* Rejilla de tarjetas */
+.rejilla-reglas {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+/* Tarjetas */
+.tarjeta-regla {
+    padding: 25px;
+    border: 1px solid #e0e6e4;
+    border-radius: 8px;
+    background-color: #ffffff;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.tarjeta-regla:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(27, 41, 39, 0.07);
+}
+
+.icono-regla {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    margin-bottom: 18px;
+    border-radius: 8px;
+    background-color: #e5f2ef;
+    color: #136f63;
+    font-size: 19px;
+}
+
+.tarjeta-regla h2 {
+    margin: 0 0 16px;
+    color: #1b2927;
+    font-family: Manrope, sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.tarjeta-regla ul {
+    margin: 0;
+    padding-left: 19px;
+    color: #62716f;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.tarjeta-regla li {
+    padding-left: 3px;
+    margin-bottom: 8px;
+}
+
+.tarjeta-regla li:last-child {
+    margin-bottom: 0;
+}
+
+/* Nota final */
+.nota-reglas {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-top: 28px;
+    padding: 22px;
+    border-radius: 7px;
+    background-color: #ffffff;
+}
+
+.nota-reglas > i {
+    margin-top: 3px;
+    color: #136f63;
+    font-size: 22px;
+}
+
+.nota-reglas h3 {
+    margin: 0 0 7px;
+    font-family: Manrope, sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.nota-reglas p {
+    margin: 0;
+    color: #6c7a78;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.btn-signIn {
+    width: 130px;
+    height: 40px;
+    border-radius: 4px;
+    border: 2px solid rgba(19, 111, 99);
+    background: rgb(255, 255, 255);
+    padding: 5px;
+    color: rgba(19, 111, 99);
+}
+
+.btn-signUp {
+    width: 130px;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid rgba(19, 111, 99);
+    background: rgba(19, 111, 99);
+    padding: 5px;
+    color:rgb(255, 255, 255);
+}

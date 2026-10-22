@@ -1,0 +1,118 @@
+
+<% layout("layouts/h1-visit") %>
+
+<main class="recuperar-main">
+
+    <!-- Pasos de recuperación -->
+
+    <div class="recuperar-pasos">
+
+        <span class="paso activo">
+            Paso 1 · Correo
+        </span>
+
+        <span class="paso">
+            Paso 2 · Enlace
+        </span>
+
+        <span class="paso">
+            Paso 3 · Nueva contraseña
+        </span>
+
+    </div>
+
+    <!-- Formulario de recuperación -->
+
+    <section class="recuperar-card">
+
+        <h1>Ingresa tu correo institucional</h1>
+
+        <p class="recuperar-descripcion">
+            Te enviaremos un enlace para crear una nueva contraseña.
+            El enlace vence en 30 minutos.
+        </p>
+
+        <form action="/recover-password" method="POST" id="formCorreo">
+
+            <div class="recuperar-campo">
+
+                <label for="correo" class="form-label">
+                    CORREO INSTITUCIONAL
+                </label>
+
+                <input
+                    type="text"
+                    id="correo"
+                    name="email"
+                    class="form-control"
+                    placeholder="Ingresa tu correo institucional"
+                    
+                >
+                <small class="signUp-error" id="email_error" hidden>
+                    El correo debe terminar en @ulima.edu.pe.
+                </small>
+
+            </div>
+
+            <div class="recuperar-botones">
+
+                <a href="/sign-in" class="recuperar-btn-volver">
+                    Volver al inicio de sesión
+                </a>
+
+                <button type="submit" class="recuperar-btn-enviar">
+                    Enviar enlace
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+    <!-- Información adicional -->
+
+    <div class="recuperar-aviso">
+
+        Si no recibes el correo en 5 minutos, revisa la carpeta de correo
+        no deseado o escribe a reservas@ulima.edu.pe.
+
+    </div>
+
+</main>
+
+<script>
+
+    const form = document.getElementById('formCorreo');
+
+    function mostrarError(id, mostrar) {
+        document.getElementById(id).hidden = !mostrar;
+    }
+
+    form.addEventListener('submit', function (event) {
+        
+        let email = document.getElementById('correo')
+        
+        let valido = true;
+
+        mostrarError('email_error', false);
+
+        email.classList.remove('error');
+
+        // Correo institucional.
+        if (!/^[^\s@]+@ulima\.edu\.pe$/i.test(email.value.trim())) {
+            mostrarError('email_error', true);
+            email.classList.add('error');
+            valido = false;
+        }
+
+        // Si hay errores, quedarse en esta vista.
+        if (!valido) {
+            event.preventDefault();
+        }
+
+    });
+
+
+
+</script>

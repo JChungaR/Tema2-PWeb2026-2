@@ -1,0 +1,513 @@
+/* src/pages/EnterpriseEspacios/BusquedaReservasPage.css */
+
+/* =========================================================
+   5.5 BÚSQUEDA DE RESERVAS
+   ========================================================= */
+
+.search-reservations-page {
+  width: 100%;
+
+  padding: 20px 0 32px;
+
+  color: #152322;
+
+  font-family:
+    Inter,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+}
+
+
+/* =========================================================
+   TÍTULO
+   ========================================================= */
+
+.search-reservations-title {
+  margin: 0 0 18px;
+
+  color: #152322;
+
+  font-size: 24px;
+
+  font-weight: 700;
+
+  line-height: 1.2;
+}
+
+
+/* =========================================================
+   FILTROS
+   ========================================================= */
+
+.search-reservations-filters {
+  display: grid;
+
+  grid-template-columns:
+    minmax(260px, 1fr)
+    190px
+    170px
+    90px;
+
+  gap: 8px;
+
+  align-items: center;
+
+  margin-bottom: 12px;
+}
+
+
+/* =========================================================
+   INPUT
+   ========================================================= */
+
+.search-reservations-input {
+  width: 100%;
+
+  height: 38px;
+
+  padding: 0 11px;
+
+  border: 1px solid #D7DFDE;
+
+  border-radius: 4px;
+
+  background: #FFFFFF;
+
+  color: #152322;
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  outline: none;
+}
+
+
+.search-reservations-input::placeholder {
+  color: #9AA7A5;
+}
+
+
+.search-reservations-input:focus {
+  border-color: #136F63;
+
+  box-shadow:
+    0 0 0 2px rgba(19, 111, 99, 0.08);
+}
+
+
+/* =========================================================
+   SELECTS
+   ========================================================= */
+
+.search-reservations-select {
+  width: 100%;
+
+  height: 38px;
+
+  padding: 0 10px;
+
+  border: 1px solid #D7DFDE;
+
+  border-radius: 4px;
+
+  background: #FFFFFF;
+
+  color: #152322;
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  outline: none;
+
+  cursor: pointer;
+}
+
+
+.search-reservations-select:focus {
+  border-color: #136F63;
+
+  box-shadow:
+    0 0 0 2px rgba(19, 111, 99, 0.08);
+}
+
+
+/* =========================================================
+   BOTÓN BUSCAR
+   ========================================================= */
+
+.search-reservations-button {
+  height: 38px;
+
+  padding: 0 15px;
+
+  border: 1px solid #136F63;
+
+  border-radius: 4px;
+
+  background: #136F63;
+
+  color: #FFFFFF;
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease;
+}
+
+
+.search-reservations-button:hover {
+  background: #0D5249;
+
+  border-color: #0D5249;
+}
+
+
+/* =========================================================
+   CANTIDAD DE RESULTADOS
+   ========================================================= */
+
+.search-reservations-count {
+  margin: 0 0 9px;
+
+  color: #6A7A78;
+
+  font-size: 11px;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   TARJETA DE TABLA
+   ========================================================= */
+
+.search-reservations-card {
+  width: 100%;
+
+  overflow: hidden;
+
+  border: 1px solid #DEE5E4;
+
+  border-radius: 5px;
+
+  background: #FFFFFF;
+}
+
+
+.search-table-responsive {
+  width: 100%;
+
+  overflow-x: auto;
+}
+
+
+/* =========================================================
+   TABLA
+   ========================================================= */
+
+.search-reservations-table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  table-layout: fixed;
+
+  background: #FFFFFF;
+}
+
+
+/* COLUMNAS */
+
+.search-reservations-table th:nth-child(1),
+.search-reservations-table td:nth-child(1) {
+  width: 16%;
+}
+
+
+.search-reservations-table th:nth-child(2),
+.search-reservations-table td:nth-child(2) {
+  width: 23%;
+}
+
+
+.search-reservations-table th:nth-child(3),
+.search-reservations-table td:nth-child(3) {
+  width: 24%;
+}
+
+
+.search-reservations-table th:nth-child(4),
+.search-reservations-table td:nth-child(4) {
+  width: 16%;
+}
+
+
+.search-reservations-table th:nth-child(5),
+.search-reservations-table td:nth-child(5) {
+  width: 13%;
+}
+
+
+.search-reservations-table th:nth-child(6),
+.search-reservations-table td:nth-child(6) {
+  width: 8%;
+}
+
+
+/* =========================================================
+   CABECERA
+   ========================================================= */
+
+.search-reservations-table thead {
+  background: #F6F8F8;
+}
+
+
+.search-reservations-table th {
+  height: 38px;
+
+  padding: 0 12px;
+
+  border-bottom: 1px solid #DEE5E4;
+
+  color: #6A7A78;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.4px;
+
+  text-align: left;
+
+  vertical-align: middle;
+}
+
+
+/* =========================================================
+   FILAS
+   ========================================================= */
+
+.search-reservations-table td {
+  height: 48px;
+
+  padding: 0 12px;
+
+  border-bottom: 1px solid #EDF1F0;
+
+  color: #152322;
+
+  font-size: 11px;
+
+  vertical-align: middle;
+}
+
+
+.search-reservations-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+.search-reservations-table tbody tr:hover {
+  background: #FAFCFB;
+}
+
+
+/* =========================================================
+   CÓDIGO
+   ========================================================= */
+
+.search-code {
+  color: #152322;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   ESTADOS
+   ========================================================= */
+
+.search-status {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 24px;
+
+  padding: 0 8px;
+
+  border-radius: 12px;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+
+/* CONFIRMADA */
+
+.search-status-confirmed {
+  background: #EDF3FA;
+
+  color: #3B6FA8;
+}
+
+
+/* EN CURSO */
+
+.search-status-progress {
+  background: #E2F1EE;
+
+  color: #136F63;
+}
+
+
+/* INASISTENCIA */
+
+.search-status-no-show {
+  background: #FCEDEC;
+
+  color: #B4322B;
+}
+
+
+/* CANCELADA */
+
+.search-status-cancelled {
+  background: #FFF4E4;
+
+  color: #B7791F;
+}
+
+
+/* ATENDIDA */
+
+.search-status-attended {
+  background: #EAF6F0;
+
+  color: #1E7F4D;
+}
+
+
+/* =========================================================
+   DETALLE
+   ========================================================= */
+
+.search-detail-cell {
+  text-align: right;
+}
+
+
+.search-detail-button {
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #136F63;
+
+  font-family: inherit;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  text-decoration: none;
+}
+
+
+.search-detail-button:hover {
+  color: #0D5249;
+
+  text-decoration: underline;
+}
+
+
+/* =========================================================
+   SIN RESULTADOS
+   ========================================================= */
+
+.search-empty {
+  height: 100px !important;
+
+  color: #6A7A78 !important;
+
+  font-size: 12px !important;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+  .search-reservations-filters {
+    grid-template-columns:
+      minmax(220px, 1fr)
+      170px
+      150px
+      85px;
+  }
+
+
+  .search-reservations-table {
+    min-width: 900px;
+  }
+
+}
+
+
+@media (max-width: 750px) {
+
+  .search-reservations-filters {
+    grid-template-columns: 1fr 1fr;
+  }
+
+
+  .search-reservations-input {
+    grid-column: 1 / -1;
+  }
+
+
+  .search-reservations-button {
+    width: 100%;
+  }
+
+}
+
+
+@media (max-width: 500px) {
+
+  .search-reservations-filters {
+    grid-template-columns: 1fr;
+  }
+
+
+  .search-reservations-input {
+    grid-column: auto;
+  }
+
+}

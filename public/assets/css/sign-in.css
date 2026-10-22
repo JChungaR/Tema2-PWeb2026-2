@@ -1,0 +1,153 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color:rgba(246, 248, 248);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 0;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-main {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 0;
+    padding-right: 220px;
+    
+}
+
+.input-signIn{
+    background-color: rgb(255, 255, 255);
+    height: 50px;
+
+}
+
+.login-imagen{
+    width: 800px;
+    height: 100vh;
+    object-fit: cover;
+    display: block;
+}
+
+.login-formulario {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    width: 100vh;
+}
+
+.login-opciones {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.btn-signUp {
+    width: 130px;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid rgba(19, 111, 99);
+    background: rgba(19, 111, 99);
+    padding: 5px;
+    color:rgb(255, 255, 255);
+}
+
+.btn-mostrar {
+    background-color: rgba(255,255,255,0); 
+    color: rgba(19, 111, 99); 
+    font-weight: bolder; 
+    font-family: Inter; 
+    font-size: 14px;
+    border: 0px;
+}
+
+.btn-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    width: 100%;
+    min-height: 50px;
+    padding: 12px;
+
+    background-color: rgb(19, 111, 99);
+    border: 1px solid rgb(19, 111, 99);
+    border-radius: 5px;
+
+    color: white;
+    font-family: Inter, sans-serif;
+    font-weight: 700;
+}
+
+/* Efecto al pasar el cursor */
+.btn-login:hover {
+    background-color: rgb(15, 90, 81);
+    border-color: rgb(15, 90, 81);
+}
+
+/* Botón deshabilitado durante la carga */
+.btn-login:disabled {
+    background-color: rgb(19, 111, 99);
+    border-color: rgb(19, 111, 99);
+    opacity: 1;
+    cursor: not-allowed;
+}
+
+/* Spinner circular */
+.spinner-login:not([hidden]) {
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+    flex-shrink: 0;
+
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    border-top-color: white;
+    border-radius: 50%;
+
+    animation: girar-spinner 0.7s linear infinite;
+}
+
+/* Animación de rotación */
+@keyframes girar-spinner {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Mensaje debajo del botón */
+.login-mensaje {
+    margin-top: 12px;
+    margin-bottom: 0;
+
+    color: rgb(106, 122, 120);
+    font-family: Inter, sans-serif;
+    font-size: 14px;
+}
+
+/* Errores */
+
+
+.signIn-error {
+    display: block;
+    margin-top: 5px;
+    font-family: Inter, sans-serif;
+    font-size: 12px;
+    color: #dc3545;
+}
+
+.error {
+    border: 1px solid #dc3545;
+}
+
+

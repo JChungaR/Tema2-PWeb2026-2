@@ -1,0 +1,598 @@
+/* src/pages/EnterpriseEspacios//RegistroLlegadaPage.css */
+
+/* =========================================================
+   5.3 REGISTRO DE LLEGADA E INASISTENCIA
+   ========================================================= */
+
+.registro-llegada-page {
+  width: 100%;
+  padding: 20px 0 32px;
+
+  color: #152322;
+
+  font-family:
+    Inter,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+}
+
+
+/* =========================================================
+   TÍTULO
+   ========================================================= */
+
+.registro-llegada-title {
+  margin: 0 0 14px;
+
+  color: #152322;
+
+  font-size: 24px;
+
+  font-weight: 700;
+
+  line-height: 1.2;
+}
+
+
+/* =========================================================
+   MENSAJE DE ÉXITO
+   ========================================================= */
+
+.registro-success-message {
+  width: 100%;
+
+  min-height: 44px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  margin-bottom: 14px;
+
+  padding: 0 12px;
+
+  border: 1px solid #1E7F4D;
+
+  border-radius: 3px;
+
+  background: #EAF6F0;
+
+  color: #1E7F4D;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+
+.registro-success-icon {
+  font-size: 14px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   TARJETA PRINCIPAL
+   ========================================================= */
+
+.registro-reservas-card {
+  width: 100%;
+
+  overflow: hidden;
+
+  border: 1px solid #DEE5E4;
+
+  border-radius: 6px;
+
+  background: #FFFFFF;
+}
+
+
+/* =========================================================
+   RESERVA
+   ========================================================= */
+
+.registro-reserva {
+  width: 100%;
+}
+
+
+/* =========================================================
+   CABECERA DE CAMILA
+   ========================================================= */
+
+.registro-reserva-header {
+  min-height: 42px;
+
+  display: grid;
+
+  grid-template-columns:
+    135px
+    minmax(260px, 1fr)
+    125px
+    130px
+    22px;
+
+  align-items: center;
+
+  padding: 0 18px;
+
+  background: #E2F1EE;
+
+  color: #152322;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+
+.registro-bloque {
+  white-space: nowrap;
+}
+
+
+.registro-estudiante {
+  font-weight: 700;
+}
+
+
+.registro-asistentes {
+  text-align: center;
+
+  font-weight: 600;
+}
+
+
+.registro-estado {
+  color: #3B6FA8;
+
+  text-align: center;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+
+.registro-collapse-icon {
+  color: #136F63;
+
+  text-align: right;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   CUERPO EXPANDIDO
+   ========================================================= */
+
+.registro-reserva-body {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    315px;
+
+  min-height: 285px;
+
+  border-bottom: 1px solid #E8EDEC;
+
+  background: #FFFFFF;
+}
+
+
+/* =========================================================
+   INFORMACIÓN DE CAMILA
+   ========================================================= */
+
+.registro-info-section {
+  padding: 20px 18px;
+}
+
+
+.registro-info-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(280px, 1fr)
+    minmax(210px, 0.9fr);
+
+  gap: 60px;
+}
+
+
+.registro-info-column {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 15px;
+}
+
+
+.registro-info-item {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+
+  color: #152322;
+
+  font-size: 12px;
+
+  line-height: 1.35;
+}
+
+
+.registro-label {
+  color: #6A7A78;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.6px;
+}
+
+
+.registro-info-item strong {
+  color: #152322;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   PANEL DERECHO
+   ========================================================= */
+
+.registro-actions-panel {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+  padding: 18px 18px;
+
+  background: #FFFFFF;
+}
+
+
+/* =========================================================
+   TARJETA DE TOLERANCIA
+   ========================================================= */
+
+.registro-tolerance-card {
+  min-height: 82px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding: 10px 12px;
+
+  border: 1px solid #D8A24B;
+
+  border-radius: 4px;
+
+  background: #FFF4E4;
+
+  color: #7A5417;
+}
+
+
+.registro-tolerance-label {
+  margin-bottom: 2px;
+
+  color: #8A611B;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+}
+
+
+.registro-tolerance-time {
+  margin-bottom: 1px;
+
+  color: #7A5417;
+
+  font-size: 17px;
+
+  font-weight: 700;
+
+  line-height: 1.1;
+}
+
+
+.registro-tolerance-description {
+  color: #7A5417;
+
+  font-size: 10px;
+
+  line-height: 1.3;
+}
+
+
+/* =========================================================
+   BOTONES
+   ========================================================= */
+
+.registro-btn {
+  width: 100%;
+
+  min-height: 44px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 0 14px;
+
+  border-radius: 4px;
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+/* Registrar llegada */
+
+.registro-btn-primary {
+  border: 1px solid #136F63;
+
+  background: #136F63;
+
+  color: #FFFFFF;
+}
+
+
+.registro-btn-primary:hover {
+  background: #0D5249;
+}
+
+
+/* Inasistencia deshabilitada */
+
+.registro-btn-disabled {
+  border: 1px solid #E0E6E5;
+
+  background: #F1F4F3;
+
+  color: #A9B3B1;
+
+  cursor: not-allowed;
+}
+
+
+/* Cancelar reserva */
+
+.registro-btn-cancel {
+  border: 1px solid #D94A42;
+
+  background: #FFFFFF;
+
+  color: #C3312A;
+}
+
+
+.registro-btn-cancel:hover {
+  background: #FFF4F3;
+}
+
+
+/* =========================================================
+   SEGUNDA RESERVA - ANDREA
+   ========================================================= */
+
+.registro-reserva-late {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    315px;
+
+  min-height: 190px;
+
+  background: #FBFCFC;
+}
+
+
+.registro-late-info {
+  padding: 20px 18px;
+}
+
+
+.registro-late-title {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: #152322;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+
+.registro-late-meta {
+  margin: 0 0 8px;
+
+  color: #6A7A78;
+
+  font-size: 11px;
+
+  line-height: 1.4;
+}
+
+
+.registro-late-reason {
+  margin: 0;
+
+  color: #6A7A78;
+
+  font-size: 11px;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   PANEL DERECHO - ANDREA
+   ========================================================= */
+
+.registro-actions-panel-late {
+  padding-top: 18px;
+
+  background: #FBFCFC;
+}
+
+
+/* =========================================================
+   TOLERANCIA VENCIDA
+   ========================================================= */
+
+.registro-tolerance-expired {
+  min-height: 68px;
+
+  border-color: #E48B86;
+
+  background: #FCEDEC;
+
+  color: #B4322B;
+}
+
+
+.registro-tolerance-expired
+.registro-tolerance-label {
+  color: #B4322B;
+}
+
+
+.registro-tolerance-expired
+.registro-tolerance-time {
+  color: #B4322B;
+
+  font-size: 17px;
+}
+
+
+/* =========================================================
+   LLEGADA TARDÍA
+   ========================================================= */
+
+.registro-btn-late {
+  border: 1px solid #136F63;
+
+  background: #FFFFFF;
+
+  color: #136F63;
+}
+
+
+.registro-btn-late:hover {
+  background: #E2F1EE;
+}
+
+
+/* =========================================================
+   MARCAR INASISTENCIA
+   ========================================================= */
+
+.registro-btn-no-show {
+  border: 1px solid #B4322B;
+
+  background: #B4322B;
+
+  color: #FFFFFF;
+}
+
+
+.registro-btn-no-show:hover {
+  background: #922721;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+  .registro-reserva-body,
+  .registro-reserva-late {
+    grid-template-columns: 1fr;
+  }
+
+
+  .registro-actions-panel {
+    border-top: 1px solid #DEE5E4;
+  }
+
+
+  .registro-reserva-header {
+    grid-template-columns:
+      110px
+      minmax(180px, 1fr)
+      100px
+      100px
+      20px;
+  }
+
+
+  .registro-info-grid {
+    gap: 30px;
+  }
+}
+
+
+@media (max-width: 700px) {
+
+  .registro-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .registro-reserva-header {
+    grid-template-columns: 1fr;
+
+    gap: 5px;
+
+    padding-top: 10px;
+
+    padding-bottom: 10px;
+  }
+
+
+  .registro-asistentes,
+  .registro-estado {
+    text-align: left;
+  }
+
+
+  .registro-collapse-icon {
+    display: none;
+  }
+}

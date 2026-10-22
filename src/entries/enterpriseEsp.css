@@ -1,0 +1,438 @@
+/* =========================================================
+   ENTERPRISE ESP - PALETA INSTITUCIONAL
+   ========================================================= */
+
+:root {
+    /* Colores principales */
+    --enterprise-verde: #136F63;
+    --enterprise-verde-oscuro: #0D5249;
+    --enterprise-verde-claro: #E2F1EE;
+
+    /* Texto */
+    --enterprise-tinta: #152322;
+    --enterprise-texto-secundario: #6A7A78;
+
+    /* Fondos */
+    --enterprise-fondo: #F6F8F8;
+    --enterprise-superficie: #FFFFFF;
+
+    /* Bordes */
+    --enterprise-borde: #DEE5E4;
+
+    /* Estados */
+    --enterprise-exito: #1E7F4D;
+    --enterprise-error: #B4322B;
+    --enterprise-advertencia: #B7791F;
+    --enterprise-info: #3B6FA8;
+}
+
+
+html,
+body,
+#root {
+    width: 100%;
+    min-height: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    background: var(--enterprise-fondo);
+}
+
+body {
+    min-height: 100vh;
+}
+
+
+
+/* =========================================================
+   CONFIGURACIÓN GENERAL
+   ========================================================= */
+
+.enterprise-page {
+    background-color: var(--enterprise-fondo);
+    color: var(--enterprise-tinta);
+
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   ESTRUCTURA PRINCIPAL
+   ========================================================= */
+
+.enterprise-layout {
+    display: flex;
+
+
+    width: 100%;
+    min-height: calc(100vh - 64px);
+
+    margin: 0;
+    padding: 0;
+
+    background: #F6F8F8;
+
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.enterprise-sidebar {
+    width: 250px;
+    min-width: 250px;
+
+    background-color: var(--enterprise-superficie);
+
+    border: 1px solid var(--enterprise-borde);
+
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   CONTENIDO PRINCIPAL
+   ========================================================= */
+
+.enterprise-content {
+    flex: 1;
+
+    min-width: 0;
+
+    min-height: calc(100vh - 64px);
+
+    padding: 24px 56px;
+
+    color: var(--enterprise-tinta);
+
+    background: #F6F8F8;
+
+}
+
+
+/* =========================================================
+   TEXTOS
+   ========================================================= */
+
+.enterprise-title {
+    color: var(--enterprise-tinta);
+
+    font-weight: 700;
+}
+
+
+.enterprise-subtitle {
+    color: var(--enterprise-texto-secundario);
+}
+
+
+/* =========================================================
+   SUPERFICIES / CARDS
+   ========================================================= */
+
+.enterprise-card {
+    background-color: var(--enterprise-superficie);
+
+    border: 1px solid var(--enterprise-borde);
+
+    border-radius: 12px;
+}
+
+
+/* =========================================================
+   BOTÓN PRINCIPAL
+   ========================================================= */
+
+.btn-enterprise {
+    background-color: var(--enterprise-verde);
+
+    border-color: var(--enterprise-verde);
+
+    color: #FFFFFF;
+}
+
+
+.btn-enterprise:hover,
+.btn-enterprise:focus {
+    background-color: var(--enterprise-verde-oscuro);
+
+    border-color: var(--enterprise-verde-oscuro);
+
+    color: #FFFFFF;
+}
+
+
+/* =========================================================
+   BOTÓN SECUNDARIO
+   ========================================================= */
+
+.btn-enterprise-secondary {
+    background-color: var(--enterprise-verde-claro);
+
+    border-color: var(--enterprise-verde-claro);
+
+    color: var(--enterprise-verde-oscuro);
+}
+
+
+.btn-enterprise-secondary:hover,
+.btn-enterprise-secondary:focus {
+    background-color: var(--enterprise-verde);
+
+    border-color: var(--enterprise-verde);
+
+    color: #FFFFFF;
+}
+
+
+/* =========================================================
+   INPUTS
+   ========================================================= */
+
+.form-control,
+.form-select {
+    border-color: var(--enterprise-borde);
+
+    color: var(--enterprise-tinta);
+}
+
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--enterprise-verde);
+
+    box-shadow: 0 0 0 0.2rem rgba(19, 111, 99, 0.15);
+}
+
+
+/* =========================================================
+   LABELS
+   ========================================================= */
+
+.form-label {
+    color: var(--enterprise-tinta);
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+.enterprise-link {
+    color: var(--enterprise-verde);
+
+    text-decoration: none;
+}
+
+
+.enterprise-link:hover {
+    color: var(--enterprise-verde-oscuro);
+
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   BADGES
+   ========================================================= */
+
+.badge-enterprise {
+    background-color: var(--enterprise-verde-claro);
+
+    color: var(--enterprise-verde-oscuro);
+}
+
+
+/* =========================================================
+   ESTADOS
+   ========================================================= */
+
+.enterprise-success {
+    color: var(--enterprise-exito);
+}
+
+
+.enterprise-error {
+    color: var(--enterprise-error);
+}
+
+
+.enterprise-warning {
+    color: var(--enterprise-advertencia);
+}
+
+
+.enterprise-info {
+    color: var(--enterprise-info);
+}
+
+
+/* =========================================================
+   ALERTAS
+   ========================================================= */
+
+.alert-enterprise-success {
+    background-color: #E8F5EE;
+
+    border: 1px solid var(--enterprise-exito);
+
+    color: var(--enterprise-exito);
+}
+
+
+.alert-enterprise-error {
+    background-color: #FBEAE8;
+
+    border: 1px solid var(--enterprise-error);
+
+    color: var(--enterprise-error);
+}
+
+
+.alert-enterprise-warning {
+    background-color: #FCF4E5;
+
+    border: 1px solid var(--enterprise-advertencia);
+
+    color: var(--enterprise-advertencia);
+}
+
+
+.alert-enterprise-info {
+    background-color: #EAF1F8;
+
+    border: 1px solid var(--enterprise-info);
+
+    color: var(--enterprise-info);
+}
+
+
+/* =========================================================
+   TABLAS
+   ========================================================= */
+
+.enterprise-table {
+    background-color: var(--enterprise-superficie);
+
+    color: var(--enterprise-tinta);
+}
+
+
+.enterprise-table thead {
+    background-color: var(--enterprise-verde-oscuro);
+
+    color: #FFFFFF;
+}
+
+
+.enterprise-table th,
+.enterprise-table td {
+    border-color: var(--enterprise-borde);
+}
+
+
+.enterprise-table tbody tr:hover {
+    background-color: var(--enterprise-verde-claro);
+}
+
+
+/* =========================================================
+   DIVISORES
+   ========================================================= */
+
+.enterprise-divider {
+    border-color: var(--enterprise-borde);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 991px) {
+
+    .enterprise-layout {
+
+        width: 100%;
+
+        margin: 0;
+
+
+        flex-direction: column;
+    }
+
+
+    .enterprise-sidebar {
+        width: 100%;
+
+        min-width: 0;
+
+        min-height: 120px;
+    }
+
+
+    .enterprise-content {
+        padding: 25px 20px;
+    }
+
+}
+
+
+@media (max-width: 576px) {
+
+    .enterprise-layout {
+
+        width: 100%;
+
+        margin: 0;
+
+    }
+
+
+    .enterprise-content {
+        padding: 20px 15px;
+    }
+
+
+}
+
+/* ========================================
+   NAVBAR ENCARGADO
+   ======================================== */
+
+.enterprise-navbar {
+  min-height: 64px;
+
+  padding-top: 0;
+  padding-bottom: 0;
+
+  background: #ffffff;
+}
+
+.enterprise-navbar-container {
+  width: 100%;
+
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.enterprise-navbar .navbar-brand {
+  margin-right: 34px !important;
+
+  font-size: 20px !important;
+}
+
+.enterprise-navbar .navbar-nav {
+  gap: 18px !important;
+}
+
+.enterprise-navbar .nav-link {
+  font-size: 13px;
+
+  white-space: nowrap;
+}
+

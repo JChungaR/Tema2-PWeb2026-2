@@ -9,7 +9,7 @@ export function home(req, res) {
 }
 
 export function about(req, res) {
-  return res.render('website/about', {
+  return res.render('visit/reglamento', {
     title: 'Acerca de',
     currentPage: 'about',
     description:
@@ -19,7 +19,7 @@ export function about(req, res) {
 
 
 export function contact(req, res) {
-  return res.render('website/contact', {
+  return res.render('visit/ayuda', {
     title: 'Acerca de',
     currentPage: 'contact',
     description:
@@ -27,22 +27,161 @@ export function contact(req, res) {
   });
 }
 
-export function players(req, res) {
-  return res.render('website/players', {
-    title: 'Acerca de',
-    currentPage: 'players',
+export function spaces(req, res) {
+  return res.render('visit/spaces', {
+    title: 'Espacios',
+    currentPage: 'spaces',
+    css: '/assets/css/spaces.css',
     description:
       'Esta es una aplicación de ejemplo creada con Node.js, Express y EJS.'
   });
 }
 
-export function signIn(req, res) {
-  return res.render('website/sign-in', {
-    title: 'Bienvenido',
+export function reglas(req, res) {
+  return res.render('visit/reglas-uso', {
+    title: 'Reglas',
+    currentPage: 'reglas',
+    css: '/assets/css/reglas-uso.css',
+    description:
+      'Esta es una aplicación de ejemplo creada con Node.js, Express y EJS.'
   });
 }
 
-export async function login(req, res) {
+export function ayuda(req, res) {
+  return res.render('visit/ayuda', {
+    title: 'Ayuda',
+    currentPage: 'ayuda',
+    css: '/assets/css/ayuda.css',
+    description:
+      'Esta es una aplicación de ejemplo creada con Node.js, Express y EJS.'
+  });
+}
+
+export function signIn(req, res) { 
+  return res.render('visit/sign-in', { 
+    title: 'Iniciar Sesión', 
+    currentPage: 'sign-in',
+    css: '/assets/css/sign-in.css',
+    description:
+      'Esta es una aplicación de ejemplo creada con Node.js, Express y EJS.'
+  }); }
+
+export function signUp(req, res) { 
+  return res.render('visit/sign-up', { 
+    title: 'Crear cuenta',
+    currentPage: 'sign-up',
+    css: '/assets/css/sign-up.css',
+    description:
+      'Esta es una aplicación de ejemplo creada con Node.js, Express y EJS.'
+  }); }
+
+export function cuenta_creada(req, res) {
+    return res.render('visit/cuenta-creada', {
+        title: 'Cuenta creada',
+        currentPage: 'account-created',
+        css: '/assets/css/cuenta-creada.css',
+        description:
+        'Esta es una aplicación de ejemplo creada con Node.js, Express y EJS.'
+    });
+}
+
+export function landing(req, res) {
+    return res.render('visit/landing', {
+      title: 'Reservas ULima',
+      currentPage: 'landing',
+      css: '/assets/css/landing_publica.css',
+      description:
+        'Esta es una aplicación de ejemplo creada con Node.js, Express y EJS.'
+    });
+}
+
+export function recuperar_contraseña(req, res) {
+    return res.render('visit/recuperar-contraseña', {
+        title: 'Recuperar contraseña',
+        currentPage: 'recover-password',
+        css: '/assets/css/recuperar-contraseña.css',
+        description:
+        'Esta es una aplicación de ejemplo creada con Node.js, Express y EJS.'
+    });
+}
+
+
+export async function ingresar(req, res) {
+  const {correo, password} = req.body;
+  const users = [
+    {correo: 'student@ulima.edu.pe', password: '123', role: 'estudiante'},
+    {correo: 'staff@ulima.edu.pe', password: '123', role: 'encargado'}
+
+  ]
+
+  let usuarioEncontrado = null;
+
+  for(let i = 0; i < users.length; i++){
+    if(users[i].correo == correo && users[i].password == password){
+      usuarioEncontrado = users[i];
+    }
+  }
+
+  if(usuarioEncontrado != null){
+    req.session.correo = usuarioEncontrado.correo;
+    req.session.role = usuarioEncontrado.role;
+    req.session.password = usuarioEncontrado.password;
+
+    return req.session.save(() => {
+      if(req.session.role == 'encargado'){
+        res.redirect('/enterprise/');
+      }
+      else if(req.session.role == 'estudiante'){
+        res.redirect('/estudiante');
+      }
+    });
+
+  }else{
+    return res.render('visit/sign-in',{
+      title: 'Iniciar Sesión', 
+      currentPage: 'sign-in',
+      css: '/assets/css/sign-in.css',
+      description:
+        'Esta es una aplicación de ejemplo creada con Node.js, Express y EJS.'
+    })
+
+  }
+  
+  
+}
+
+export async function signUp_student(req, res) {
+  
+  const { nombres, apellidos, correo, password, confirmPassword, career_id, semester_id, acceptRules} = req.body;
+  
+  return res.render('visit/cuenta-creada', {
+        title: 'Cuenta creada',
+        currentPage: 'account-created',
+        css: '/assets/css/cuenta-creada.css',
+        email: correo,
+        description:
+          'Esta es una aplicación de ejemplo creada con Node.js, Express y EJS.'
+    });
+  
+}
+
+export async function signUp_staff(req, res) {
+  
+  const { nombres, apellidos, correo, password, assigned_campus_id, acceptRules} = req.body;
+  
+  return res.render('visit/solicitud-enviada', {
+        title: 'Solicitud enviada',
+        currentPage: 'request-sent',
+        css: '/assets/css/cuenta-creada.css',
+        email: correo,
+        description:
+          'Esta es una aplicación de ejemplo creada con Node.js, Express y EJS.'
+    });
+  
+}
+
+
+export async function login2(req, res) {
   const { user, password } = req.body;
   const validUser = process.env.DEFAULT_USER || 'admin';
   const validPassword = process.env.DEFAULT_PASSWORD || '123';

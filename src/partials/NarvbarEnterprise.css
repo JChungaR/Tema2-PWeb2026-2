@@ -1,0 +1,69 @@
+/* src/partials/NavbarEnterprise.css */
+
+/* Estilos de barra de navegación */
+.navbar-custom {
+    background-color: var(--c_superficie);
+    border-bottom: 1px solid var(--c_borde);
+    font-family: var(--fuente_cuerpo), sans-serif;
+}
+
+/* Marca / Logo */
+.brand-verde {
+    color: var(--c_verde_institucional);
+}
+
+.brand-tinta {
+    color: var(--c_tinta);
+}
+
+/* Enlaces de navegación */
+.nav-link-custom {
+    color: var(--c_texto_secundario) !important;
+    font-weight: 500;
+    transition: color 0.2s ease-in-out;
+}
+
+.nav-link-custom:hover,
+.nav-link-custom.active {
+    color: var(--c_verde_institucional) !important;
+    font-weight: 700;
+}
+
+/* Badge de Rol (Estudiante, Admin, etc.) */
+.badge-rol {
+    background-color: rgb(101, 111, 221);
+    color: rgb(89, 74, 183) !important;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Avatar circular de iniciales */
+.avatar-iniciales {
+    width: 36px;
+    height: 36px;
+    background-color: var(--c_verde_claro);
+    color: var(--c_verde_oscuro);
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+/* Menú desplegable */
+.dropdown-menu-custom {
+    border-color: var(--c_borde);
+    border-radius: 8px;
+}
+
+.dropdown-item-custom:hover {
+    background-color: var(--c_fondo_pagina);
+    color: var(--c_verde_institucional);
+}
+
+.dropdown-item-danger {
+    color: var(--c_error);
+}
+
+.dropdown-item-danger:hover {
+    background-color: #fce8e6;
+    color: var(--c_error);
+}

@@ -1,211 +1,233 @@
 <!DOCTYPE html>
-
 <html lang="es">
 
 <head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-  <meta charset="UTF-8">
+    <link
+        rel="icon"
+        type="image/x-icon"
+        href="/favicon.ico"
+    >
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+    <!-- Bootstrap 5 -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
 
-  <link
-    rel="icon"
-    type="image/x-icon"
-    href="/favicon.ico"
-  >
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- Bootstrap -->
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  >
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+        rel="stylesheet"
+    >
 
-  <!-- Font Awesome 7.3.1 -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
-  >
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet"
+    >
 
-  <!-- CSS propio -->
-  <link
-    rel="stylesheet"
-    href="/dist/css/web.css"
-  >
+    <!-- Font Awesome 7.3.1 -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+    >
 
-  <title>401 | Acceso no autorizado | PlayerStats</title>
+    <title>Acceso denegado</title>
 
+    <style>
+        /* Estructura general */
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background-color: #ffffff;
+            padding: 0;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Contenido principal */
+        .pagina-401 {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            background-color: #f6f8f8;
+            text-align: center;
+            min-height: 500px;
+        }
+
+        .contenido-401 {
+            width: 100%;
+            max-width: 450px;
+        }
+
+        /* Icono de acceso denegado */
+        .icono-401 {
+            width: 58px;
+            height: 58px;
+            margin: 0 auto 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: #fbeaea;
+            color: #cf2929;
+            font-size: 21px;
+        }
+
+        /* Título */
+        .contenido-401 h1 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #1b2927;
+            font-family: Manrope, sans-serif;
+            font-size: 26px;
+            font-weight: 800;
+        }
+
+        /* Descripción */
+        .descripcion-401 {
+            max-width: 400px;
+            margin: 0 auto 14px;
+            color: #6c7a78;
+            font-family: Inter, sans-serif;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        /* Contenedor de botones */
+        .acciones-401 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        /* Botón cerrar sesión */
+        .btn-cerrar-sesion {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 33px;
+            padding: 7px 15px;
+            border: 1px solid #136f63;
+            border-radius: 3px;
+            background-color: transparent;
+            color: #136f63;
+            font-family: Inter, sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-cerrar-sesion:hover {
+            background-color: #e3efed;
+            color: #0e5b52;
+        }
+
+        /* Botón volver a las reservas */
+        .btn-volver-reservas {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 33px;
+            padding: 7px 18px;
+            border: 1px solid #136f63;
+            border-radius: 3px;
+            background-color: #136f63;
+            color: #ffffff;
+            font-family: Inter, sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-volver-reservas:hover {
+            background-color: #0e5b52;
+            border-color: #0e5b52;
+            color: #ffffff;
+        }
+
+        /* Adaptación para móviles */
+        @media (max-width: 480px) {
+            .contenido-401 h1 {
+                font-size: 24px;
+            }
+
+            .descripcion-401 {
+                font-size: 12px;
+            }
+
+            .acciones-401 {
+                gap: 8px;
+            }
+        }
+    </style>
 </head>
 
-
-<body class="bg-dark min-vh-100 d-flex flex-column">
-
-
-  <!-- =====================================================
-       CONTENIDO
-  ====================================================== -->
-
-  <main class="flex-grow-1 d-flex align-items-center justify-content-center p-4">
-
-    <div
-      class="container"
-      style="max-width: 900px;">
-
-      <div class="row justify-content-center">
-
-        <div class="col-12 col-md-10 col-lg-8">
-
-          <div
-            class="card bg-dark border-secondary shadow-lg text-center">
-
-            <div class="card-body p-4 p-md-5">
+<body>
 
 
-              <!-- Icono -->
-              <div class="mb-4">
+    <!-- CONTENIDO 401 -->
+    <main class="pagina-401">
 
-                <div
-                  class="d-inline-flex
-                         align-items-center
-                         justify-content-center
-                         rounded-circle
-                         bg-success
-                         bg-opacity-10
-                         text-success"
-                  style="width: 100px; height: 100px;">
+        <div class="contenido-401">
 
-                  <i
-                    class="fa-solid fa-lock"
-                    style="font-size: 3rem;">
-                  </i>
+            <!-- Icono -->
+            <div class="icono-401">
+                <i class="fa-solid fa-ban" aria-hidden="true"></i>
+            </div>
 
-                </div>
+            <!-- Título -->
+            <h1>
+                Acceso denegado
+            </h1>
 
-              </div>
-
-
-              <!-- Código -->
-              <h1
-                class="display-1 fw-bold text-success mb-0"
-                style="font-size: clamp(6rem, 18vw, 12rem);">
-
-                401
-
-              </h1>
-
-
-              <!-- Título -->
-              <h2 class="display-6 fw-bold text-white mt-3">
-
-                Acceso no autorizado
-
-              </h2>
-
-
-              <!-- Mensaje -->
-              <p
-                class="lead text-secondary mx-auto mt-3"
-                style="max-width: 600px;">
-
+            <!-- Mensaje -->
+            <p class="descripcion-401">
                 <%= message || 'Debes iniciar sesión para acceder a esta página.' %>
+            </p>
 
-              </p>
+            <!-- Botones -->
+            <div class="acciones-401">
 
-
-              <!-- Botones -->
-              <div
-                class="d-flex
-                       flex-column
-                       flex-sm-row
-                       justify-content-center
-                       gap-2
-                       mt-4">
-
-
-                <!-- Login -->
+                <!-- Cerrar sesión -->
                 <a
-                  href="/sign-in"
-                  class="btn btn-success btn-lg px-4">
-
-                  <i class="fa-solid fa-right-to-bracket me-2"></i>
-
-                  Iniciar sesión
-
+                    href="/logout"
+                    class="btn-cerrar-sesion"
+                >
+                    Cerrar sesión
                 </a>
 
+                <!-- Volver a mis reservas -->
 
-                <!-- Inicio -->
-                <a
-                  href="/"
-                  class="btn btn-outline-light btn-lg px-4">
-
-                  <i class="fa-solid fa-house me-2"></i>
-
-                  Volver al inicio
-
+                
+                <a href="<%= rutaInicio %>" class="btn-volver-reservas">
+                    Volver a mi inicio
                 </a>
-
-              </div>
-
-
-              <!-- Información -->
-              <div class="mt-5 pt-4 border-top border-secondary">
-
-                <div
-                  class="d-flex
-                         align-items-center
-                         justify-content-center
-                         text-secondary">
-
-                  <i
-                    class="fa-solid fa-shield-halved text-success me-2">
-                  </i>
-
-                  <span class="small">
-
-                    PlayerStats · FIFA / EA FC Player Database
-
-                  </span>
-
-                </div>
-
-              </div>
-
+                
 
             </div>
 
-          </div>
-
         </div>
 
-      </div>
+    </main>
 
-    </div>
-
-  </main>
-
-
-  <!-- =====================================================
-       FOOTER
-  ====================================================== -->
-
-  <footer class="border-top border-secondary py-3">
-
-    <div class="container text-center">
-
-      <p class="text-secondary small mb-0">
-
-        © 2026 PlayerStats.
-        Todos los derechos reservados.
-
-      </p>
-
-    </div>
-
-  </footer>
-
+    <!-- FOOTER -->
+    <%- include("partials/_footer-visit") %>
 
 </body>
 

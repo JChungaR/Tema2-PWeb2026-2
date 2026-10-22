@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: rgba(255, 255, 255);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 0;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.account-created-main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.account-created-card {
+    width: 100%;
+    max-width: 500px;
+    padding: 45px 35px;
+    text-align: center;
+    background-color: white;
+    border: 1px solid #dce3e2;
+    border-radius: 10px;
+}
+
+.account-created-icon {
+    font-size: 60px;
+    color: rgb(19, 111, 99);
+    margin-bottom: 20px;
+}
+
+.account-created-card h1 {
+    font-family: Manrope, sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    color: rgb(21, 35, 34);
+}
+
+.account-created-card p {
+    font-family: Inter, sans-serif;
+    font-size: 15px;
+    color: rgb(106, 122, 120);
+    margin: 15px 0 25px;
+}
+
+.account-created-button {
+    display: block;
+    padding: 12px;
+    background-color: rgb(19, 111, 99);
+    color: white;
+    text-decoration: none;
+    font-family: Inter, sans-serif;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.account-created-button:hover {
+    background-color: rgb(15, 88, 79);
+}
+
+.account-created-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: rgb(19, 111, 99);
+    text-decoration: none;
+    font-family: Inter, sans-serif;
+}
+
+.btn-signIn {
+    width: 130px;
+    height: 40px;
+    border-radius: 4px;
+    border: 2px solid rgba(19, 111, 99);
+    background: rgb(255, 255, 255);
+    padding: 5px;
+    color: rgba(19, 111, 99);
+}
+
+.btn-signUp {
+    width: 130px;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid rgba(19, 111, 99);
+    background: rgba(19, 111, 99);
+    padding: 5px;
+    color:rgb(255, 255, 255);
+}
+

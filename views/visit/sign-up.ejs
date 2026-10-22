@@ -1,0 +1,590 @@
+
+<% layout("layouts/h1-visit") %>
+
+<main class="signup-main">
+    <section class="signup-card">
+
+        <h1 id="signupTitle">Crear cuenta de estudiante</h1>
+        <p class="signup-subtitle" id="signupSubtitle">
+            Solo correos @ulima.edu.pe. La cuenta se activa al confirmar el correo.
+        </p>
+
+        <!-- Selector de tipo de cuenta -->
+        <div class="signup-tabs">
+            <button type="button"
+                    class="signup-tab active"
+                    id="tabEstudiante"
+                    role="tab"
+                    aria-selected="true">
+                Estudiante
+            </button>
+
+            <button type="button"
+                    class="signup-tab"
+                    id="tabEncargado"
+                    role="tab"
+                    aria-selected="false">
+                Encargado de espacios
+            </button>
+        </div>
+
+        <!-- REGISTRO DE ESTUDIANTE -->
+        <form id="formEstudiante"
+              action="/sign-up/student"
+              method="POST">
+
+            <div class="signup-grid">
+                <div class="signup-field">
+                    <label for="studentNames">NOMBRES</label>
+                    <input class="form-control"
+                           type="text"
+                           id="studentNames"
+                           name="nombres"
+                           placeholder="Ingresa tus nombres"
+                           autocomplete="given-name">
+                    <small class="signup-error" id="estudiante_nombre_error" hidden>
+                        Completa el campo del nombre.
+                    </small>
+                </div>
+
+                <div class="signup-field">
+                    <label for="studentLastNames">APELLIDOS</label>
+                    <input class="form-control"
+                           type="text"
+                           id="studentLastNames"
+                           name="apellidos"
+                           placeholder="Ingresa tus apellidos"
+                           autocomplete="family-name">
+                    <small class="signup-error" id="estudiante_apellido_error" hidden>
+                        Completa el campo del apellido.
+                    </small>
+                </div>
+            </div>
+
+            <div class="signup-field">
+                <label for="studentEmail">CORREO INSTITUCIONAL</label>
+                <input class="form-control"
+                       type="text"
+                       id="studentEmail"
+                       name="correo"
+                       placeholder="ejemplo@ulima.edu.pe"
+                       autocomplete="email">
+                <small class="signup-error" id="estudiante_email_error" hidden>
+                        El correo debe terminar en @ulima.edu.pe.
+                </small>
+            </div>
+
+            <div class="signup-grid">
+                <div class="signup-field">
+                    <label for="studentPassword">CONTRASEÑA</label>
+                    <input class="form-control"
+                           type="password"
+                           id="studentPassword"
+                           name="password"
+                           placeholder="Mínimo 8 caracteres"
+                           autocomplete="new-password"
+                           >
+                    <small class="signup-error" id="estudiante_password_error" hidden>
+                        Usa al menos 8 caracteres y una mayúscula.
+                    </small>
+                    <small class="signup-error" id="estudiante_password_mayus_error" hidden>
+                        La contraseña debe incluir al menos una mayúscula.
+                    </small>
+                    <small class="signup-success" id="estudiante_password_success" hidden>
+                        La contraseña cumple con todos los requisitos.
+                    </small>
+                </div>
+
+                <div class="signup-field">
+                    <label for="studentConfirm">CONFIRMAR CONTRASEÑA</label>
+                    <input class="form-control"
+                           type="password"
+                           id="studentConfirm"
+                           name="confirmPassword"
+                           placeholder="Repite tu contraseña"
+                           autocomplete="new-password"
+                           >
+                    <small class="signup-error" id="estudiante_confirm_error" hidden>
+                        Las contraseñas no coinciden.
+                    </small>
+                </div>
+            </div>
+
+            <div class="signup-grid">
+                <div class="signup-field">
+                    <label for="careerId">CARRERA</label>
+                    <select class="form-select"
+                            id="careerId"
+                            name="carrera">
+                        <option value="" selected disabled>
+                            Selecciona tu carrera
+                        </option>
+                        <option value="administración">Administración</option>
+                        <option value="arquitectura">Arquitectura</option>
+                        <option value="comunicación">Comunicación</option>
+                        <option value="contabilidad">Contabilidad y Finanzas</option>
+                        <option value="derecho">Derecho</option>
+                        <option value="economía">Economía</option>
+                        <option value="ingeniería ambiental">Ingeniería Ambiental</option>
+                        <option value="ingeniería civil">Ingeniería Civil</option>
+                        <option value="ingeniería industrial">Ingeniería Industrial</option>
+                        <option value="ingeniería de sistemas">Ingeniería de Sistemas</option>
+                        <option value="ingeniería mecatrónica">Ingeniería Mecatrónica</option>
+                        <option value="marketing">Marketing</option>
+                        <option value="negocios internacionales">Negocios Internacionales</option>
+                        <option value="psicología">Psicología</option>
+                    </select>
+                    <small class="signup-error" id="estudiante_carrera_error" hidden>
+                        Selecciona una opción.
+                    </small>
+                </div>
+                
+
+                <div class="signup-field">
+                    <label for="semesterId">CICLO</label>
+                    <select class="form-select"
+                            id="semesterId"
+                            name="ciclo">
+                        <option value="" selected disabled>
+                                    Selecciona tu ciclo
+                        </option>
+
+                        <option value="primer ciclo">Primer ciclo</option>
+                        <option value="segundo ciclo">Segundo ciclo</option>
+                        <option value="tercer ciclo">Tercer ciclo</option>
+                        <option value="cuarto ciclo">Cuarto ciclo</option>
+                        <option value="quinto ciclo">Quinto ciclo</option>
+                        <option value="sexto ciclo">Sexto ciclo</option>
+                        <option value="séptimo ciclo">Séptimo ciclo</option>
+                        <option value="octavo ciclo">Octavo ciclo</option>
+                        <option value="noveno ciclo">Noveno ciclo</option>
+                        <option value="décimo ciclo">Décimo ciclo</option>
+                    </select>
+                    <small class="signup-error" id="estudiante_ciclo_error" hidden>
+                        Selecciona una opción.
+                    </small>
+                </div>
+            </div>
+
+            <div class="signup-terms">
+                <input type="checkbox"
+                       id="studentRules"
+                       name="acceptRules"
+                       value="yes">
+
+                <label for="studentRules">
+                    Acepto el <a href="/reglamento">reglamento de uso de espacios</a>
+                    y el registro de mis inasistencias. <br>
+                    <small class="signup-error" id="estudiante_cuadro_error" hidden>
+                    Acepte los términos.
+                    </small>
+                </label>
+            </div>
+        
+
+            <div class="signup-actions">
+                <a href="/" class="signup-cancel">Cancelar</a>
+                <button type="submit" class="signup-submit">
+                    Crear cuenta
+                </button>
+            </div>
+        </form>
+
+        <!-- REGISTRO DE ENCARGADO -->
+        <form id="formEncargado"
+              action="/sign-up/staff"
+              method="POST"
+              hidden>
+
+            <div class="signup-notice">
+                Tu cuenta quedará pendiente de aprobación por la
+                Dirección de Servicios Académicos.
+            </div>
+
+            <div class="signup-grid">
+                <div class="signup-field">
+                    <label for="staffNames">NOMBRES</label>
+                    <input class="form-control"
+                           type="text"
+                           id="staffNames"
+                           name="nombres"
+                           placeholder="Ingresa tus nombres"
+                           autocomplete="given-name"
+                           disabled>
+                    <small class="signup-error" id="encargado_nombre_error" hidden>
+                        Completa el campo del nombre.
+                    </small>
+                </div>
+
+                <div class="signup-field">
+                    <label for="staffLastNames">APELLIDOS</label>
+                    <input class="form-control"
+                           type="text"
+                           id="staffLastNames"
+                           name="apellidos"
+                           placeholder="Ingresa tus apellidos"
+                           autocomplete="family-name"
+                           disabled>
+                    <small class="signup-error" id="encargado_apellido_error" hidden>
+                        Completa el campo del apellido.
+                    </small>
+                </div>
+            </div>
+
+            <div class="signup-field">
+                <label for="staffEmail">CORREO INSTITUCIONAL</label>
+                <input class="form-control"
+                       type="text"
+                       id="staffEmail"
+                       name="correo"
+                       placeholder="ejemplo@ulima.edu.pe"
+                       autocomplete="email"
+                       disabled>
+                <small class="signup-error" id="encargado_email_error" hidden>
+                        El correo debe terminar en @ulima.edu.pe.
+                </small>
+            </div>
+
+            <div class="signup-grid">
+                <div class="signup-field">
+                    <label for="staffPassword">CONTRASEÑA</label>
+                    <input class="form-control"
+                           type="password"
+                           id="staffPassword"
+                           name="password"
+                           placeholder="Mínimo 8 caracteres"
+                           autocomplete="new-password"
+                           disabled>
+                    <small class="signup-error" id="encargado_password_error" hidden>
+                        Usa al menos 8 caracteres y una mayúscula.
+                    </small>
+                    <small class="signup-error" id="encargado_password_mayus_error" hidden>
+                        La contraseña debe incluir al menos una mayúscula.
+                    </small>
+                    <small class="signup-success" id="encargado_password_success" hidden>
+                        La contraseña cumple con todos los requisitos.
+                    </small>
+                </div>
+
+                <div class="signup-field">
+                    <label for="campusId">SEDE ASIGNADA</label>
+                    <select class="form-select"
+                            id="campusId"
+                            name="assigned_campus_id"
+                            disabled>
+                        <option value="" selected disabled>
+                            Selecciona una sede
+                        </option>
+                        <option value="1">Campus Monterrico</option>
+                        <option value="2">Campus Mayorazgo</option>
+                    </select>
+                    <small class="signup-error" id="encargado_sede_error" hidden>
+                        Selecciona una opción.
+                    </small>
+                </div>
+            </div>
+
+            <div class="signup-terms">
+                <input type="checkbox"
+                       id="staffRules"
+                       name="acceptRules"
+                       value="yes"
+                       disabled>
+                <label for="staffRules">
+                    Confirmo que mis datos son correctos y acepto que
+                    mi cuenta requiera aprobación. <br>
+                    <small class="signup-error" id="encargado_cuadro_error" hidden>
+                        Confirma los datos.
+                    </small>
+                </label>
+            </div>
+
+            <div class="signup-actions">
+                <a href="/" class="signup-cancel">Cancelar</a>
+                <button type="submit" class="signup-submit">
+                    Enviar solicitud
+                </button>
+            </div>
+        </form>
+
+        <div class="signup-login">
+            ¿Ya tienes una cuenta?
+            <a href="/sign-in">Inicia sesión</a>
+        </div>
+
+    </section>
+</main>
+
+<script>
+    const tabEstudiante = document.getElementById('tabEstudiante');
+    const tabEncargado = document.getElementById('tabEncargado');
+    const formEstudiante = document.getElementById('formEstudiante');
+    const formEncargado = document.getElementById('formEncargado');
+
+    const signupTitle = document.getElementById('signupTitle');
+    const signupSubtitle = document.getElementById('signupSubtitle');
+
+    function seleccionarTipo(tipo) {
+        const esEstudiante = tipo === 'estudiante';
+
+        formEstudiante.hidden = !esEstudiante;
+        formEncargado.hidden = esEstudiante;
+
+        tabEstudiante.classList.toggle('active', esEstudiante);
+        tabEncargado.classList.toggle('active', !esEstudiante);
+
+        tabEstudiante.setAttribute('aria-selected', String(esEstudiante));
+        tabEncargado.setAttribute('aria-selected', String(!esEstudiante));
+
+        // Deshabilitar todos los campos del formulario oculto.
+        formEstudiante.querySelectorAll('input, select, button')
+            .forEach(campo => campo.disabled = !esEstudiante);
+
+        formEncargado.querySelectorAll('input, select, button')
+            .forEach(campo => campo.disabled = esEstudiante);
+
+        signupTitle.textContent = esEstudiante
+            ? 'Crear cuenta de estudiante'
+            : 'Registro de encargado de espacios';
+
+        signupSubtitle.textContent = esEstudiante
+            ? 'Solo correos @ulima.edu.pe. La cuenta se activa al confirmar el correo.'
+            : 'Registra tus datos para solicitar acceso como encargado de espacios.';
+    }
+
+    tabEstudiante.addEventListener('click', () => seleccionarTipo('estudiante'));
+    tabEncargado.addEventListener('click', () => seleccionarTipo('encargado'));
+
+    const form1 = document.getElementById('formEstudiante');
+
+    function mostrarError(id, mostrar) {
+        document.getElementById(id).hidden = !mostrar;
+    }
+
+    let mensajes_estudiante = [
+        'estudiante_nombre_error',
+        'estudiante_apellido_error',
+        'estudiante_email_error',
+        'estudiante_password_error',
+        'estudiante_password_mayus_error',
+        'estudiante_password_success',
+        'estudiante_confirm_error',
+        'estudiante_carrera_error',
+        'estudiante_ciclo_error',
+        'estudiante_cuadro_error'
+    ]
+
+
+    form1.addEventListener('submit', function (event) {
+        
+        let nombre = document.getElementById('studentNames');
+        let apellidos = document.getElementById('studentLastNames');
+        let email = document.getElementById('studentEmail');
+        let password = document.getElementById('studentPassword');
+        let confirmPassword = document.getElementById('studentConfirm');
+        let carrera = document.getElementById('careerId');
+        let ciclo = document.getElementById('semesterId');
+        let cuadro = document.getElementById('studentRules');
+
+        let valido = true;
+
+        let ids_estudiante = [
+            nombre,
+            apellidos,
+            email,
+            password,
+            confirmPassword,
+            carrera,
+            ciclo
+        ]
+
+        for (let i = 0; i < mensajes_estudiante.length; i++){
+        mostrarError(mensajes_estudiante[i], false);
+        }
+
+        for (let i = 0; i < ids_estudiante.length; i++){
+            ids_estudiante[i].classList.remove('error');
+        }
+
+        // Nombres.
+        if (nombre.value.trim() === '') {
+            mostrarError('estudiante_nombre_error', true);
+            nombre.classList.add('error');
+            valido = false;
+        }
+
+        // Apellidos.
+        if (apellidos.value.trim() === '') {
+            mostrarError('estudiante_apellido_error', true);
+            apellidos.classList.add('error');
+            valido = false;
+        }
+
+        // Correo institucional.
+        if (!/^[^\s@]+@ulima\.edu\.pe$/i.test(email.value.trim())) {
+            mostrarError('estudiante_email_error', true);
+            email.classList.add('error');
+            valido = false;
+        }
+
+        // Contraseña: mínimo 8 caracteres.
+        if (password.value.length < 8) {
+            mostrarError('estudiante_password_error', true);
+            password.classList.add('error');
+            valido = false; 
+        }
+
+        // Contraseña: al menos una mayúscula.
+        else if (!/[A-ZÁÉÍÓÚÑ]/.test(password.value)) {
+            mostrarError('estudiante_password_mayus_error', true);
+            password.classList.add('error');
+            valido = false;
+        }
+ 
+        // Mostrar éxito únicamente si ambas reglas se cumplen.
+        if (
+            password.value.length >= 8 &&
+            /[A-ZÁÉÍÓÚÑ]/.test(password.value)
+        ) {
+            mostrarError('estudiante_password_success', true);
+        }
+
+        // Confirmación de contraseña.
+        if (password.value !== confirmPassword.value) {
+            mostrarError('estudiante_confirm_error', true);
+            valido = false;
+        }
+
+        // Carrera.
+        if (carrera.value === '') {
+            mostrarError('estudiante_carrera_error', true);
+            carrera.classList.add('error');
+            valido = false;
+        }
+
+        // Ciclo.
+        if (ciclo.value === '') {
+            mostrarError('estudiante_ciclo_error', true);
+            ciclo.classList.add('error');
+            valido = false;
+        }
+
+        // Aceptación de términos.
+        if (!cuadro.checked) {
+            mostrarError('estudiante_cuadro_error', true);
+            valido = false;
+        }
+
+        // Si hay errores, quedarse en esta vista.
+        if (!valido) {
+            event.preventDefault();
+        }
+
+    });
+
+    const form2 = document.getElementById('formEncargado');
+
+    let mensajes_encargado = [
+        'encargado_nombre_error',
+        'encargado_apellido_error',
+        'encargado_email_error',
+        'encargado_password_error',
+        'encargado_password_mayus_error',
+        'encargado_password_success',
+        'encargado_sede_error',
+        'encargado_cuadro_error'
+    ]
+
+    form2.addEventListener('submit', function (event) {
+        
+        let nombreEn = document.getElementById('staffNames');
+        let apellidosEn = document.getElementById('staffLastNames');
+        let emailEn = document.getElementById('staffEmail');
+        let passwordEn = document.getElementById('staffPassword');
+        let sede = document.getElementById('campusId');
+        let cuadroEn = document.getElementById('staffRules');
+
+        let valido = true;
+
+        let ids_encargado = [
+            nombreEn,
+            apellidosEn,
+            emailEn,
+            passwordEn,
+            sede,
+    
+        ]
+
+        for (let i = 0; i < mensajes_encargado.length; i++){
+        mostrarError(mensajes_encargado[i], false);
+        }
+
+        for (let i = 0; i < ids_encargado.length; i++){
+            ids_encargado[i].classList.remove('error');
+        }
+
+        // Nombres.
+        if (nombreEn.value.trim() === '') {
+            mostrarError('encargado_nombre_error', true);
+            nombreEn.classList.add('error');
+            valido = false;
+        }
+
+        // Apellidos.
+        if (apellidosEn.value.trim() === '') {
+            mostrarError('encargado_apellido_error', true);
+            apellidosEn.classList.add('error');
+            valido = false;
+        }
+
+        // Correo institucional.
+        if (!/^[^\s@]+@ulima\.edu\.pe$/i.test(emailEn.value.trim())) {
+            mostrarError('encargado_email_error', true);
+            emailEn.classList.add('error');
+            valido = false;
+        }
+
+        // Contraseña: mínimo 8 caracteres.
+        if (passwordEn.value.length < 8) {
+            mostrarError('encargado_password_error', true);
+            passwordEn.classList.add('error');
+            valido = false; 
+        }
+
+        // Contraseña: al menos una mayúscula.
+        else if (!/[A-ZÁÉÍÓÚÑ]/.test(passwordEn.value)) {
+            mostrarError('encargado_password_mayus_error', true);
+            passwordEn.classList.add('error');
+            valido = false;
+        }
+ 
+        // Mostrar éxito únicamente si ambas reglas se cumplen.
+        if (
+            passwordEn.value.length >= 8 &&
+            /[A-ZÁÉÍÓÚÑ]/.test(passwordEn.value)
+        ) {
+            mostrarError('encargado_password_success', true);
+        }
+
+        // Sede.
+        if (sede.value === '') {
+            mostrarError('encargado_sede_error', true);
+            sede.classList.add('error');
+            valido = false;
+        }
+
+        // Aceptación de términos.
+        if (!cuadroEn.checked) {
+            mostrarError('encargado_cuadro_error', true);
+            valido = false;
+        }
+
+        // Si hay errores, quedarse en esta vista.
+        if (!valido) {
+            event.preventDefault();
+        }
+    });
+        
+    seleccionarTipo('estudiante');
+</script>
+

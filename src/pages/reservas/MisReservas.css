@@ -1,0 +1,133 @@
+/* Botón principal institucional */
+.btn-verde-principal {
+    background-color: var(--c_verde_oscuro) !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 6px;
+}
+
+.btn-verde-principal:hover {
+    background-color: var(--c_verde_institucional) !important;
+    color: #ffffff !important;
+}
+
+/* Tarjeta de Barra de Búsqueda */
+.search-bar-card {
+    background-color: var(--c_superficie);
+    border: 1px solid var(--c_borde) !important;
+    border-radius: 8px;
+}
+
+.btn-dropdown-filter {
+    background-color: #ffffff;
+    border: 1px solid var(--c_borde);
+    color: var(--c_tinta);
+    border-radius: 6px;
+    font-size: 0.9rem;
+    padding: 0.45rem 0.85rem;
+}
+
+.date-filter-box {
+    background-color: #ffffff;
+    border: 1px solid var(--c_borde);
+    color: var(--c_tinta);
+    border-radius: 6px;
+    font-size: 0.9rem;
+    padding: 0.45rem 0.85rem;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.search-input {
+    border: 1px solid var(--c_borde);
+    border-radius: 6px;
+    font-size: 0.9rem;
+    padding: 0.45rem 0.85rem;
+}
+
+.search-input::placeholder {
+    color: var(--c_texto_secundario);
+}
+
+/* Títulos de sección */
+.section-title {
+    color: var(--c_verde_institucional);
+    font-weight: 700;
+}
+
+/* Tarjetas de Reservas */
+.reserva-card {
+    background-color: var(--c_superficie);
+    border: 1px solid var(--c_borde) !important;
+    border-radius: 8px;
+}
+
+.title-space {
+    font-size: 1rem;
+}
+
+.hr-card {
+    border-top: 1px solid var(--c_borde);
+    opacity: 1;
+}
+
+.btn-ver-detalle {
+    color: var(--c_verde_institucional) !important;
+    font-weight: 600 !important;
+    font-size: 0.875rem !important;
+}
+
+.btn-ver-detalle:hover {
+    color: var(--c_verde_oscuro) !important;
+}
+
+.btn-cancelar {
+    color: var(--c_error) !important;
+    font-weight: 600 !important;
+    font-size: 0.875rem !important;
+}
+
+.btn-cancelar:hover {
+    opacity: 0.8;
+}
+
+/* Insignias de Estado (Badges) */
+.badge-confirmada {
+    background-color: #e5ecf4 !important;
+    color: #3b6ea7 !important;
+}
+
+.badge-en-curso {
+    background-color: #fbf1e2 !important;
+    color: #b6781f !important;
+}
+
+.badge-atendida {
+    background-color: #e0efec !important;
+    color: #1e7e4d !important;
+}
+
+.badge-inasistencia {
+    background-color: #f7eae9 !important;
+    color: #b3322b !important;
+}
+
+/* Estado Vacío (Empty State) */
+.empty-state-card {
+    background-color: var(--c_superficie);
+    border: 1px solid var(--c_borde) !important;
+    border-radius: 8px;
+}
+
+.empty-icon-box {
+    width: 48px;
+    height: 48px;
+    background-color: var(--c_verde_claro);
+    color: var(--c_verde_institucional);
+    border-radius: 8px;
+}
+
+.empty-state-text {
+    max-width: 460px;
+    font-size: 0.95rem;
+}

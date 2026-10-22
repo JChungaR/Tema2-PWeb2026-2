@@ -1,0 +1,530 @@
+
+/* =========================================
+   NUEVO ESPACIO
+========================================= */
+
+.nuevo-espacio-page {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 10px 24px 28px;
+  box-sizing: border-box;
+  color: var(--enterprise-tinta, #152322);
+}
+
+.nuevo-espacio-page *,
+.nuevo-espacio-page *::before,
+.nuevo-espacio-page *::after {
+  box-sizing: border-box;
+}
+
+/* =========================================
+   MIGAS DE PAN Y TÍTULO
+========================================= */
+
+.nuevo-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 8px;
+  color: var(--enterprise-texto-secundario, #6A7A78);
+  font-size: 14px;
+}
+
+.nuevo-breadcrumb button {
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+}
+
+.nuevo-breadcrumb button:hover {
+  color: var(--enterprise-verde, #136F63);
+}
+
+.nuevo-breadcrumb span:last-child {
+  color: var(--enterprise-tinta, #152322);
+}
+
+.nuevo-titulo {
+  margin: 0 0 12px;
+  font-size: 29px;
+  line-height: 1.25;
+  font-weight: 750;
+}
+
+.nuevo-mensaje {
+  margin-bottom: 12px;
+  padding: 10px 14px;
+  border: 1px solid;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.nuevo-mensaje-error {
+  color: #B42318;
+  background: #FDECEC;
+  border-color: #D92D20;
+}
+
+.nuevo-mensaje-exito {
+  color: #126B4F;
+  background: #E7F5ED;
+  border-color: #65A88B;
+}
+
+/* =========================================
+   FORMULARIO: DOS COLUMNAS
+========================================= */
+
+.nuevo-espacio-page form {
+  width: 100%;
+  margin: 0;
+}
+
+.nuevo-contenido {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(260px, 1fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.nuevo-columna-principal {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+/* =========================================
+   TARJETAS
+========================================= */
+
+.nuevo-card,
+.nuevo-panel-lateral {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid var(--enterprise-borde, #DEE5E4);
+  border-radius: 7px;
+  background: var(--enterprise-superficie, #FFFFFF);
+}
+
+.nuevo-card h2 {
+  margin: 0 0 14px;
+  color: var(--enterprise-verde, #136F63);
+  font-size: 20px;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+/* =========================================
+   CAMPOS
+========================================= */
+
+.nuevo-campo {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.nuevo-campo label {
+  margin-bottom: 6px;
+  color: var(--enterprise-texto-secundario, #6A7A78);
+  font-size: 12px;
+  line-height: 1.4;
+  font-weight: 750;
+  letter-spacing: 0.35px;
+  text-transform: uppercase;
+}
+
+.nuevo-campo input,
+.nuevo-campo select,
+.nuevo-campo textarea {
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid var(--enterprise-borde, #DEE5E4);
+  border-radius: 4px;
+  outline: none;
+  background: #FFFFFF;
+  color: var(--enterprise-tinta, #152322);
+  font: inherit;
+  font-size: 14px;
+}
+
+.nuevo-campo input:focus,
+.nuevo-campo select:focus,
+.nuevo-campo textarea:focus {
+  border-color: var(--enterprise-verde, #136F63);
+  box-shadow: 0 0 0 3px rgba(19, 111, 99, 0.12);
+}
+
+.nuevo-campo textarea {
+  height: 72px;
+  min-height: 72px;
+  resize: vertical;
+}
+
+.nuevo-campo input::placeholder,
+.nuevo-campo textarea::placeholder {
+  color: #899694;
+}
+
+.nuevo-campo .campo-error {
+  border: 2px solid #D92D20;
+}
+
+.nuevo-error {
+  margin-top: 5px;
+  color: #D92D20;
+  font-size: 12px;
+}
+
+.nuevo-ayuda {
+  margin-top: 5px;
+  color: var(--enterprise-texto-secundario, #6A7A78);
+  font-size: 12px;
+}
+
+/* =========================================
+   IDENTIFICACIÓN Y UBICACIÓN
+========================================= */
+
+.nuevo-grid-identificacion {
+  display: grid;
+  grid-template-columns: minmax(110px, 0.85fr) minmax(0, 2fr) minmax(160px, 1.15fr);
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.nuevo-grid-ubicacion {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+/* =========================================
+   AFORO Y DESCRIPCIÓN
+========================================= */
+
+.nuevo-grid-aforo {
+  display: grid;
+  grid-template-columns: minmax(120px, 0.55fr) minmax(0, 3fr);
+  gap: 16px;
+  align-items: start;
+}
+
+/* =========================================
+   GALERÍA
+========================================= */
+
+.nuevo-galeria {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  align-items: stretch;
+}
+
+.nuevo-foto,
+.nuevo-subir-foto,
+.nuevo-restricciones-foto {
+  position: relative;
+  width: 100%;
+  height: 82px;
+  min-width: 0;
+  border-radius: 4px;
+}
+
+.nuevo-foto {
+  overflow: hidden;
+  border: 1px solid var(--enterprise-borde, #DEE5E4);
+  background: #F1F5F4;
+}
+
+.nuevo-foto img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nuevo-foto span {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  padding: 15px 25px 5px 8px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+  color: #FFFFFF;
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nuevo-foto button {
+  position: absolute;
+  right: 4px;
+  bottom: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: none;
+  border-radius: 3px;
+  background: #FFFFFF;
+  color: #D92D20;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.nuevo-subir-foto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border: 1px dashed #53A99B;
+  background: #E2F1EE;
+  color: #136F63;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.nuevo-subir-foto:hover {
+  background: #D3EAE5;
+}
+
+.nuevo-restricciones-foto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border: 1px dashed var(--enterprise-borde, #DEE5E4);
+  background: #FFFFFF;
+  color: var(--enterprise-texto-secundario, #6A7A78);
+  text-align: center;
+  font-family: monospace;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   PANEL LATERAL
+========================================= */
+
+.nuevo-panel-lateral {
+  padding: 16px;
+}
+
+.nuevo-panel-lateral h3 {
+  margin: 0 0 12px;
+  color: var(--enterprise-texto-secundario, #6A7A78);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+}
+
+.nuevo-panel-lateral p {
+  margin: 0 0 12px;
+  color: var(--enterprise-tinta, #152322);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.nuevo-pasos {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nuevo-pasos span {
+  color: var(--enterprise-verde, #136F63);
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.nuevo-panel-lateral hr {
+  margin: 14px 0;
+  border: 0;
+  border-top: 1px solid var(--enterprise-borde, #DEE5E4);
+  opacity: 1;
+}
+
+.nuevo-panel-lateral .nuevo-nota {
+  margin-bottom: 0;
+  color: var(--enterprise-texto-secundario, #6A7A78);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* =========================================
+   BOTONES: DEBAJO DE LA GALERÍA
+========================================= */
+
+.nuevo-acciones {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.nuevo-acciones button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  min-height: 46px;
+  padding: 11px 20px;
+  border-radius: 4px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.nuevo-btn-texto {
+  border: 1px solid transparent;
+  background: transparent;
+  color: #136F63;
+}
+
+.nuevo-btn-texto:hover {
+  background: #E2F1EE;
+}
+
+.nuevo-btn-secundario {
+  border: 1px solid #136F63;
+  background: #FFFFFF;
+  color: #136F63;
+}
+
+.nuevo-btn-secundario:hover {
+  background: #E2F1EE;
+}
+
+.nuevo-btn-principal {
+  border: 1px solid #136F63;
+  background: #136F63;
+  color: #FFFFFF;
+}
+
+.nuevo-btn-principal:hover {
+  border-color: #0D5249;
+  background: #0D5249;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+  .nuevo-contenido {
+    grid-template-columns: minmax(0, 2fr) minmax(230px, 1fr);
+    gap: 16px;
+  }
+
+  .nuevo-grid-identificacion {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .nuevo-grid-identificacion .nuevo-campo:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .nuevo-galeria {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =========================================
+   MÓVIL
+========================================= */
+
+@media (max-width: 800px) {
+  .nuevo-espacio-page {
+    padding: 12px 16px 24px;
+  }
+
+  .nuevo-contenido {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .nuevo-grid-identificacion,
+  .nuevo-grid-ubicacion,
+  .nuevo-grid-aforo {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .nuevo-grid-identificacion .nuevo-campo:last-child {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .nuevo-titulo {
+    font-size: 25px;
+  }
+
+  .nuevo-card,
+  .nuevo-panel-lateral {
+    padding: 12px;
+  }
+
+  .nuevo-galeria {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .nuevo-acciones {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .nuevo-acciones button {
+    width: 100%;
+  }
+}
+
+
+.nuevo-pasos {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.nuevo-pasos button {
+  display: block;
+  width: 100%;
+  padding: 2px 0;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  color: var(--enterprise-verde);
+  text-align: left;
+  font: inherit;
+  line-height: 1.3;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.nuevo-pasos button:hover {
+  color: var(--enterprise-verde-oscuro);
+  text-decoration: underline;
+}
+
+.nuevo-pasos button {
+  font-weight: 700;
+}

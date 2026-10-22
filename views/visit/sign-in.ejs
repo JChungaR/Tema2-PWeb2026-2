@@ -1,0 +1,336 @@
+<% layout("layouts/h1-visit") %>
+
+<main class="login-main">
+
+    <!-- Imagen -->
+    <div>
+        <img  
+            class="login-imagen"
+            src="/assets/img/sign-in.jpg"
+            alt="Universidad de Lima">
+    </div>
+
+
+    <!-- Formulario -->
+    <div class="login-formulario">
+
+        <div
+            class="card border-0"
+            style="
+                width: 100%;
+                max-width: 500px;
+                border-radius: 10px;
+                background-color: rgba(246, 248, 248);
+                padding: 20px;
+            "
+        >
+
+            <div class="card-body p-5">
+                
+
+                <!-- Título -->
+                <div class="mb-2">
+
+                    
+                    <h2
+                        style="
+                            font-family: Manrope;
+                            color: rgba(21, 35, 34);
+                            font-weight: bolder;
+                        "
+                    >
+                        Iniciar sesión
+                    </h2>
+
+                    <p
+                        style="
+                            font-family: Inter;
+                            color: rgba(106, 122, 120);
+                            font-size: 15px;
+                        "
+                    >
+                        Usa tu correo institucional @ulima.edu.pe
+                    </p>
+
+                </div>
+
+
+                <!-- Formulario -->
+                
+                <form id="formSignIn" action="/sign-in" method="POST">
+
+                    <!-- Email -->
+                    <div class="mb-3">
+
+                        <label
+                            for="email"
+                            class="form-label"
+                            style="
+                                font-family: Inter;
+                                font-size: 14px;
+                                font-weight: bolder;
+                                color: rgba(106, 122, 120);
+                            "
+                        >
+                            CORREO INSTITUCIONAL
+                        </label>
+
+                        <input
+                            type="text"
+                            class="form-control input-signIn"
+                            id="email"
+                            name="correo"
+                            placeholder="ejemplo@ulima.edu.pe"
+                            autocomplete="email"
+                        >
+
+                        <small class="signIn-error" id="email_error" hidden>
+                            El correo debe terminar en @ulima.edu.pe.
+                        </small>
+
+                    </div>
+
+                    <!-- Contraseña -->
+                    <div class="mb-2">
+
+                        <div class="d-flex justify-content-between">
+
+                            <label
+                                for="password"
+                                class="form-label"
+                                style="
+                                    font-family: Inter;
+                                    font-size: 14px;
+                                    font-weight: bolder;
+                                    color: rgba(106, 122, 120);
+                                "
+                            >
+                                CONTRASEÑA
+                            </label>
+
+                            <button
+                                onclick="mostrar(event)"
+                                type="button"
+                                id="togglePassword"
+                                class="btn-mostrar"
+                            >
+                                Mostrar
+                            </button>
+
+                        </div>
+
+                        <input
+                            type="password"
+                            class="form-control input-signIn"
+                            id="password"
+                            name="password"
+                            placeholder="Ingresa tu contraseña"
+                            autocomplete="current-password"
+                        >
+
+                        <small class="signIn-error" id="password_error" hidden>
+                            Complete la contraseña.
+                        </small>
+
+                    </div>
+
+                    <!-- Recordarme / Olvidé mi contraseña -->
+                    <div class="login-opciones">
+
+                        <div class="form-check mb-4">
+
+                            <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="remember"
+                                name="remember"
+                            >
+
+                            <label
+                                class="form-check-label"
+                                for="remember"
+                                style="
+                                    font-family: Inter;
+                                    font-size: 14px;
+                                    color: rgba(106, 122, 120);
+                                "
+                            >
+                                Recordarme
+                            </label>
+
+                        </div>
+
+                        <a
+                            href="/recover-password"
+                            style="
+                                font-family: Inter;
+                                font-size: 14px;
+                                color: rgba(19, 111, 99);
+                                text-decoration: none;
+                                font-weight: bolder;
+                            "
+                        >
+                            ¿Olvidaste tu contraseña?
+                        </a>
+
+                    </div>
+
+                    <!-- Botón -->
+                    <div class="d-grid">
+
+                        <button
+                            type="submit"
+                            class="btn btn-dark btn-login"
+                            id="btnIngresar"
+                        >
+                            <span class="spinner-login" id="spinnerLogin" hidden></span>
+                            <span id="textoLogin">Ingresar</span>
+                        </button>
+
+                    </div>
+
+                    <p class="login-mensaje" id="mensajeLogin" hidden>
+                        Verificando tus credenciales. Espera un momento.
+                    </p>
+
+                </form>
+
+                <!-- Crear cuenta -->
+                <div class="text-center mt-3">
+
+                    <span
+                        style="
+                            font-family: Inter;
+                            font-size: 14px;
+                            color: rgba(106, 122, 120);
+                        "
+                    >
+                        ¿No tienes una cuenta?
+                    </span>
+
+                    <a
+                        href="/sign-up"
+                        style="
+                            font-family: Inter;
+                            font-size: 14px;
+                            font-weight: bolder;
+                            color: rgba(19, 111, 99);
+                            text-decoration: none;
+                        "
+                    >
+                        Regístrate
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+<script>
+
+    function mostrar(event){
+        event.preventDefault()
+
+        let password = document.getElementById('password');
+        let togglePassword = document.getElementById('togglePassword');
+
+        if (password.type === 'password') {
+            password.type = 'text';
+            togglePassword.textContent = 'Ocultar';
+        } else {
+            password.type = 'password';
+            togglePassword.textContent = 'Mostrar';
+        }
+    }
+
+    const formulario = document.getElementById('formSignIn');
+
+    let boton = document.getElementById('btnIngresar');
+    let spinner = document.getElementById('spinnerLogin');
+    let texto = document.getElementById('textoLogin');
+    let mensaje = document.getElementById('mensajeLogin');
+
+    
+    function mostrarError(id, mostrar) {
+        document.getElementById(id).hidden = !mostrar;
+    }
+
+    let mensajes = [
+        'email_error',
+        'password_error'
+    ]
+
+
+    formulario.addEventListener('submit', function (event) {
+
+        let email = document.getElementById('email');
+        let password = document.getElementById('password');
+
+        let valido = true;
+
+        let ids = [
+            email,
+            password
+        ]
+
+        for (let i = 0; i < mensajes.length; i++){
+        mostrarError(mensajes[i], false);
+        }
+
+        for (let i = 0; i < ids.length; i++){
+            ids[i].classList.remove('error');
+        }
+
+        // Correo institucional.
+        
+        if (!/^[^\s@]+@ulima\.edu\.pe$/i.test(email.value.trim())) {
+            mostrarError('email_error', true);
+            email.classList.add('error');
+            valido = false;
+        }
+
+        // Contraseña.
+        if (password.value.trim() === '') {
+            mostrarError('password_error', true);
+            password.classList.add('error');
+            valido = false; 
+        }
+
+         // Si hay errores, quedarse en esta vista.
+        if (!valido) {
+            event.preventDefault();
+        }
+
+        else{
+
+            // Evitar el envío inmediato del formulario
+            event.preventDefault();
+
+            // Evitar envíos repetidos
+            boton.disabled = true;
+
+            // Mostrar el spinner
+            spinner.hidden = false;
+
+            // Cambiar el texto
+            texto.textContent = 'Verificando...';
+
+            // Mostrar el mensaje inferior
+            mensaje.hidden = false;
+
+            // Esperar 1.5 segundos antes de enviar el formulario
+            setTimeout(function () {
+                formulario.submit();
+            }, 1500);
+
+        }
+
+    });
+
+
+</script>
