@@ -2,46 +2,54 @@
 
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Outlet, Navigate } from 'react-router-dom';
 
 // Estilos globales
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
-//Componentes parciales
+// Componentes parciales
 import Navbar from '../partials/Navbar.jsx';
 
-
-// Páginas del sistema (CRUDs)
-import ConfirmacionReserva from '../pages/Estudiante/ConfirmacionReserva.jsx';
+// Páginas del estudiante
 import MiCuentaPage from '../pages/Estudiante/MiCuentaPage.jsx';
+import ConfirmacionReserva from '../pages/reservas/ConfirmacionReserva.jsx';
+import { MisReservas } from '../pages/reservas/MisReservas.jsx';
+import { DetalleReserva } from '../pages/reservas/DetalleReserva.jsx';
 
-// Layout Principal (Navbar + Footer)
+// Layout principal (Navbar + contenido)
 function EstudianteLayout() {
-  return (
-      <div className="flex-grow-1 d-flex flex-column bg-light">
-        <Navbar />
-        <main className="p-4 flex-grow-1">
-          {/* El contenido de la ruta activa se renderiza aquí */}
-          <Outlet />
-        </main>
-      </div>
-  );
+    return (
+        <div className="flex-grow-1 d-flex flex-column bg-light">
+            <Navbar />
+            <main className="p-4 flex-grow-1">
+                <Outlet />
+            </main>
+        </div>
+    );
 }
 
-// Configuración de Rutas
+// Configuración de rutas
 function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route index element={<MiCuentaPage />} />
-        <Route path="/estudiante" element={<EstudianteLayout />}>
-        <Route path="confirmacion-reserva" element={<ConfirmacionReserva />} />
-        <Route path="mi-cuenta" element={<MiCuentaPage />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  );
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/estudiante" element={<EstudianteLayout />}>
+                    <Route index element={<MisReservas />} />
+                    <Route path="misreservas" element={<MisReservas />} />
+                    <Route path="detalle" element={<DetalleReserva />} />
+                    <Route path="detalle/:id" element={<DetalleReserva />} />
+                    <Route path="confirmacion" element={<ConfirmacionReserva />} />
+                    <Route path="confirmacion-reserva" element={<ConfirmacionReserva />} />
+                    <Route path="mi-cuenta" element={<MiCuentaPage />} />
+                </Route>
+
+                {/* Compatibilidad con la ruta raíz anterior */}
+                <Route path="/" element={<Navigate to="/estudiante" replace />} />
+                <Route path="*" element={<Navigate to="/estudiante" replace />} />
+            </Routes>
+        </BrowserRouter>
+    );
 }
 
 // Montaje en el DOM

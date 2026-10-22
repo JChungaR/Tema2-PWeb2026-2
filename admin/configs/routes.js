@@ -10,7 +10,7 @@ import * as enterpriseEsp from '../controllers/enterpriseEsp_controllers.js';
 
 import * as nationApis from '../apis/nations_apis.js';
 
-import { redirectIfAuthenticated, requireAuth, soloRolEncargado, soloRolEstudiante } from '../../configs/middlewares.js'; 
+import { redirectIfAuthenticated, requireAuth, soloRolEncargado, soloRolEstudiante } from '../../configs/middlewares.js';
 
 const router = Router();
 
@@ -28,10 +28,14 @@ router.post('/api/v1/nations', nationApis.createNation);
 router.put('/api/v1/nations/:id', nationApis.updateNation);
 router.delete('/api/v1/nations/:id', nationApis.deleteNation);
 
+//estudiante
 router.get('/estudiante', soloRolEstudiante, student.home);
 router.get('/estudiante/mi-cuenta', soloRolEstudiante, student.home);
 router.get('/estudiante/confirmacion-reserva', soloRolEstudiante, student.home)
-
+router.get('/estudiante/mis-reservas', soloRolEstudiante, student.home);
+router.get('/estudiante/confirmacion', soloRolEstudiante, student.home);
+router.get('/estudiante/detalle', soloRolEstudiante, student.home);
+router.get('/estudiante/detalle/:id', soloRolEstudiante, student.home);
 
 //
 router.get('/enterprise/espacios', soloRolEncargado, enterpriseEsp.espacios);

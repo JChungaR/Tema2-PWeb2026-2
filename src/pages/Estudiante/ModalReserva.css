@@ -1,0 +1,177 @@
+/* src/components/modals/ModalReserva.css */
+
+.modal-backdrop-custom {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(21, 35, 34, 0.45);
+    z-index: 1050;
+    backdrop-filter: blur(2px);
+}
+
+.modal-card {
+    max-width: 520px;
+    border-radius: 12px !important;
+    background-color: #ffffff !important;
+}
+
+.btn-close-custom {
+    background: transparent;
+    border: none;
+    font-size: 1.1rem;
+    color: var(--c_texto_secundario);
+    cursor: pointer;
+    line-height: 1;
+}
+
+.btn-close-custom:hover {
+    color: var(--c_tinta) !important;
+}
+
+/* Modos de alertas */
+.alert-danger-custom {
+    background-color: #fde8e7 !important;
+    border: 1px solid #f8b4b1 !important;
+    color: #9c2822 !important;
+    font-size: 0.875rem;
+}
+
+.alert-warning-custom {
+    background-color: #fef3d6 !important;
+    border: 1px solid #f6d892 !important;
+    color: #8c5d14 !important;
+    font-size: 0.875rem;
+}
+
+/* Caja Verde de Espacio */
+.space-summary-card {
+    background-color: var(--c_verde_claro);
+    border-radius: 8px;
+}
+
+.space-title {
+    font-size: 0.95rem;
+}
+
+.space-subtitle, .space-date {
+    font-size: 0.8rem;
+}
+
+.space-time {
+    font-size: 0.95rem;
+}
+
+/* Caja Gris */
+.space-summary-gray {
+    background-color: #f2f5f5;
+}
+
+/* Form inputs */
+.form-label-custom {
+    font-size: 0.725rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--c_texto_secundario);
+}
+
+.input-custom {
+    border: 1px solid var(--c_borde);
+    border-radius: 6px;
+    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem;
+}
+
+.invitados-input-container {
+    border: 1px solid var(--c_borde);
+    border-radius: 6px;
+    min-height: 38px;
+    background-color: #ffffff;
+}
+
+.tag-invitado {
+    background-color: #e2f1ee !important;
+    color: var(--c_verde_oscuro) !important;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border-radius: 4px;
+    padding: 0.25rem 0.5rem;
+}
+
+.btn-remove-tag {
+    background: transparent;
+    border: none;
+    color: var(--c_verde_oscuro) !important;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+
+/* Indicador Tope Semanal */
+.tope-semanal-box {
+    background-color: #f6f8f8 !important;
+    border: 1px solid var(--c_borde) !important;
+}
+
+.text-dark-teal {
+    color: var(--c_verde_oscuro) !important;
+}
+
+/* Botones Footer */
+.btn-verde-confirmar {
+    background-color: var(--c_verde_oscuro) !important;
+    color: #ffffff !important;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    padding: 0.5rem 1.25rem;
+}
+
+.btn-verde-confirmar:hover {
+    background-color: var(--c_verde_institucional);
+    color: #ffffff;
+}
+
+.btn-danger-cancelar {
+    background-color: var(--c_error);
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+}
+
+.btn-danger-cancelar:hover {
+    background-color: #962822;
+}
+
+.btn-link-cancel {
+    color: var(--c_verde_institucional);
+    font-weight: 600;
+}
+
+.btn-link-verde {
+    color: var(--c_verde_institucional);
+}
+
+.btn-link-mantener {
+    color: var(--c_verde_institucional);
+}
+
+.btn-disabled-custom {
+    background-color: #e5e9e8 !important;
+    color: #a0acab !important;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem 1.25rem;
+    font-weight: 600;
+}
+
+.btn-secondary-custom {
+    background-color: #e5e9e8;
+    color: var(--c_tinta);
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem 1.25rem;
+    font-weight: 600;
+}
