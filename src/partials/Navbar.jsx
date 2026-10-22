@@ -22,7 +22,7 @@ export default function Navbar({ user = { name: "Pepe Valdivia", role: "Estudian
       <nav className="navbar navbar-expand-lg navbar-custom py-3">
         <div className="container">
           {/* Logo institucional */}
-          <a className="navbar-brand fw-bold fs-4 me-4 d-flex align-items-center" href="/estudiantes/espacios">
+          <a className="navbar-brand fw-bold fs-4 me-4 d-flex align-items-center" href="/estudiante">
             <span className="brand-verde">Reserva</span>
             <span className="brand-tinta">UL</span>
           </a>
@@ -51,8 +51,8 @@ export default function Navbar({ user = { name: "Pepe Valdivia", role: "Estudian
               </li>
               <li className="nav-item">
                 <a
-                    className={`nav-link nav-link-custom ${activeLink === '/estudiante/reservas' ? 'active' : ''}`}
-                    href="/estudiante/reservas">
+                    className={`nav-link nav-link-custom ${activeLink === '/estudiante/mis-reservas' ? 'active' : ''}`}
+                    href="/estudiante/mis-reservas">
                   Mis reservas
                 </a>
               </li>
