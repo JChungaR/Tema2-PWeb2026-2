@@ -10,6 +10,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 // Componentes parciales
 import Navbar from '../partials/Navbar.jsx';
+import FooterEstudianteEsp from '../partials/FooterEstudianteEsp.jsx';
 
 // Páginas del estudiante
 import MiCuentaPage from '../pages/Estudiante/MiCuentaPage.jsx';
@@ -25,6 +26,8 @@ function EstudianteLayout() {
             <main className="p-4 flex-grow-1">
                 <Outlet />
             </main>
+
+            <FooterEstudianteEsp />
         </div>
     );
 }

@@ -1,18 +1,18 @@
 // src/partials/FooterEnterpriseEsp.jsx
-import './FooterEnterpriseEsp.css'
+import './Footer.css'
 
 export default function FooterEnterpriseEsp() {
   return (
-    <footer className="enterprise-footer">
+    <footer className="base-footer">
 
-      <div className="enterprise-footer-left">
+      <div className="base-footer-left">
         Universidad de Lima · Campus Monterrico
       </div>
 
-      <div className="enterprise-footer-right">
+      <div className="base-footer-right">
         
-        <a className='links' href="/manual">Manual de operación</a>
-        <a className='links' href="/soporte">soporte.reservas@ulima.edu.pe</a>
+        <a className="base-footer-link" href="/manual">Manual de operación</a>
+        <a className="base-footer-link" href="/soporte">soporte.reservas@ulima.edu.pe</a>
       </div>
 
     </footer>
