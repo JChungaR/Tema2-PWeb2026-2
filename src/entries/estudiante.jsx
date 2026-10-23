@@ -43,6 +43,8 @@ function App() {
                     <Route path="confirmacion" element={<ConfirmacionReserva />} />
                     <Route path="confirmacion-reserva" element={<ConfirmacionReserva />} />
                     <Route path="mi-cuenta" element={<MiCuentaPage />} />
+                    <Route path="disponibilidad" element={<DisponibilidadPage />}
+/>
                 </Route>
 
                 {/* Compatibilidad con la ruta raíz anterior */}
