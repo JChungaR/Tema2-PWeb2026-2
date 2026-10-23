@@ -44,8 +44,8 @@ export default function Navbar({ user = { name: "Pepe Valdivia", role: "Estudian
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 gap-1 gap-lg-2">
               <li className="nav-item">
                 <a
-                    className={`nav-link nav-link-custom ${activeLink === '/estudiante/espacios' ? 'active' : ''}`}
-                    href="/estudiante/espacios">
+                    className={`nav-link nav-link-custom ${activeLink === '/estudiante/disponibilidad' ? 'active' : ''}`}
+                    href="/estudiante/disponibilidad">
                   Buscar espacios
                 </a>
               </li>

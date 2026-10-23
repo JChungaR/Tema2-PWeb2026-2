@@ -1,0 +1,510 @@
+/* ========================================
+   H3: DISPONIBILIDAD Y BÚSQUEDA
+   ReservaUL - Estudiante
+======================================== */
+
+.h3-contenedor {
+  min-height: 100vh;
+  background-color: #f4f6fa;
+  color: #243247;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+/* Encabezado */
+
+.h3-header {
+  background-color: #102b50;
+  color: #ffffff;
+  padding: 18px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+}
+
+.h3-header h1 {
+  font-size: 25px;
+  margin: 0;
+  font-weight: 700;
+}
+
+.h3-nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.h3-nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.h3-nav a:hover {
+  color: #b9d7ff;
+}
+
+.h3-rol {
+  background-color: #24466f;
+  padding: 8px 13px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 0.6px;
+}
+
+/* Contenido principal */
+
+.h3-contenido {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 32px 5%;
+}
+
+.h3-contenido > h2 {
+  color: #102b50;
+  font-size: 28px;
+  margin: 0 0 8px;
+}
+
+.h3-descripcion {
+  color: #68778b;
+  font-size: 15px;
+  margin-bottom: 28px;
+}
+
+/* Distribución de filtros y resultados */
+
+.h3-layout {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 25px;
+  align-items: start;
+}
+
+/* Panel de filtros */
+
+.h3-filtros {
+  background-color: #ffffff;
+  padding: 24px;
+  border: 1px solid #e1e7ef;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(20, 43, 75, 0.05);
+}
+
+.h3-filtros h3 {
+  color: #102b50;
+  font-size: 18px;
+  margin: 0 0 22px;
+}
+
+.h3-filtros label {
+  display: block;
+  margin: 17px 0 8px;
+  color: #34445a;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.h3-filtros input,
+.h3-filtros select {
+  width: 100%;
+  min-height: 42px;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border: 1px solid #ccd5e1;
+  border-radius: 7px;
+  background-color: #ffffff;
+  color: #243247;
+  font-family: inherit;
+  font-size: 13px;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.h3-filtros input:focus,
+.h3-filtros select:focus {
+  border-color: #2864ad;
+  box-shadow: 0 0 0 3px rgba(40, 100, 173, 0.12);
+}
+
+.h3-filtros input::placeholder {
+  color: #9aa6b5;
+}
+
+/* Botones */
+
+.h3-filtros button,
+.h3-tarjeta button,
+.h3-vacio button {
+  min-height: 40px;
+  border: none;
+  border-radius: 7px;
+  padding: 10px 15px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.h3-tarjeta button,
+.h3-vacio button {
+  background-color: #174c8e;
+  color: #ffffff;
+}
+
+.h3-tarjeta button:hover,
+.h3-vacio button:hover {
+  background-color: #103766;
+  transform: translateY(-1px);
+}
+
+.h3-boton-secundario {
+  width: 100%;
+  margin-top: 22px;
+  background-color: #eaf0f7;
+  color: #17416f;
+}
+
+.h3-boton-secundario:hover {
+  background-color: #dce7f4;
+}
+
+/* Resultados */
+
+.h3-resultados > h3 {
+  margin: 0 0 8px;
+  color: #102b50;
+  font-size: 20px;
+}
+
+.h3-resultados > p {
+  margin: 0 0 18px;
+  color: #68778b;
+  font-size: 13px;
+}
+
+.h3-tarjetas {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+/* Tarjetas de espacios */
+
+.h3-tarjeta {
+  background-color: #ffffff;
+  border: 1px solid #e1e7ef;
+  border-radius: 12px;
+  padding: 22px;
+  box-shadow: 0 4px 14px rgba(20, 43, 75, 0.05);
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.h3-tarjeta:hover {
+  box-shadow: 0 8px 22px rgba(20, 43, 75, 0.1);
+  transform: translateY(-2px);
+}
+
+.h3-etiqueta {
+  display: inline-block;
+  padding: 5px 9px;
+  background-color: #e8f1ff;
+  color: #174c8e;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.h3-tarjeta h4 {
+  color: #102b50;
+  font-size: 17px;
+  line-height: 1.4;
+  margin: 14px 0;
+}
+
+.h3-tarjeta p {
+  color: #58677b;
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 8px 0;
+  overflow-wrap: anywhere;
+}
+
+.h3-tarjeta p strong {
+  color: #34445a;
+}
+
+.h3-tarjeta button {
+  width: 100%;
+  margin-top: 12px;
+}
+
+/* Estado sin resultados */
+
+.h3-vacio {
+  background-color: #ffffff;
+  border: 1px dashed #ccd5e1;
+  border-radius: 12px;
+  padding: 35px 20px;
+  text-align: center;
+}
+
+.h3-vacio h4 {
+  color: #102b50;
+  font-size: 18px;
+  margin: 0 0 10px;
+}
+
+.h3-vacio p {
+  color: #68778b;
+  line-height: 1.6;
+}
+
+.h3-vacio button {
+  margin-top: 10px;
+}
+
+/* Calendario semanal */
+
+.h3-calendario {
+  margin-top: 35px;
+  padding: 25px;
+  background-color: #ffffff;
+  border: 1px solid #e1e7ef;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(20, 43, 75, 0.05);
+}
+
+.h3-calendario-titulo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.h3-calendario-titulo h3 {
+  margin: 0 0 8px;
+  color: #102b50;
+  font-size: 21px;
+}
+
+.h3-calendario-titulo p {
+  color: #68778b;
+  margin: 0;
+  font-size: 13px;
+}
+
+.h3-semana-botones {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.h3-semana-botones button {
+  min-height: 36px;
+  padding: 8px 13px;
+  border: 1px solid #d4dce7;
+  border-radius: 6px;
+  background-color: #ffffff;
+  color: #17416f;
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.h3-semana-botones button:hover {
+  background-color: #eaf0f7;
+}
+
+/* Leyenda */
+
+.h3-leyenda {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin: 24px 0 18px;
+}
+
+.h3-leyenda span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #58677b;
+  font-size: 12px;
+}
+
+.h3-leyenda i {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+
+/* Tabla */
+
+.h3-tabla-contenedor {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #e1e7ef;
+  border-radius: 8px;
+}
+
+.h3-tabla {
+  width: 100%;
+  min-width: 750px;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  font-size: 12px;
+}
+
+.h3-tabla th,
+.h3-tabla td {
+  padding: 10px 8px;
+  border: 1px solid #e6ebf2;
+  text-align: center;
+}
+
+.h3-tabla thead th {
+  background-color: #102b50;
+  color: #ffffff;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.h3-tabla tbody th {
+  background-color: #f4f6fa;
+  color: #34445a;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.h3-tabla tbody tr:hover {
+  background-color: #f8faff;
+}
+
+/* Bloques de disponibilidad */
+
+.h3-bloque {
+  display: block;
+  padding: 7px 5px;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.h3-libre {
+  background-color: #d9f4e5;
+  color: #17663b;
+}
+
+.h3-ocupado {
+  background-color: #ffe2e2;
+  color: #a52828;
+}
+
+.h3-no-disponible {
+  background-color: #e8eaf0;
+  color: #596273;
+}
+
+/* Nota del calendario */
+
+.h3-nota {
+  margin: 18px 0 0;
+  color: #7a8798;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* Accesibilidad */
+
+.h3-contenedor button:focus-visible,
+.h3-contenedor a:focus-visible {
+  outline: 3px solid #6ea8fe;
+  outline-offset: 3px;
+}
+
+/* Adaptación para tablets */
+
+@media (max-width: 1000px) {
+  .h3-layout {
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .h3-tarjetas {
+    grid-template-columns: 1fr;
+  }
+
+  .h3-contenido {
+    padding: 28px 3%;
+  }
+}
+
+/* Adaptación para celulares */
+
+@media (max-width: 650px) {
+  .h3-header {
+    padding: 17px 5%;
+    align-items: flex-start;
+  }
+
+  .h3-header h1 {
+    font-size: 22px;
+  }
+
+  .h3-nav {
+    width: 100%;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .h3-contenido {
+    padding: 24px 4%;
+  }
+
+  .h3-contenido > h2 {
+    font-size: 23px;
+  }
+
+  .h3-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .h3-filtros {
+    padding: 20px;
+  }
+
+  .h3-calendario {
+    padding: 16px;
+  }
+
+  .h3-calendario-titulo {
+    align-items: flex-start;
+  }
+
+  .h3-semana-botones {
+    flex-wrap: wrap;
+  }
+
+  .h3-leyenda {
+    gap: 12px;
+  }
+}

@@ -14,6 +14,7 @@ import FooterEstudianteEsp from '../partials/FooterEstudianteEsp.jsx';
 
 // Páginas del estudiante
 import MiCuentaPage from '../pages/Estudiante/MiCuentaPage.jsx';
+import DisponibilidadPage from '../pages/Estudiante/DisponibilidadPage.jsx';
 import ConfirmacionReserva from '../pages/reservas/ConfirmacionReserva.jsx';
 import { MisReservas } from '../pages/reservas/MisReservas.jsx';
 import { DetalleReserva } from '../pages/reservas/DetalleReserva.jsx';
@@ -50,6 +51,8 @@ function App() {
                     <Route path="mi-cuenta" element={<MiCuentaPage />} />
                     <Route path="mis-incidencias" element={<MisIncidenciasPage />} />
                     <Route path="reportar-incidencia" element={<ReportarIncidenciaPage />} />   
+                    <Route path="disponibilidad" element={<DisponibilidadPage />}
+/>
                 </Route>
 
                 {/* Compatibilidad con la ruta raíz anterior */}
