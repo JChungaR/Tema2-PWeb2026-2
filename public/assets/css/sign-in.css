@@ -150,4 +150,27 @@ body {
     border: 1px solid #dc3545;
 }
 
+.alerta-error {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    padding: 12px 15px;
+
+    background-color: #fce8e6;
+    border: 1px solid #f5b7b1;
+    border-radius: 5px;
+
+    color: #b42318;
+    font-family: Inter, sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.alerta-error i {
+    font-size: 16px;
+    flex-shrink: 0;
+}

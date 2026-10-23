@@ -131,17 +131,7 @@ function DisponibilidadPage() {
 
   return (
     <main className="h3-contenedor">
-      <header className="h3-header">
-        <h1>ReservaUL</h1>
-
-        <nav className="h3-nav">
-          <a href="#buscar-espacios">Buscar espacios</a>
-          <a href="#calendario-semanal">Calendario</a>
-        </nav>
-
-        <span className="h3-rol">ESTUDIANTE</span>
-      </header>
-
+      
       <section className="h3-contenido" id="buscar-espacios">
         <h2>Disponibilidad y búsqueda</h2>
 

@@ -54,6 +54,13 @@
 
                 </div>
 
+                <% if (typeof errorLogin !== 'undefined' && errorLogin) { %>
+                    <div class="alerta-error" role="alert">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <span><%= errorLogin %></span>
+                    </div>
+                <% } %>
+
 
                 <!-- Formulario -->
                 

@@ -36,7 +36,7 @@ router.get('/estudiante/mis-reservas', soloRolEstudiante, student.home);
 router.get('/estudiante/confirmacion', soloRolEstudiante, student.home);
 router.get('/estudiante/detalle', soloRolEstudiante, student.home);
 router.get('/estudiante/detalle/:id', soloRolEstudiante, student.home);
-
+router.get('/estudiante/disponibilidad', soloRolEstudiante, student.home);
 router.get('/estudiante/mis-incidencias', soloRolEstudiante, student.home);
 
 router.get('/estudiante/reportar-incidencia', soloRolEstudiante, student.home);

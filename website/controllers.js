@@ -136,15 +136,15 @@ export async function ingresar(req, res) {
       }
     });
 
-  }else{
-    return res.render('visit/sign-in',{
-      title: 'Iniciar Sesión', 
+    } else {
+    return res.status(401).render('visit/sign-in', {
+      title: 'Iniciar Sesión',
       currentPage: 'sign-in',
       css: '/assets/css/sign-in.css',
       description:
-        'Esta es una aplicación de ejemplo creada con Node.js, Express y EJS.'
-    })
-
+        'Esta es una aplicación de ejemplo creada con Node.js, Express y EJS.',
+      errorLogin: 'El correo o la contraseña son incorrectos.'
+    });
   }
   
   
