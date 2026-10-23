@@ -13,6 +13,7 @@ import Navbar from '../partials/Navbar.jsx';
 
 // Páginas del estudiante
 import MiCuentaPage from '../pages/Estudiante/MiCuentaPage.jsx';
+import DisponibilidadPage from '../pages/Estudiante/DisponibilidadPage.jsx';
 import ConfirmacionReserva from '../pages/reservas/ConfirmacionReserva.jsx';
 import { MisReservas } from '../pages/reservas/MisReservas.jsx';
 import { DetalleReserva } from '../pages/reservas/DetalleReserva.jsx';
